@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Start Reticulum Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/water.css?v=6">
+</head>
+<body>
+    <div class="centered">
+        <p>
+            <span class="top_menu lang_menu">
+                <a href="../index.html">Русский</a> |
+                <a href="https://reticulum.network/index_de.html" target="_blank" rel="noopener">Deutsch</a> |
+                <a href="https://reticulum.network/index.html" target="_blank" rel="noopener">English</a> |
+                <a href="https://reticulum.network/index_es.html" target="_blank" rel="noopener">Español</a> |
+                <a href="https://reticulum.network/index_nl.html" target="_blank" rel="noopener">Nederlands</a> |
+                <a href="https://reticulum.network/index_pl.html" target="_blank" rel="noopener">Polski</a> |
+                <a href="https://reticulum.network/index_pt-br.html" target="_blank" rel="noopener">Português</a> |
+                <a href="https://reticulum.network/index_tr.html" target="_blank" rel="noopener">Türkçe</a> |
+                <a href="https://reticulum.network/index_uk.html" target="_blank" rel="noopener">Українська</a> |
+                <a href="https://reticulum.network/index_jp.html" target="_blank" rel="noopener">日本語</a> |
+                <a href="https://reticulum.network/index_zh-cn.html" target="_blank" rel="noopener">简体中文</a>
+            </span>
+        </p>
+<hr>
+        <p>
+            <span class="top_menu">
+                <a href="../index.html">Reticulum</a> |
+                <a href="start.html">Start</a> |
+                <a href="./hardware.html">Hardware</a> |
+                <a href="./connect.html">Connect</a> |
+                <a href="./docs.html">Manual</a> |
+                <a href="./crypto.html">Cryptography</a> |
+                <a href="./credits.html">Credits</a> |
+                <a href="https://github.com/markqvist/reticulum" target="_blank" rel="noopener" title="Проект на GitHub">Source</a> |
+                <a href="./donate.html">Donate</a>
+            </span>
+        </p>
+    </div>
+
+    <h1>Начало работы</h1>
+    <p>
+        Лучший способ начать работу со стеком Reticulum Network зависит от ваших целей.
+        Для полного описания и примеров см. раздел
+        <a href="https://reticulum.network/manual/gettingstartedfast.html" target="_blank" rel="noopener">Getting Started Fast</a> в
+        <a href="https://reticulum.network/manual/index.html" target="_blank" rel="noopener">Руководстве Reticulum</a>.
+    </p>
+
+    <h2>Экспериментальное программное обеспечение</h2>
+    <p><em>Внимание!</em> Reticulum всё ещё в бета‑версии. Это значит, что хотя он уже работает очень хорошо
+        и стабильно, могут оставаться критические баги или уязвимости в поведении,
+        конфиденциальности или безопасности системы в целом. Используйте Reticulum, только если вы
+        согласны с этим и понимаете последствия.</p>
+
+    <h2>Сообщество и поддержка</h2>
+    <p>Если у вас возникли проблемы или что‑то не работает, обратитесь за помощью в эти места:</p>
+    <ul>
+        <li>Форум <a href="https://github.com/markqvist/Reticulum/discussions" target="_blank" rel="noopener">discussion forum
+        </a> на GitHub</li>
+        <li>Канал Reticulum в Matrix
+            <a href="https://matrix.to/#/#reticulum:matrix.org" target="_blank" rel="noopener">#reticulum:matrix.org</a></li>
+        <li>Subreddit <a href="https://reddit.com/r/reticulum" target="_blank" rel="noopener">Reticulum</a></li>
+        <li>Или в Телеграм группу <a href="https://t.me/reticulum_network_rus" target="_blank" rel="noopener">@reticulum_network_rus</a></li>
+    </ul>
+
+    <h2>Установка</h2>
+    <p>Самый простой способ установить Reticulum и сопутствующие утилиты — через pip:</p>
+    <pre><code class="language-bash">pip install rns</code></pre>
+    <p>После этого можно запускать любую программу, использующую Reticulum, или запустить Reticulum как системный сервис с
+        <a href="https://reticulum.network/manual/using.html#the-rnsd-utility" target="_blank" rel="noopener">утилитой rnsd</a>.</p>
+    <p>Если <code>pip</code> недоступен, сначала установите пакеты <code>python3</code> и <code>python3-pip</code> для вашей ОС.</p>
+
+    <h2>Конфигурация</h2>
+    <p>При первом запуске Reticulum создаст файл конфигурации по умолчанию, обеспечивая базовую
+        связность с другими узлами Reticulum, доступными локально. Если среди этих узлов есть транспортные
+        экземпляры, они могут подключить вас к более широким сетям. Файл конфигурации содержит несколько примеров
+        и ссылки для создания более сложных настроек.</p>
+
+    <h2>Поддерживаемые интерфейсы</h2>
+    <p>Подробные примеры расширения связи через различные среды — пакетное радио,
+        LoRa, последовательные порты, быстрые IP‑соединения и Интернет через UDP и TCP — см. раздел
+        <a href="https://reticulum.network/manual/interfaces.html" target="_blank" rel="noopener">Supported Interfaces</a> в
+        <a href="https://reticulum.network/manual/index.html" target="_blank" rel="noopener">Руководстве Reticulum</a>.</p>
+
+    <h2>Включённые утилиты</h2>
+    <p>Reticulum поставляется с набором полезных утилит для управления сетями, просмотра статуса и
+        информации, а также других задач. Подробнее о них в разделе
+        <a href="https://reticulum.network/manual/using.html#included-utility-programs" target="_blank" rel="noopener">Included Utility Programs</a> в
+        <a href="https://reticulum.network/manual/index.html" target="_blank" rel="noopener">Руководстве Reticulum</a>.</p>
+    <ul>
+        <li>Системный демон <code>rnsd</code> для постоянного сервиса Reticulum</li>
+        <li>Утилита статуса интерфейсов <code>rnstatus</code>, показывающая информацию об интерфейсах</li>
+        <li>Инструмент управления путями <code>rnpath</code> для просмотра и изменения таблиц маршрутизации</li>
+        <li>Диагностическая утилита <code>rnprobe</code> для проверки связности с узлами</li>
+        <li>Простая программа передачи файлов <code>rncp</code> для копирования файлов на удалённые системы</li>
+        <li>Утилита удалённого выполнения команд <code>rnx</code>,
+            позволяющая запускать команды и получать вывод с удалённых систем</li>
+    </ul>
+    <p>Все инструменты, включая <code>rnx</code> и <code>rncp</code>, работают надёжно даже по
+        очень низкоскоростным каналам, таким как LoRa или пакетное радио.</p>
+
+    <h2>Программы, использующие Reticulum</h2>
+    <p>Чтобы быстро понять возможности Reticulum, ознакомьтесь со следующими ресурсами.</p>
+    <ul>
+        <li>Для автономной, зашифрованной и устойчивой mesh‑сети смотрите
+            <a href="https://github.com/markqvist/NomadNet" target="_blank" rel="noopener">Nomad Network</a></li>
+        <li>Приложения для Android, Linux и macOS —
+            <a href="https://github.com/markqvist/sideband" target="_blank" rel="noopener">Sideband</a>,
+            имеющие графический интерфейс и ориентированные на простоту использования.</li>
+        <li><a href="https://github.com/markqvist/lxmf" target="_blank" rel="noopener">LXMF</a> — распределённый,
+            tolerant‑to‑delay и disruption‑tolerant
+            протокол передачи сообщений, построенный на Reticulum</li>
+    </ul>
+
+    <h2>Зависимости</h2>
+    <p>Установка базового пакета <code>rns</code> требует перечисленных ниже зависимостей.
+        На большинстве систем и дистрибутивов они доступны в виде пакетов,
+        и при установке <code>rns</code> через <code>pip</code> они будут автоматически загружены
+        и установлены.</p>
+    <ul>
+        <li><a href="https://github.com/pyca/cryptography" target="_blank" rel="noopener">PyCA/cryptography</a></li>
+        <li><a href="https://github.com/al45tair/netifaces" target="_blank" rel="noopener">netifaces</a></li>
+        <li><a href="https://github.com/pyserial/pyserial" target="_blank" rel="noopener">pyserial</a></li>
+    </ul>
+
+    <h2>Вариант Pure‑Python</h2>
+    <p>На необычных системах, где один или несколько из перечисленных модулей нельзя установить, можно использовать
+        пакет <code>rnspure</code>, который не требует внешних зависимостей при установке.
+        Содержимое пакетов <code>rns</code> и <code>rnspure</code> <em>идентично</em>;
+        единственное различие — <code>rnspure</code> не содержит зависимостей.</p>
+
+    <p>Reticulum загружает внешние зависимости только если они <em>необходимы</em> и <em>доступны</em>.
+        Например, если <a href="https://github.com/pyserial/pyserial" target="_blank" rel="noopener"><code>pyserial</code></a> недоступен,
+        интерфейсы на основе последовательного порта
+        просто не будут работать, тогда как остальные модули загрузятся при необходимости.</p>
+
+    <p><strong>Обратите внимание!</strong> Если вы используете <code>rnspure</code> на системах, не поддерживающих
+        <a href="https://github.com/pyca/cryptography" target="_blank" rel="noopener">PyCA/cryptography</a>,
+        внимательно изучите раздел <a href="crypto.html">Криптографические примитивы</a>.</p>
+
+    <h2>Производительность</h2>
+    <p>
+        Reticulum нацелен на <em>очень</em> широкий диапазон практической производительности, но отдаёт приоритет
+        функциональности и производительности над низкоскоростными средами.
+        Цель — обеспечить динамический диапазон от <strong>250 бит в секунду</strong> до
+        <strong>1 гигабита в секунду</strong> на обычном оборудовании.
+    </p>
+    <p>
+        В текущий момент практический диапазон составляет примерно от <strong>150 бит в
+        секунду</strong> до <strong>40 мегабит в секунду</strong>,
+        при этом более быстрые физические среды не полностью загружены. Повышение производительности планируется в
+        будущих версиях, но не является приоритетом, пока не будет окончательно определён формат передачи и API.
+    </p>
+    <p align="right"><a href="hardware.html">Следующая тема: Поддерживаемое оборудование</a></p>
+
+    <hr>
+
+    <div class="centered">
+        <p>Сайт проекта:
+            <a href="https://reticulum.network" target="_blank" rel="noopener">reticulum.network</a>
+        </p>
+    </div>
+
+</body>
+</html>

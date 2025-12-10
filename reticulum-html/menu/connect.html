@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Connect Reticulum Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/water.css?v=6">
+</head>
+<body>
+    <div class="centered">
+        <p>
+            <span class="top_menu lang_menu">
+                <a href="../index.html">Русский</a> |
+                <a href="https://reticulum.network/index_de.html" target="_blank" rel="noopener">Deutsch</a> |
+                <a href="https://reticulum.network/index.html" target="_blank" rel="noopener">English</a> |
+                <a href="https://reticulum.network/index_es.html" target="_blank" rel="noopener">Español</a> |
+                <a href="https://reticulum.network/index_nl.html" target="_blank" rel="noopener">Nederlands</a> |
+                <a href="https://reticulum.network/index_pl.html" target="_blank" rel="noopener">Polski</a> |
+                <a href="https://reticulum.network/index_pt-br.html" target="_blank" rel="noopener">Português</a> |
+                <a href="https://reticulum.network/index_tr.html" target="_blank" rel="noopener">Türkçe</a> |
+                <a href="https://reticulum.network/index_uk.html" target="_blank" rel="noopener">Українська</a> |
+                <a href="https://reticulum.network/index_jp.html" target="_blank" rel="noopener">日本語</a> |
+                <a href="https://reticulum.network/index_zh-cn.html" target="_blank" rel="noopener">简体中文</a>
+            </span>
+        </p>
+<hr>
+        <p>
+            <span class="top_menu">
+                <a href="../index.html">Reticulum</a> |
+                <a href="./start.html">Start</a> |
+                <a href="./hardware.html">Hardware</a> |
+                <a href="connect.html">Connect</a> |
+                <a href="./docs.html">Manual</a> |
+                <a href="./crypto.html">Cryptography</a> |
+                <a href="./credits.html">Credits</a> |
+                <a href="https://github.com/markqvist/reticulum" target="_blank" rel="noopener" title="Проект на GitHub">Source</a> |
+                <a href="./donate.html">Donate</a>
+            </span>
+        </p>
+    </div>
+
+    <h1>Точки входа в сообщество</h1>
+    <p>Подключить сеть Reticulum</p>
+
+    <p>Сообществом предоставлено несколько публичных точек входа в сети Reticulum.
+        Для повседневного использования рекомендуется использовать их вместо тестовой сети.</p>
+
+    <p>Вы можете подключить свои устройства или экземпляры к одной или нескольким из этих точек,
+        чтобы получить доступ к любым сетям Reticulum, к которым они физически подключены.</p>
+
+    <p>Оптимально настроить узел транспортного уровня Reticulum, доступный локально вашим устройствам,
+        а затем соединить этот транспортный узел с несколькими публичными точками входа.
+        Это обеспечит эффективные соединения и резервирование в случае отказа любой из них.</p>
+
+    <pre><code># Эти публичные точки входа предоставлены сообществом
+# и доступны через публичный Интернет.
+
+[[RNS Testnet BetweenTheBorders]]
+type = TCPClientInterface
+enabled = yes
+target_host = reticulum.betweentheborders.com
+target_port = 4242
+
+[[Spaceman-ygg]]
+type = TCPClientInterface
+enabled = true
+target_host = 201:e73a:61ee:ca68:4bc5:99d5:fd70:ded1
+target_port = 4343
+
+[[Sydney RNS]]
+type = TCPClientInterface
+enabled = true
+target_host = sydney.reticulum.au
+target_port = 4242    
+
+[[dismails TCP Interface]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = rns.dismail.de
+target_port = 7822
+
+[[interloper node]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = intr.cx
+target_port = 4242
+
+[[noDNS1]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = 202.61.243.41
+target_port = 4965
+
+[[The Outpost]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = theoutpost.life
+target_port = 4242
+
+[[Beleth RNS Hub]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = rns.beleth.net
+target_port = 4242
+
+[[Rocket Tech Hub]]
+type = TCPClientInterface
+enabled = yes
+target_host = reticulum.rocket-tech.net
+target_port = 443
+
+[[SparkN0de]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = aspark.uber.space
+target_port = 44860
+
+[[Tidudanka.com]]
+type = TCPClientInterface
+enabled = yes
+target_host = reticulum.tidudanka.com
+target_port = 37500
+
+[[quad4net tcp]]
+type = TCPClientInterface
+enabled = yes
+target_host = rns.quad4.io
+target_port = 4242
+
+[[nisa-node]]
+type = TCPClientInterface
+enabled = yes
+target_host = nisa.cat
+target_port = 4242
+
+[[acehoss]]
+type = TCPClientInterface
+enabled = yes
+target_host = rns.acehoss.net
+target_port = 4242
+
+[[RNS Testnet StoppedCold]]
+type = TCPClientInterface
+enabled = yes
+target_host = rns.stoppedcold.com
+target_port = 4242
+
+[[RNS COMSEC-RD]]
+type = TCPClientInterface
+enabled = yes
+target_host = 80.78.23.249
+target_port = 4242
+
+[[R-Net TCP]]
+type = TCPClientInterface
+enabled = yes
+target_host = istanbul.reserve.network
+target_port = 9034
+
+[[RNS TCP Node Germany 001]]
+type = TCPClientInterface
+enabled = true
+target_host = 202.61.243.41
+target_port = 4965
+
+[[RNS TCP Node Germany 002]]
+type = TCPClientInterface
+enabled = true
+target_host = 193.26.158.230
+target_port = 4965
+
+[[Quortal TCP Node]]
+type = TCPClientInterface
+enabled = true
+target_host = reticulum.qortal.link
+target_port = 4242
+
+[[mobilefabrik TCP]]
+type = TCPClientInterface
+enabled = true
+target_host = phantom.mobilefabrik.com
+target_port = 4242
+
+[[g00n.cloud Hub]]
+type = TCPClientInterface
+enabled = true
+target_host = dfw.us.g00n.cloud
+target_port = 6969
+
+[[RNS_Transport_US-East]]
+type = TCPClientInterface
+interface_enabled = true
+target_host = 45.77.109.86
+target_port = 4965
+
+[[rothbard_RNS_transport_ZA]]
+type = TCPClientInterface
+enabled = true
+target_host = rothbard.lab.networks.deavmi.assigned.network
+target_port = 4242
+
+[[rothbard_RNS_transport_ZA_ygg]]
+type = TCPClientInterface
+enabled = true
+target_host = 200:73eb:2e4:14be:aac7:90b3:784b:71a3
+target_port = 4242
+
+[[rothbard_RNS_transport_ZA_i2p]]
+type = I2PInterface
+enabled = true
+peers = guuahj7pyb6ksmjv2bqrjg4cs2wou6cor3ivsi6crntqbzsxnbna.b32.i2p
+</code></pre>
+
+    <p align="right"><a href="docs.html">Следующая тема: Руководство</a></p>
+
+    <hr>
+
+    <div class="centered">
+        <p>Сайт проекта:
+            <a href="https://reticulum.network" target="_blank" rel="noopener">reticulum.network</a>
+        </p>
+    </div>
+
+</body>
+</html>

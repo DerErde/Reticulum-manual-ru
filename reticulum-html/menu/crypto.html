@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Cryptography Reticulum Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/water.css?v=6">
+</head>
+<body>
+    <div class="centered">
+        <p>
+            <span class="top_menu lang_menu">
+                <a href="../index.html">Русский</a> |
+                <a href="https://reticulum.network/index_de.html" target="_blank" rel="noopener">Deutsch</a> |
+                <a href="https://reticulum.network/index.html" target="_blank" rel="noopener">English</a> |
+                <a href="https://reticulum.network/index_es.html" target="_blank" rel="noopener">Español</a> |
+                <a href="https://reticulum.network/index_nl.html" target="_blank" rel="noopener">Nederlands</a> |
+                <a href="https://reticulum.network/index_pl.html" target="_blank" rel="noopener">Polski</a> |
+                <a href="https://reticulum.network/index_pt-br.html" target="_blank" rel="noopener">Português</a> |
+                <a href="https://reticulum.network/index_tr.html" target="_blank" rel="noopener">Türkçe</a> |
+                <a href="https://reticulum.network/index_uk.html" target="_blank" rel="noopener">Українська</a> |
+                <a href="https://reticulum.network/index_jp.html" target="_blank" rel="noopener">日本語</a> |
+                <a href="https://reticulum.network/index_zh-cn.html" target="_blank" rel="noopener">简体中文</a>
+            </span>
+        </p>
+<hr>
+        <p>
+            <span class="top_menu">
+                <a href="../index.html">Reticulum</a> |
+                <a href="./start.html">Start</a> |
+                <a href="./hardware.html">Hardware</a> |
+                <a href="./connect.html">Connect</a> |
+                <a href="./docs.html">Manual</a> |
+                <a href="crypto.html">Cryptography</a> |
+                <a href="./credits.html">Credits</a> |
+                <a href="https://github.com/markqvist/reticulum" target="_blank" rel="noopener" title="Проект на GitHub">Source</a> |
+                <a href="./donate.html">Donate</a>
+            </span>
+        </p>
+    </div>
+
+    <h1>Криптографические примитивы</h1>
+
+    <p>Reticulum использует простой набор эффективных, надёжных и хорошо проверенных криптографических примитивов,
+        с широко доступными реализациями, которые могут работать как на обычных процессорах, так и на микроконтроллерах.</p>
+
+    <p>Одним из основных факторов выбора именно этого набора примитивов является то,
+        что их можно реализовать <em>безопасно</em> с относительно небольшим количеством подводных камней на
+        практически всех современных вычислительных платформах.</p>
+
+    <p>Приведённые здесь примитивы <strong>являются авторитетными</strong>. Всё, что претендует на Reticulum,
+        но не использует эти точные примитивы, <strong>не является</strong> Reticulum и, возможно,
+        представляет собой намеренно скомпрометированную или ослабленную копию.</p>
+
+    <p>
+        Используемые примитивы:
+    </p>
+
+    <ul>
+        <li>Ed25519 для подписей</li>
+        <li>X25519 для обмена ключами ECDH</li>
+        <li>HKDF для вывода ключей</li>
+        <li>AES‑256 в режиме CBC</li>
+        <li>HMAC‑SHA256 для аутентификации сообщений</li>
+        <li>SHA‑256</li>
+        <li>SHA‑512</li>
+    </ul>
+
+    <p>В конфигурации установки по умолчанию примитивы <code>X25519</code>, <code>Ed25519</code> и <code>AES‑256‑CBC</code>
+        предоставляются <a href="https://www.openssl.org/" target="_blank" rel="noopener">OpenSSL</a>
+        (через пакет <a href="https://github.com/pyca/cryptography" target="_blank" rel="noopener">PyCA/cryptography</a>).
+        Функции хеширования <code>SHA‑256</code> и <code>SHA‑512</code> предоставляются стандартной библиотекой
+        Python <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener">hashlib</a>.
+        Примитивы <code>HKDF</code>, <code>HMAC</code>, <code>Token</code> и функция заполнения <code>PKCS7</code>
+        всегда предоставляются следующими внутренними реализациями:
+    </p>
+
+    <ul>
+        <li><a href="https://github.com/markqvist/Reticulum/blob/master/RNS/Cryptography/HKDF.py" target="_blank" rel="noopener">HKDF.py</a></li>
+        <li><a href="https://github.com/markqvist/Reticulum/blob/master/RNS/Cryptography/HMAC.py" target="_blank" rel="noopener">HMAC.py</a></li>
+        <li><a href="https://github.com/markqvist/Reticulum/blob/master/RNS/Cryptography/Token.py" target="_blank" rel="noopener">Token.py</a></li>
+        <li><a href="https://github.com/markqvist/Reticulum/blob/master/RNS/Cryptography/PKCS7.py" target="_blank" rel="noopener">PKCS7.py</a></li>
+    </ul>
+
+    <p>Reticulum также включает полную реализацию всех необходимых примитивов на чистом Python.
+        Если OpenSSL и PyCA недоступны в системе при запуске Reticulum, он будет использовать внутренние примитивы на
+        чистом Python. Следствие этого — производительность: бекенд OpenSSL работает <em>намного</em> быстрее.
+        Более важное последствие — потенциальная потеря безопасности при использовании примитивов, которые не прошли
+        такой же уровень проверки, тестирования и аудита, как те, что из OpenSSL.</p>
+
+    <p>Если вы хотите использовать внутренние примитивы на чистом Python, <strong>настоятельно рекомендуется</strong>
+        иметь хорошее понимание связанных рисков и принять обоснованное решение, приемлемы ли они для вас.</p>
+
+    <p>Reticulum — относительно молодое программное обеспечение, и его следует рассматривать как таковое.
+        Хотя он построен с учётом лучших практик криптографии, он <em>не</em> проходил внешних аудитов безопасности,
+        и могут существовать уязвимости, нарушающие конфиденциальность или безопасность. Если вы хотите помочь или
+        спонсировать аудит, пожалуйста, свяжитесь с нами.</p>
+
+    <p align="right"><a href="credits.html">Следующая тема: Благодарности &amp; Признание</a></p>
+
+    <hr>
+
+    <div class="centered">
+        <p>Сайт проекта:
+            <a href="https://reticulum.network" target="_blank" rel="noopener">reticulum.network</a>
+        </p>
+    </div>
+</body>
+</html>
