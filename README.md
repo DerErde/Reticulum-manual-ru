@@ -1,7 +1,9 @@
 <div align="center">
-<img src="reticulum-html/gfx/reticulum_logo_512.png" alt="Логотип Reticulum" width="200">
+<img src="reticulum-html/gfx/reticulum_logo_512.png" alt="Логотип Reticulum" width="160">
   
-# Перевод официальной документации проекта <a href="https://reticulum.network">Reticulum</a> на русский язык.
+<h3>
+Перевод официальной документации проекта <a href="https://reticulum.network">Reticulum</a> на русский язык.
+</h3>
 
 Сайт оформлен в виде HTML страниц с относительными ссылками, чтобы любой мог открыть его локально на своем компьютере.
 
