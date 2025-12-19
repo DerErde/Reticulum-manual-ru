@@ -17,4 +17,8 @@
 
 Подробная инструкция по выбору оборудования, установке приложения, настройке, и т.д. будет сделана в отдельном проекте.
 
+<p>Эта документация:
+    <a href="https://github.com/DerErde/Reticulum-manual-ru" target="_blank" rel="noopener">Reticulum-manual-ru</a>
+</p>
+
 </div>
