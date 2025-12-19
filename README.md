@@ -17,8 +17,14 @@
 
 Подробная инструкция по выбору оборудования, установке приложения, настройке, и т.д. будет сделана в отдельном проекте.
 
-<p>Эта документация:
+<p>
+    Эта документация:
     <a href="https://github.com/DerErde/Reticulum-manual-ru" target="_blank" rel="noopener">Reticulum-manual-ru</a>
 </p>
+</div>
 
+<div align="center">
+    <div class="copyright">Copyright &#169; 2025, Mark Qvist</div>
+    Generated with <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    <a href="https://github.com/pradyunsg/furo">Furo</a>
 </div>
