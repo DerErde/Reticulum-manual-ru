@@ -5,7 +5,7 @@
 *.iml
 
 # Исключаем директории
-venv/
-bin/
-lib/
-lib64/
+**/venv/
+**/bin/
+**/lib/
+**/lib64/
