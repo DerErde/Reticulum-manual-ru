@@ -391,7 +391,7 @@
                 </p>
                 <p>
                     Reticulum позволяет создавать глобальные сети с помощью готовых инструментов и предлагает сквозное
-                    шифрование, прямую секретность, автоконфигурируемый криптографически защищенный многоузловой
+                    шифрование, <span title="End‑to‑end encryption">прямую</span> секретность, автоконфигурируемый криптографически защищенный многоузловой
                     транспорт, эффективную адресацию, неподдельные подтверждения пакетов и многое другое.
                 </p>
                 <p>
@@ -470,116 +470,123 @@
                       </ul>
                     </li>
                     <li>
-                      <p>Initiator anonymity, communicate without revealing your identity</p>
+                      <p>Анонимность инициатора, общайтесь, не раскрывая свою личность</p>
                       <ul>
-                        <li><p>Reticulum does not include source addresses on any packets</p></li>
+                        <li><p title="В заголовке каждого передаваемого пакета нет поля, указывающего, откуда он был отправлен">
+                            Reticulum не включает исходные адреса в любые пакеты</p></li>
                       </ul>
                     </li>
                     <li>
                       <p>
-                        Asymmetric X25519 encryption and Ed25519 signatures as a basis for all
-                        communication
+                          <a href="https://habr.com/ru/articles/748226/" title="Asymmetric encryption" target="_blank" rel="noopener">Асимметричное шифрование</a>
+                          X25519 и подписи Ed25519 как основа для всей коммуникации
                       </p>
                       <ul>
                         <li>
                           <p>
-                            The foundational Reticulum Identity Keys are 512-bit Elliptic Curve
-                            keysets
+                            Основные идентификационные ключи Reticulum представляют собой наборы ключей
+                              эллиптической кривой длиной 512 бит
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p title="Forward Secrecy - Совершенная прямая секретность">
+                          <a href="https://ru.wikipedia.org/wiki/Perfect_forward_secrecy" target="_blank" rel="noopener">Прямая секретность</a>
+                          доступна для всех типов связи, как для отдельных пакетов, так и для каналов связи
+                      </p>
+                    </li>
+                    <li>
+                      <p>Reticulum использует следующий формат для зашифрованных токенов:</p>
+                      <ul>
+                        <li>
+                          <p>
+                              <span title="Ключ создаётся только для конкретного сеанса">Эфемерные ключи</span>
+                              на пакет и канал связи, полученные в результате обмена ключами
+                              <span title="Elliptic‑Curve Diffie‑Hellman — протокол, позволяющий двум сторонам совместно вычислить общий секрет, не передавая его напрямую">ECDH</span>
+                              на <span title="Обе стороны генерируют эфемерные приватные ключи на эллиптической кривой Curve25519">кривой Curve25519</span>
+                          </p>
+                        </li>
+                          <li><p>AES-256 в режиме <span title="Cipher Block Chaining">CBC</span> с заполнением
+                              <a href="https://en.wikipedia.org/wiki/PKCS_7" target="_blank" rel="noopener">PKCS7</a></p></li>
+                        <li><p><a href="https://ru.wikipedia.org/wiki/HMAC" target="_blank" rel="noopener">
+                         HMAC</a> с использованием SHA256 для аутентификации</p></li>
+                          <li><p><span title="Когда создаётся IV (вектор инициализации) для симметричных шифров, его значение должно быть непредсказуемым">IV</span>
+                              генерируются с помощью
+                              <span title="функция из стандартного модуля os в Python, которая возвращает криптографически‑стойкую последовательность случайных байтов">os.urandom()</span></p></li>
+                      </ul>
+                    </li>
+                    <li><p>Неподделываемые подтверждения доставки пакетов</p></li>
+                    <li>
+                      <p>Гибкая и расширяемая система интерфейсов</p>
+                      <ul>
+                        <li>
+                          <p>Reticulum включает широкий набор встроенных типов интерфейсов</p>
+                        </li>
+                        <li>
+                          <p>
+                            Возможность загрузки и использования пользовательских или предоставленных сообществом
+                              типов интерфейсов
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            Легко создавайте собственные интерфейсы для связи по любому каналу
                           </p>
                         </li>
                       </ul>
                     </li>
                     <li>
                       <p>
-                        Forward Secrecy is available for all communication types, both for single
-                        packets and over links
+                        Аутентификация и виртуальная сегментация сети для всех поддерживаемых типов интерфейсов
                       </p>
                     </li>
                     <li>
-                      <p>Reticulum uses the following format for encrypted tokens:</p>
+                      <p>Интуитивно понятный и простой в использовании API</p>
                       <ul>
                         <li>
                           <p>
-                            Ephemeral per-packet and link keys and derived from an ECDH key exchange
-                            on Curve25519
-                          </p>
-                        </li>
-                        <li><p>AES-256 in CBC mode with PKCS7 padding</p></li>
-                        <li><p>HMAC using SHA256 for authentication</p></li>
-                        <li><p>IVs are generated through os.urandom()</p></li>
-                      </ul>
-                    </li>
-                    <li><p>Unforgeable packet delivery confirmations</p></li>
-                    <li>
-                      <p>Flexible and extensible interface system</p>
-                      <ul>
-                        <li>
-                          <p>Reticulum includes a large variety of built-in interface types</p>
-                        </li>
-                        <li>
-                          <p>
-                            Ability to load and utilise custom user- or community-supplied interface
-                            types
+                            Легче и удобнее в использовании, чем API‑интерфейсы сокетов, и при этом более мощный
                           </p>
                         </li>
                         <li>
                           <p>
-                            Easily create your own custom interfaces for communicating over anything
+                            Значительно упрощает создание распределенных и децентрализованных приложений
                           </p>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <p>
-                        Authentication and virtual network segmentation on all supported interface
-                        types
-                      </p>
+                      <p>Надежная и эффективная передача произвольных объемов данных</p>
+                      <ul>
+                        <li>
+                          <p>Reticulum может работать как с несколькими байтами данных,
+                              так и с файлами размером в несколько гигабайт</p>
+                        </li>
+                        <li>
+                          <p>
+                            Последовательность, сжатие, координация передачи и контроль контрольных сумм
+                              выполняются автоматически
+                          </p>
+                        </li>
+                        <li><p>API очень прост в использовании и отображает ход передачи данных</p></li>
+                      </ul>
                     </li>
+                    <li><p>Легкий, гибкий и расширяемый механизм запроса/ответа</p></li>
                     <li>
-                      <p>An intuitive and easy-to-use API</p>
+                      <p>Эффективное установление связи</p>
                       <ul>
                         <li>
                           <p>
-                            Simpler and easier to use than sockets APIs and simpler, but more
-                            powerful
+                            Общая стоимость установки зашифрованного и проверенного соединения составляет 3 пакета,
+                              суммарно 297 байт
                           </p>
                         </li>
-                        <li>
-                          <p>
-                            Makes building distributed and decentralised applications much simpler
-                          </p>
-                        </li>
+                        <li><p>Низкая стоимость поддержания соединения — всего 0,44 бита в секунду</p></li>
                       </ul>
                     </li>
-                    <li>
-                      <p>Reliable and efficient transfer of arbitrary amounts of data</p>
-                      <ul>
-                        <li>
-                          <p>Reticulum can handle a few bytes of data or files of many gigabytes</p>
-                        </li>
-                        <li>
-                          <p>
-                            Sequencing, compression, transfer coordination and checksumming are
-                            automatic
-                          </p>
-                        </li>
-                        <li><p>The API is very easy to use, and provides transfer progress</p></li>
-                      </ul>
-                    </li>
-                    <li><p>Lightweight, flexible and expandable Request/Response mechanism</p></li>
-                    <li>
-                      <p>Efficient link establishment</p>
-                      <ul>
-                        <li>
-                          <p>
-                            Total cost of setting up an encrypted and verified link is only 3
-                            packets, totalling 297 bytes
-                          </p>
-                        </li>
-                        <li><p>Low cost of keeping links open at only 0.44 bits per second</p></li>
-                      </ul>
-                    </li>
-                    <li><p>Reliable sequential delivery with Channel and Buffer mechanisms</p></li>
+                    <li><p>Надёжная последовательная доставка с использованием механизмов
+                        <span title="Channel">Каналов</span> и <span title="Buffer">Буферов</span></p></li>
                   </ul>
                 </section>
                 <section id="where-can-reticulum-be-used">
