@@ -591,7 +591,7 @@
                 </section>
                 <section id="where-can-reticulum-be-used">
                   <h2>
-                    Where can Reticulum be Used?<a
+                    Где можно использовать Reticulum?<a
                       class="headerlink"
                       href="#where-can-reticulum-be-used"
                       title="Link to this heading"
@@ -599,32 +599,56 @@
                     >
                   </h2>
                   <p>
-                    Over practically any medium that can support at least a half-duplex channel with
-                    greater throughput than 5 bits per second, and an MTU of 500 bytes. Data radios,
-                    modems, LoRa radios, serial lines, AX.25 TNCs, amateur radio digital modes,
-                    ad-hoc WiFi, free-space optical links and similar systems are all examples of
-                    the types of interfaces Reticulum was designed for.
+                      Практически на любом носителе, который может поддерживать хотя бы полудуплексный канал
+                      со скоростью более 5 бит/с и
+                      <span title="Максимальный размер передаваемого пакета данных (Maximum Transmission Unit) в данном канале составляет примерно 500 байт">
+                          MTU &asymp; 500 байт</span>.<br>
+
+                      <span title="Data radios — радиопередатчики/приёмники (RNode, LoRa‑модули) специально предназначенные для передачи цифровых данных (пакетов, телеметрии, файлов и т.п.) по радиочастотному каналу">
+                      Радиостанции для передачи данных</span>,
+                      <span title="LTE‑модемы, спутниковые модемы для удалённых станций, USB‑модемы и т.д.">модемы</span>,
+                      <span title="Радиомодули, использующие технологию LoRa (Long Range) — RNode, SX1276‑модули">радиомодули LoRa</span>,
+                      <span title="Речь идёт о классических RS‑232/RS‑485/TTL‑UART‑соединениях, которые часто используют для связи микроконтроллеров, датчиков">
+                          последовательные линии</span>,
+                      <a href="https://en.wikipedia.org/wiki/Terminal_node_controller" target="_blank" rel="noopener"
+                         title="AX.25 TNC — это трансивер‑компьютер (Terminal Node Controller), реализующий протокол AX.25 — набор правил пакетной передачи данных в любительском радиочастотном диапазоне">
+                          AX.25 TNC</a>,
+                      <span title="Digital modes — это набор цифровых протоколов и методов модуляции, используемых в любительском радио (ham radio) для передачи данных вместо традиционного голоса.">
+                          цифровые режимы любительского радио</span>,
+                      <a href="https://en.wikipedia.org/wiki/Wireless_ad_hoc_network" target="_blank" rel="noopener"
+                         title="Ad‑hoc Wi‑Fi — это беспроводная сеть Wi‑Fi, в которой устройства соединяются напрямую друг с другом без центрального маршрутизатора или точки доступа.">
+                          ad-hoc WiFi</a>,
+                      <span title="Free‑space optical links — это беспроводные оптические каналы, в которых передача данных происходит световым лучом по прямой видимости без использования оптоволокна.">
+                          беспроводные оптические линии связи</span> и
+                      аналогичные системы — все это примеры типов интерфейсов, для которых был разработан Reticulum.
                   </p>
                   <p>
-                    An open-source LoRa-based interface called
-                    <a class="reference external" href="https://unsigned.io/rnode">RNode</a> has
-                    been designed as an example transceiver that is very suitable for Reticulum. It
-                    is possible to build it yourself, to transform a common LoRa development board
-                    into one, or it can be purchased as a complete transceiver from various vendors.
+                      Открытый интерфейс на базе LoRa под названием
+                      <a class="reference external" href="https://unsigned.io/rnode"
+                      title="RNode — открытый, свободный цифровой радиотрансивер. Позволяет любому человеку отправлять и принимать любые типы данных."
+                         target="_blank" rel="noopener">RNode</a>
+                      был разработан в качестве примера трансивера,
+                      который очень хорошо подходит для Reticulum. Его можно собрать самостоятельно, превратив
+                      обычную
+                      <a href="hardware.html#lilygo-t-beam-supreme" title="LoRa development board">плату разработки LoRa</a>
+                      в такой трансивер, либо купить готовый трансивер у различных поставщиков.
                   </p>
                   <p>
-                    Reticulum can also be encapsulated over existing IP networks, so there’s nothing
-                    stopping you from using it over wired Ethernet or your local WiFi network, where
-                    it’ll work just as well. In fact, one of the strengths of Reticulum is how
-                    easily it allows you to connect different mediums into a self-configuring,
-                    resilient and encrypted mesh.
+                      Reticulum может быть инкапсулирован поверх существующих IP‑сетей, поэтому ничто не мешает
+                      использовать его через проводной Ethernet или локальную Wi‑Fi сеть — он будет работать так же эффективно.
+                      Фактически, одной из сильных сторон Reticulum является то, как легко он позволяет соединять
+                      разные среды в самонастраивающуюся, устойчивую и зашифрованную mesh‑сеть.
                   </p>
                   <p>
-                    As an example, it’s possible to set up a Raspberry Pi connected to both a LoRa
-                    radio, a packet radio TNC and a WiFi network. Once the interfaces are added,
-                    Reticulum will take care of the rest, and any device on the WiFi network can
-                    communicate with nodes on the LoRa and packet radio sides of the network, and
-                    vice versa.
+                      В качестве примера можно настроить Raspberry Pi, подключённый одновременно к
+                      <span title="LoRa radio – радиомодуль, использующий технологию LoRa (Long Range) — RNode, SX1276‑модули">LoRa‑радио</span>,
+                      <span title="Packet radio TNC – это устройство, преобразующее цифровые пакеты данных в форму, пригодную для передачи по традиционным радиочастотным системам (обычно HF‑/VHF‑/UHF‑радио)">
+                      пакетному радиомодулю TNC</span> и Wi‑Fi сети.
+                      После добавления этих интерфейсов Reticulum позаботится обо всём остальном,
+                      и любое устройство в Wi‑Fi сети сможет обмениваться данными с узлами на LoRa
+                      и <span title="Через пакетное радио (обычно HF, VHF или UHF‑радио, управляемое TNC‑контроллером)">
+                      пакетного радио</span>,
+                      <span title="vice versa – латинское выражение, означающее «наоборот», «в обратном порядке»">и наоборот</span>.
                   </p>
                 </section>
                 <section id="interface-types-and-devices">
@@ -723,13 +747,10 @@
                     >
                   </h2>
                   <p>
-                    Reticulum is an experimental networking stack, and should be considered as such.
-                    While it has been built with cryptography best-practices very foremost in mind,
-                    it has not yet been externally security audited, and there could very well be
-                    privacy-breaking bugs. To be considered secure, Reticulum needs a thorough
-                    security review by independent cryptographers and security researchers. If you
-                    want to help out with this, or can help sponsor an audit, please do get in
-                    touch.
+                      Reticulum — это экспериментальный сетевой стек, и его следует рассматривать как таковой.
+                      Хотя он был создан с учетом передовых методов криптографии,
+                      он еще не прошел внешнюю проверку безопасности, и в нем вполне могут быть ошибки,
+                      нарушающие конфиденциальность.
                   </p>
                 </section>
               </section>
