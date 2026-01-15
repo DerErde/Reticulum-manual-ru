@@ -263,7 +263,7 @@
         </div>
         <div class="header-center">
           <a href="index.html"
-            ><div class="brand">Документация Reticulum Network Stack 1.0.5</div></a
+            ><div class="brand">Документация Reticulum Network Stack 1.1.3</div></a
           >
         </div>
         <div class="header-right">
@@ -290,7 +290,7 @@
                 <img class="sidebar-logo" src="_static/rns_logo_512.png" alt="Logo" />
               </div>
 
-              <span class="sidebar-brand-text">Reticulum Network Stack 1.0.5 documentation</span>
+              <span class="sidebar-brand-text">Reticulum Network Stack 1.1.3 documentation</span>
             </a>
             <form class="sidebar-search-container" method="get" action="search.html" role="search">
               <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search" />
@@ -653,7 +653,7 @@
                 </section>
                 <section id="interface-types-and-devices">
                   <h2>
-                    Interface Types and Devices<a
+                    Типы интерфейсов и устройства<a
                       class="headerlink"
                       href="#interface-types-and-devices"
                       title="Link to this heading"
@@ -661,44 +661,45 @@
                     >
                   </h2>
                   <p>
-                    Reticulum implements a range of generalised interface types that covers the
-                    communications hardware that Reticulum can run over. If your hardware is not
-                    supported, it’s simple to
+                    Reticulum реализует набор обобщённых типов интерфейсов, охватывающих аппаратные средства связи,
+                    через которые может работать Reticulum. Если ваше оборудование не поддерживается,
+                      его легко добавить,
                     <a class="reference internal" href="examples.html#example-custominterface"
-                      ><span class="std std-ref">implement an interface class</span></a
-                    >. Currently, Reticulum can use the following devices and communication mediums:
+                      ><span class="std std-ref">реализовав класс интерфейса</span></a
+                    >. В настоящее время Reticulum может использовать следующие устройства и средства связи:
                   </p>
                   <ul class="simple">
                     <li>
-                      <p>Any Ethernet device</p>
+                      <p>Любое Ethernet‑устройство</p>
                       <ul>
-                        <li><p>WiFi devices</p></li>
-                        <li><p>Wired Ethernet devices</p></li>
-                        <li><p>Fibre-optic transceivers</p></li>
-                        <li><p>Data radios with Ethernet ports</p></li>
+                        <li><p>Wi‑Fi‑устройства</p></li>
+                        <li><p>Проводные Ethernet‑устройства</p></li>
+                        <li><p>Оптоволоконные трансиверы</p></li>
+                        <li><p>Радиомодули передачи данных с Ethernet‑портами</p></li>
                       </ul>
                     </li>
                     <li>
                       <p>
-                        LoRa using
-                        <a class="reference external" href="https://unsigned.io/rnode">RNode</a>
+                        LoRa с использованием
+                        <a class="reference external" href="https://unsigned.io/rnode" target="_blank" rel="noopener">RNode</a>
                       </p>
                       <ul>
                         <li>
                           <p>
-                            Can be installed on
+                            Может быть установлен на
                             <a
                               class="reference external"
-                              href="https://github.com/markqvist/rnodeconfigutil#supported-devices"
-                              >many popular LoRa boards</a
+                              href="hardware.html#supported-boards-and-devices"
+                              target="_blank" rel="noopener"
+                              >многих популярных платах LoRa</a
                             >
                           </p>
                         </li>
                         <li>
                           <p>
-                            Can be purchased as a
-                            <a class="reference external" href="https://unsigned.io/rnode"
-                              >ready to use transceiver</a
+                            Доступен в виде
+                            <a class="reference external" href="https://unsigned.io/rnode" target="_blank" rel="noopener"
+                              >готового к использованию трансивера</a
                             >
                           </p>
                         </li>
@@ -706,51 +707,50 @@
                     </li>
                     <li>
                       <p>
-                        Packet Radio TNCs, such as
-                        <a class="reference external" href="https://unsigned.io/openmodem"
+                        Пакетные радиомодемы (TNC), такие как
+                        <a class="reference external" href="https://unsigned.io/openmodem" target="_blank" rel="noopener"
+                           title="Универсальный интерфейс связи"
                           >OpenModem</a
                         >
                       </p>
                       <ul>
-                        <li><p>Any packet radio TNC in KISS mode</p></li>
-                        <li><p>Ideal for VHF and UHF radio</p></li>
+                        <li><p title="Любой пакетный радиомодем">Любой TNC для пакетной радиосвязи в режиме
+                        <span title="Простой протокольный интерфейс, используемый между радиомодемом (TNC) и компьютером/модулем связи">
+                            KISS</span></p></li>
+                        <li><p>Идеально подходит для радиостанций
+                            <a href="https://en.wikipedia.org/wiki/Very_high_frequency" target="_blank" rel="noopener"
+                               title="VHF‑радио – передаёт сигналы в диапазоне 30 – 300 МГц (коротковолновый спектр)">VHF</a> и
+                            <a href="https://en.wikipedia.org/wiki/Ultra_high_frequency" target="_blank" rel="noopener"
+                            title="UHF‑радио – работает в диапазоне 300 MHz – 3 GHz (сверхкоротковолновый спектр)">UHF</a></p></li>
                       </ul>
                     </li>
-                    <li><p>Any device with a serial port</p></li>
-                    <li><p>The I2P network</p></li>
-                    <li><p>TCP over IP networks</p></li>
-                    <li><p>UDP over IP networks</p></li>
+                    <li><p>Любое устройство с последовательным портом</p></li>
+                    <li><p>Сеть <a href="https://geti2p.net/en/" target="_blank" rel="noopener">I2P</a></p></li>
+                    <li><p>TCP поверх IP‑сетей</p></li>
+                    <li><p>UDP поверх IP‑сетей</p></li>
                     <li>
-                      <p>Anything you can connect via stdio</p>
+                      <p>Любой интерфейс, доступный через
+                          <b title="stdio — это сокращение от standard input / standard output (стандартный ввод и стандартный вывод)">
+                              stdio</b></p>
                       <ul>
-                        <li><p>Reticulum can use external programs and pipes as interfaces</p></li>
-                        <li><p>This can be used to easily hack in virtual interfaces</p></li>
-                        <li><p>Or to quickly create interfaces with custom hardware</p></li>
+                        <li><p>Reticulum может использовать внешние программы и
+                            <span title="Каналы (pipe) — это механизм межпроцессного взаимодействия, при котором один процесс передаёт данные другому через поток байтов, имитирующий обычный ввод/вывод">
+                                каналы (pipe)</span> в качестве интерфейсов</p></li>
+                          <li><p>Это можно использовать для <span title="to easily hack">простого добавления</span>
+                              виртуальных интерфейсов</p></li>
+                        <li><p>Или быстро создать интерфейсы для пользовательского оборудования</p></li>
                       </ul>
                     </li>
+                    <li><p>Любое другое решение, использующее
+                        <a href="interfaces.html#interfaces-custom" target="_blank" rel="noopener"
+                           title="Custom interface modules — это Python‑классы, которые реализуют требуемый API Reticulum (открытие/закрытие канала, чтение и запись пакетов и т.п.)">
+                        кастомные интерфейсные модули</a>, написанные на Python</p></li>
                   </ul>
                   <p>
-                    For a full list and more details, see the
-                    <a class="reference internal" href="interfaces.html#interfaces-main"
-                      ><span class="std std-ref">Supported Interfaces</span></a
-                    >
-                    chapter.
-                  </p>
-                </section>
-                <section id="caveat-emptor">
-                  <h2>
-                    Caveat Emptor<a
-                      class="headerlink"
-                      href="#caveat-emptor"
-                      title="Link to this heading"
-                      >¶</a
-                    >
-                  </h2>
-                  <p>
-                      Reticulum — это экспериментальный сетевой стек, и его следует рассматривать как таковой.
-                      Хотя он был создан с учетом передовых методов криптографии,
-                      он еще не прошел внешнюю проверку безопасности, и в нем вполне могут быть ошибки,
-                      нарушающие конфиденциальность.
+                    Полный список и более подробную информацию см. в главе
+                    <a class="reference internal" href="interfaces.html#interfaces-main" target="_blank" rel="noopener"
+                      ><span class="std std-ref">Поддерживаемые интерфейсы</span></a
+                    >.
                   </p>
                 </section>
               </section>
@@ -761,9 +761,9 @@
               <a class="next-page" href="gettingstartedfast.html">
                 <div class="page-info">
                   <div class="context">
-                    <span>Next</span>
+                    <span>Далее</span>
                   </div>
-                  <div class="title">Getting Started Fast</div>
+                  <div class="title">Быстрый старт</div>
                 </div>
                 <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               </a>
@@ -771,16 +771,16 @@
                 <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
                 <div class="page-info">
                   <div class="context">
-                    <span>Previous</span>
+                    <span>Назад</span>
                   </div>
 
-                  <div class="title">Home</div>
+                  <div class="title">Главная</div>
                 </div>
               </a>
             </div>
             <div class="bottom-of-page">
               <div class="left-details">
-                <div class="copyright">Copyright &#169; 2025, Mark Qvist</div>
+                <div class="copyright">Copyright &#169; 2026, Mark Qvist</div>
                   Официальный сайт проекта <a href="https://reticulum.network" target="_blank" rel="noopener">Reticulum.network</a><br>
                   Официальный репозиторий на <a href="https://github.com/markqvist/reticulum" target="_blank" rel="noopener">GitHub</a>
               </div>
@@ -820,7 +820,6 @@
                           >Типы интерфейсов и устройства</a
                         >
                       </li>
-                      <li><a class="reference internal" href="#caveat-emptor">Предостережение</a></li>
                     </ul>
                   </li>
                 </ul>
