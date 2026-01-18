@@ -436,7 +436,7 @@
                   >
                 </h1>
                 <p>
-                  Лучший способ начать работу со стеком сети Reticulum зависит от ваших целей.
+                  Лучший способ начать работу с сетью Reticulum зависит от ваших целей.
                   В этом руководстве изложены разумные варианты начала для разных сценариев.
                 </p>
                 <section id="standalone-reticulum-installation">
@@ -449,80 +449,67 @@
                     >
                   </h2>
                   <p>
-                    If you simply want to install Reticulum and related utilities on a
-                    system, the easiest way is via the
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">pip</span></code
-                    >
-                    package manager:
+                    Если вы просто хотите установить Reticulum и сопутствующие утилиты, самый простой
+                      способ — использовать менеджер пакетов:
+                    <code class="docutils literal notranslate"><span class="pre">pip</span></code>
                   </p>
                   <div class="highlight-shell notranslate">
                     <div class="highlight">
-                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns
-</pre>
+                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns</pre>
                     </div>
                   </div>
                   <p>
-                    If you do not already have pip installed, you can install it using the
-                    package manager of your system with a command like
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">sudo</span> <span class="pre">apt</span>
-                      <span class="pre">install</span>
-                      <span class="pre">python3-pip</span></code
-                    >,
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">sudo</span> <span class="pre">pamac</span>
-                      <span class="pre">install</span>
-                      <span class="pre">python-pip</span></code
-                    >
-                    or similar.
+                    Если pip еще не установлен, вы можете установить его с помощью менеджера пакетов вашей системы,
+                      выполнив команду:
+                    <code class="docutils literal notranslate" title="Debian/Ubuntu">
+                        <span class="pre">sudo</span>
+                        <span class="pre">apt</span>
+                        <span class="pre">install</span>
+                        <span class="pre">python3-pip</span></code>,
+                    <code class="docutils literal notranslate" title="Arch Linux">
+                        <span class="pre">sudo</span>
+                        <span class="pre">pamac</span>
+                        <span class="pre">install</span>
+                        <span class="pre">python-pip</span></code>
+                    или аналогичную.
                   </p>
                   <p>
-                    You can also dowload the Reticulum release wheels from GitHub, or
-                    other release channels, and install them offline using
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">pip</span></code
-                    >:
-                  </p>
-                  <div class="highlight-shell notranslate">
-                    <div class="highlight">
-                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>./rns-1.1.2-py3-none-any.whl
-</pre>
-                    </div>
-                  </div>
-                  <p>
-                    On platforms that limit user package installation via
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">pip</span></code
-                    >, you may need to manually allow this using the
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">--break-system-packages</span></code
-                    >
-                    command line flag when installing. This will not actually break any
-                    packages, unless you have installed Reticulum directly via your
-                    operating system’s package manager.
+                    Вы также можете скачать готовые
+                      <span title="Python‑пакеты в формате wheel (.whl). Это готовый, предварительно собранный архив, содержащий все файлы, необходимые для установки библиотеки без компиляции исходного кода">
+                          wheel‑пакеты Reticulum с GitHub</span> или
+                      других каналов выпуска и установить их офлайн с помощью
+                    <code class="docutils literal notranslate">
+                        <span class="pre">pip</span></code>:
                   </p>
                   <div class="highlight-shell notranslate">
                     <div class="highlight">
-                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w">
-
-                      </span>--break-system-packages
-</pre>
+                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>./rns-1.1.2-py3-none-any.whl</pre>
                     </div>
                   </div>
                   <p>
-                    For more detailed installation instructions, please see the
+                    На платформах, где установка пользовательских пакетов через
+                    <code class="docutils literal notranslate"
+                      ><span class="pre">pip</span></code
+                    > ограничена, может потребоваться вручную разрешить её с помощью флага командной строки
+                    <code class="docutils literal notranslate"
+                      ><span class="pre">--break-system-packages</span></code>
+                      при установке. Этот флаг не повредит никакие пакеты,
+                      если только вы не устанавливали Reticulum напрямую через менеджер пакетов вашей операционной системы.
+                  </p>
+                  <div class="highlight-shell notranslate">
+                    <div class="highlight">
+                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> </span>--break-system-packages</pre>
+                    </div>
+                  </div>
+                  <p>
+                    Более подробные инструкции по установке см. в разделе
                     <a class="reference internal" href="#install-guides"
-                      ><span class="std std-ref">Platform-Specific Install Notes</span></a
-                    >
-                    section.
+                      ><span class="std std-ref">Примечания по установке для конкретных платформ</span></a>
                   </p>
                   <p>
-                    After installation is complete, it might be helpful to refer to the
+                    После завершения установки может быть полезно обратиться к главе
                     <a class="reference internal" href="using.html#using-main"
-                      ><span class="std std-ref">Using Reticulum on Your System</span></a
-                    >
-                    chapter.
+                      ><span class="std std-ref">Использование Reticulum на вашей системе</span></a>
                   </p>
                   <section id="resolving-dependency-installation-issues">
                     <h3>
