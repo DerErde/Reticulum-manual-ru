@@ -328,9 +328,7 @@
               <div class="sidebar-tree">
                 <ul class="current">
                   <li class="toctree-l1">
-                    <a class="reference internal" href="whatis.html"
-                      >Что такое Reticulum?</a
-                    >
+                    <a class="reference internal" href="whatis.html">Что такое Reticulum?</a>
                   </li>
                   <li class="toctree-l1 current current-page">
                     <a class="current reference internal" href="#"
@@ -338,57 +336,57 @@
                     >
                   </li>
                   <li class="toctree-l1">
-                    <a class="reference internal" href="zen.html">Zen of Reticulum</a>
+                    <a class="reference internal" href="zen.html">Дзен Reticulum</a>
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="software.html"
-                      >Programs Using Reticulum</a
+                      >Программы, использующие Reticulum</a
                     >
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="using.html"
-                      >Using Reticulum on Your System</a
+                      >Использование Reticulum на вашей системе</a
                     >
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="understanding.html"
-                      >Understanding Reticulum</a
+                      >Понимание Reticulum</a
                     >
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="hardware.html"
-                      >Communications Hardware</a
+                      >Коммуникационное оборудование</a
                     >
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="interfaces.html"
-                      >Configuring Interfaces</a
+                      >Настройка интерфейсов</a
                     >
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="networks.html"
-                      >Building Networks</a
+                      >Создание сетей</a
                     >
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="support.html"
-                      >Support Reticulum</a
+                      >Поддержка Reticulum</a
                     >
                   </li>
                   <li class="toctree-l1">
-                    <a class="reference internal" href="examples.html">Code Examples</a>
+                    <a class="reference internal" href="examples.html">Примеры кода</a>
                   </li>
                   <li class="toctree-l1">
                     <a class="reference internal" href="license.html"
-                      >Reticulum License</a
+                      >Лицензия Reticulum</a
                     >
                   </li>
                 </ul>
                 <ul>
                   <li class="toctree-l1">
-                    <a class="reference internal" href="reference.html">API Reference</a>
+                    <a class="reference internal" href="reference.html">Справочник API</a>
                   </li>
-                </ul>
+                </ul><br>
               </div>
             </div>
           </div>
@@ -430,7 +428,7 @@
             <article role="main" id="furo-main-content">
               <section id="getting-started-fast">
                 <h1>
-                  Getting Started Fast<a
+                  Быстрый старт<a
                     class="headerlink"
                     href="#getting-started-fast"
                     title="Link to this heading"
@@ -438,13 +436,12 @@
                   >
                 </h1>
                 <p>
-                  The best way to get started with the Reticulum Network Stack depends on
-                  what you want to do. This guide will outline sensible starting paths for
-                  different scenarios.
+                  Лучший способ начать работу со стеком сети Reticulum зависит от ваших целей.
+                  В этом руководстве изложены разумные варианты начала для разных сценариев.
                 </p>
                 <section id="standalone-reticulum-installation">
                   <h2>
-                    Standalone Reticulum Installation<a
+                    Установка автономного Reticulum<a
                       class="headerlink"
                       href="#standalone-reticulum-installation"
                       title="Link to this heading"
@@ -507,7 +504,9 @@
                   </p>
                   <div class="highlight-shell notranslate">
                     <div class="highlight">
-                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> </span>--break-system-packages
+                      <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w">
+
+                      </span>--break-system-packages
 </pre>
                     </div>
                   </div>
@@ -547,14 +546,14 @@
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
                         <pre><span></span><span class="c1"># Debian / Ubuntu / Derivatives</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+                            sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
 
-<span class="c1"># Arch / Manjaro / Derivatives</span>
-sudo<span class="w"> </span>pamac<span class="w"> </span>install<span class="w"> </span>base-devel
+                            <span class="c1"># Arch / Manjaro / Derivatives</span>
+                            sudo<span class="w"> </span>pamac<span class="w"> </span>install<span class="w"> </span>base-devel
 
-<span class="c1"># Fedora</span>
-sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="w"> </span><span class="s2">&quot;Development Tools&quot;</span><span class="w"> </span><span class="s2">&quot;Development Libraries&quot;</span>
-</pre>
+                            <span class="c1"># Fedora</span>
+                            sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="w"> </span><span class="s2">&quot;Development Tools&quot;</span><span class="w"> </span><span class="s2">&quot;Development Libraries&quot;</span>
+                            </pre>
                       </div>
                     </div>
                     <p>
@@ -697,7 +696,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="
                     chapters of this manual, but most importantly, start with reading the
                     next section,
                     <a class="reference internal" href="#bootstrapping-connectivity"
-                      ><span class="std std-ref">Bootstrapping Connectivity</span></a
+                      ><span class="std std-ref">Запуск подключения</span></a
                     >, as this provides the most essential understanding of how to ensure
                     reliable connectivity with a minimum of maintenance.
                   </p>
@@ -705,7 +704,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="
                 <section id="bootstrapping-connectivity">
                   <span id="id1"></span>
                   <h2>
-                    Bootstrapping Connectivity<a
+                    Запуск подключения<a
                       class="headerlink"
                       href="#bootstrapping-connectivity"
                       title="Link to this heading"
@@ -743,7 +742,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="
                   </p>
                   <section id="finding-your-way">
                     <h3>
-                      Finding Your Way<a
+                      Ориентирование в сети<a
                         class="headerlink"
                         href="#finding-your-way"
                         title="Link to this heading"
@@ -943,7 +942,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="
                   </section>
                   <section id="network-health-responsibility">
                     <h3>
-                      Network Health &amp; Responsibility<a
+                      Здоровье сети и ответственность<a
                         class="headerlink"
                         href="#network-health-responsibility"
                         title="Link to this heading"
@@ -2145,9 +2144,9 @@ break-system-packages = true
               <a class="next-page" href="zen.html">
                 <div class="page-info">
                   <div class="context">
-                    <span>Next</span>
+                    <span>Далее</span>
                   </div>
-                  <div class="title">Zen of Reticulum</div>
+                  <div class="title">Дзен Reticulum</div>
                 </div>
                 <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               </a>
@@ -2155,46 +2154,50 @@ break-system-packages = true
                 <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
                 <div class="page-info">
                   <div class="context">
-                    <span>Previous</span>
+                    <span>Назад</span>
                   </div>
 
-                  <div class="title">What is Reticulum?</div>
+                  <div class="title">Что такое Reticulum?</div>
                 </div>
               </a>
             </div>
             <div class="bottom-of-page">
               <div class="left-details">
-                <div class="copyright">Copyright &#169; 2025, Mark Qvist</div>
-                Generated with <a href="https://www.sphinx-doc.org/">Sphinx</a> and
-                <a href="https://github.com/pradyunsg/furo">Furo</a>
+                <div class="copyright">Copyright &#169; 2026, Mark Qvist</div>
+                  Официальный сайт проекта <a href="https://reticulum.network" target="_blank" rel="noopener">Reticulum.network</a><br>
+                  Официальный репозиторий на <a href="https://github.com/markqvist/reticulum" target="_blank" rel="noopener">GitHub</a>
               </div>
               <div class="right-details"></div>
             </div>
           </footer>
         </div>
+
         <aside class="toc-drawer">
           <div class="toc-sticky toc-scroll">
             <div class="toc-title-container">
-              <span class="toc-title"> On this page </span>
+              <a class="toc-title" href="../index.html"> &#127759; HOME </a>
             </div>
+            <div class="toc-title-container">
+              <span class="toc-title"> На этой странице </span>
+            </div>
+
             <div class="toc-tree-container">
               <div class="toc-tree">
                 <ul>
                   <li>
-                    <a class="reference internal" href="#">Getting Started Fast</a>
+                    <a class="reference internal" href="#">Быстрый старт</a>
                     <ul>
                       <li>
                         <a
                           class="reference internal"
                           href="#standalone-reticulum-installation"
-                          >Standalone Reticulum Installation</a
-                        >
+                          >Установка автономного Reticulum</a>
                         <ul>
                           <li>
                             <a
                               class="reference internal"
                               href="#resolving-dependency-installation-issues"
-                              >Resolving Dependency &amp; Installation Issues</a
+                              >Решение проблем с зависимостями и установкой</a
                             >
                           </li>
                         </ul>
@@ -2203,55 +2206,55 @@ break-system-packages = true
                         <a
                           class="reference internal"
                           href="#try-using-a-reticulum-based-program"
-                          >Try Using a Reticulum-based Program</a
+                          >Попробовать программу на базе Reticulum</a
                         >
                       </li>
                       <li>
                         <a class="reference internal" href="#using-the-included-utilities"
-                          >Using the Included Utilities</a
+                          >Использование включённых утилит</a
                         >
                       </li>
                       <li>
                         <a
                           class="reference internal"
                           href="#creating-a-network-with-reticulum"
-                          >Creating a Network With Reticulum</a
+                          >Создание сети с помощью Reticulum</a
                         >
                       </li>
                       <li>
                         <a class="reference internal" href="#bootstrapping-connectivity"
-                          >Bootstrapping Connectivity</a
+                          >Запуск подключения</a
                         >
                         <ul>
                           <li>
                             <a class="reference internal" href="#finding-your-way"
-                              >Finding Your Way</a
+                              >Ориентирование в сети</a
                             >
                           </li>
                           <li>
                             <a
                               class="reference internal"
                               href="#build-personal-infrastructure"
-                              >Build Personal Infrastructure</a
+                              >Создание личной инфраструктуры</a
                             >
                           </li>
                           <li>
                             <a class="reference internal" href="#mixing-strategies"
-                              >Mixing Strategies</a
+                              >Сочетание стратегий</a
                             >
                           </li>
                           <li>
                             <a
                               class="reference internal"
                               href="#network-health-responsibility"
-                              >Network Health &amp; Responsibility</a
+                              >Здоровье сети и ответственность</a
                             >
                           </li>
                           <li>
                             <a
                               class="reference internal"
                               href="#contributing-to-the-global-ret"
-                              >Contributing to the Global Ret</a
+                              >Вклад в глобальную сеть Reticulum</a
                             >
                           </li>
                         </ul>
@@ -2260,45 +2263,45 @@ break-system-packages = true
                         <a
                           class="reference internal"
                           href="#connect-to-the-distributed-backbone"
-                          >Connect to the Distributed Backbone</a
+                          >Подключение к распределённому ядру сети</a
                         >
                       </li>
                       <li>
                         <a class="reference internal" href="#hosting-public-entrypoints"
-                          >Hosting Public Entrypoints</a
+                          >Размещение публичных точек входа</a
                         >
                       </li>
                       <li>
                         <a
                           class="reference internal"
                           href="#connecting-reticulum-instances-over-the-internet"
-                          >Connecting Reticulum Instances Over the Internet</a
+                          >Подключение экземпляров Reticulum через Интернет</a
                         >
                       </li>
                       <li>
                         <a class="reference internal" href="#adding-radio-interfaces"
-                          >Adding Radio Interfaces</a
+                          >Добавление радиоинтерфейсов</a
                         >
                       </li>
                       <li>
                         <a
                           class="reference internal"
                           href="#creating-and-using-custom-interfaces"
-                          >Creating and Using Custom Interfaces</a
+                          >Создание и использование пользовательских интерфейсов</a
                         >
                       </li>
                       <li>
                         <a
                           class="reference internal"
                           href="#develop-a-program-with-reticulum"
-                          >Develop a Program with Reticulum</a
+                          >Разработка программы с Reticulum</a
                         >
                       </li>
                       <li>
                         <a
                           class="reference internal"
                           href="#platform-specific-install-notes"
-                          >Platform-Specific Install Notes</a
+                          >Инструкции по установке для конкретных платформ</a
                         >
                         <ul>
                           <li>
