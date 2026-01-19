@@ -513,7 +513,7 @@
                   </p>
                   <section id="resolving-dependency-installation-issues">
                     <h3>
-                      Resolving Dependency &amp; Installation Issues<a
+                      Решение проблем с зависимостями и установкой<a
                         class="headerlink"
                         href="#resolving-dependency-installation-issues"
                         title="Link to this heading"
@@ -521,36 +521,37 @@
                       >
                     </h3>
                     <p>
-                      On some platforms, there may not be binary packages available for
-                      all dependencies, and
+                      На некоторых платформах могут отсутствовать бинарные пакеты для всех зависимостей, и установка через
                       <code class="docutils literal notranslate"
                         ><span class="pre">pip</span></code
                       >
-                      installation may fail with an error message. In these cases, the
-                      issue can usually be resolved by installing the development
-                      essentials packages for your platform:
+                      может завершаться с ошибкой.
+                      В таких случаях проблему обычно можно решить,
+                        установив пакеты
+                        <b title="Development essentials — это набор системных пакетов, файлов и библиотек, необходимых для сборки и установки из‑исходного кода Python‑пакетов">development essentials</b> для вашей платформы:
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
                         <pre><span></span><span class="c1"># Debian / Ubuntu / Derivatives</span>
-                            sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
 
-                            <span class="c1"># Arch / Manjaro / Derivatives</span>
-                            sudo<span class="w"> </span>pamac<span class="w"> </span>install<span class="w"> </span>base-devel
+<span class="c1"># Arch / Manjaro / Derivatives</span>
+sudo<span class="w"> </span>pamac<span class="w"> </span>install<span class="w"> </span>base-devel
 
-                            <span class="c1"># Fedora</span>
-                            sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="w"> </span><span class="s2">&quot;Development Tools&quot;</span><span class="w"> </span><span class="s2">&quot;Development Libraries&quot;</span>
-                            </pre>
+<span class="c1"># Fedora</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>groupinstall<span class="w"> </span><span class="s2">&quot;Development Tools&quot;</span><span class="w"> </span><span class="s2">&quot;Development Libraries&quot;</span>
+
+<span class="c1"># openSUSE</span>
+sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"> </span>-t pattern devel_basis
+</pre>
                       </div>
                     </div>
                     <p>
-                      With the base development packages installed,
+                        После установки <span title="Development Essentials">базовых пакетов разработки</span>
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      should be able to compile any missing dependencies from source, and
-                      complete installation even on platforms that don’t have pre-
-                      compiled packages available.
+                        ><span class="pre">pip</span></code>
+                      должен быть в состоянии скомпилировать любые отсутствующие зависимости из исходного кода и
+                        завершить установку даже на платформах, на которых нет готовых скомпилированных пакетов.
                     </p>
                   </section>
                 </section>
