@@ -807,7 +807,7 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                   </section>
                   <section id="build-personal-infrastructure">
                     <h3>
-                      Build Personal Infrastructure<a
+                      Создайте личную инфраструктуру<a
                         class="headerlink"
                         href="#build-personal-infrastructure"
                         title="Link to this heading"
@@ -815,61 +815,60 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                       >
                     </h3>
                     <p>
-                      You do not need a datacenter to be a meaningful part of the
-                      Reticulum ecosystem. In fact, the most important nodes in the
-                      network are often the smallest ones.
+                      Вам не нужен дата‑центр, чтобы стать значимой частью экосистемы Reticulum.
+                        На самом деле самые важные узлы сети часто оказываются самыми маленькими.
                     </p>
                     <p>
-                      We strongly encourage everyone, even home users, to think in terms
-                      of building <strong>personal infrastructure</strong>. Don’t connect
-                      every phone, tablet, and computer in your house directly to a public
-                      internet gateway. Instead, repurpose an old computer, a Raspberry
-                      Pi, or a supported router to act as your own, personal
-                      <strong>Transport Node</strong>:
+                      Мы настоятельно советуем всем, включая домашних пользователей,
+                        мыслить в терминах создания <strong>личной инфраструктуры</strong>.
+                      Не подключайте каждый телефон, планшет и компьютер в доме напрямую к публичному интернет‑шлюзу.
+                      Вместо этого переоборудуйте старый компьютер, Raspberry Pi или поддерживаемый роутер,
+                      чтобы он действовал как ваш личный
+                      <strong title="Transport Node">транспортный узел</strong>:
                     </p>
                     <ul class="simple">
                       <li>
                         <p>
-                          Your local Transport Node sits in your home, connected to your
-                          WiFi and perhaps a radio interface (like an RNode).
+                          Ваш локальный транспортный узел находится у вас дома, подключен к вашей WiFi сети и,
+                            возможно, к радиоинтерфейсу (например, RNode).
                         </p>
                       </li>
                       <li>
                         <p>
-                          You configure this node with a
+                          Вы настраиваете этот узел с помощью интерфейса
                           <code class="docutils literal notranslate"
-                            ><span class="pre">bootstrap_only</span></code
-                          >
-                          interface (perhaps a TCP tunnel to a wider network) and enable
-                          interface discovery.
+                            ><span class="pre">bootstrap_only</span></code>
+                          (возможно, TCP-туннель к более широкой сети) и включаете обнаружение интерфейса.
                         </p>
                       </li>
                       <li>
                         <p>
-                          While you sleep, work, or cook, your node listens to the
-                          network. It discovers other local community members, validates
-                          their Network Identities, and automatically establishes direct
-                          links.
+                          Пока вы спите, работаете или готовите, ваш узел прослушивает сеть.
+                            Он обнаруживает других участников местного сообщества, проверяет их сетевые идентификаторы
+                            и автоматически устанавливает прямые соединения.
                         </p>
                       </li>
                       <li>
                         <p>
-                          Your personal devices now connect to your <em>local</em> node,
-                          which is integrated into a living, breathing local mesh. Your
-                          traffic flows through local paths provided by other real people
-                          in the community rather than bouncing off a distant server.
+                          Ваши личные устройства теперь подключаются к вашему <em>локальному</em> узлу,
+                            который является частью живой локальной mesh‑сети.
+                          Ваш трафик проходит по локальным маршрутам, организованным другими реальными людьми сообщества,
+                          <span title="«bouncing off a distant server» — трафик сначала отправляется к удалённому серверу, а уже от него переадресуется дальше">
+                              а не через удалённый сервер</span>.<br>
+                          <em>[Примечание переводчика: в Reticulum ваш трафик не проходит через центральный сервер (посредник).
+                            Вместо этого он передаётся напрямую между соседними узлами сети (через локальные маршруты),
+                            что делает связь более децентрализованной, быстрой и менее зависимой от удалённых серверов.]</em>
                         </p>
                       </li>
                     </ul>
                     <p>
                       <strong
-                        >Don’t wait for others to build the networks you want to
-                        see</strong
-                      >. Every network is important, perhaps even most so those that
-                      support individual families and persons. Once enough of this
-                      personal, local infrastructure exist, connecting them directly to
-                      each other, without traversing the public Internet, becomes
-                      inevitable.
+                        >Не ждите, пока другие создадут сети, которые вы хотите видеть</strong>.
+                        Каждая сеть важна, возможно, даже больше всего те, которые поддерживают отдельные семьи и
+                        частные лица.
+                        Как только появится достаточное количество такой личной, локальной инфраструктуры,
+                        их прямое соединение друг с другом, без прохождения через общедоступный Интернет,
+                        станет неизбежным.
                     </p>
                   </section>
                   <section id="mixing-strategies">
@@ -2219,7 +2218,7 @@ break-system-packages = true
                             <a
                               class="reference internal"
                               href="#build-personal-infrastructure"
-                              >Создание личной инфраструктуры</a
+                              >Создайте личную инфраструктуру</a
                             >
                           </li>
                           <li>
