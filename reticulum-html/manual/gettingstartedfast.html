@@ -616,7 +616,7 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                 </section>
                 <section id="creating-a-network-with-reticulum">
                   <h2>
-                    Creating a Network With Reticulum<a
+                    Создание сети с помощью Reticulum<a
                       class="headerlink"
                       href="#creating-a-network-with-reticulum"
                       title="Link to this heading"
@@ -624,70 +624,64 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                     >
                   </h2>
                   <p>
-                    To create a network, you will need to specify one or more
-                    <em>interfaces</em> for Reticulum to use. This is done in the
-                    Reticulum configuration file, which by default is located at
+                    Чтобы создать сеть, вам необходимо указать один или несколько
+                    <em>интерфейсов</em>, которые будет использовать Reticulum.
+                    Это делается в конфигурационном файле Reticulum, который по умолчанию находится в
                     <code class="docutils literal notranslate"
                       ><span class="pre">~/.reticulum/config</span></code
-                    >. You can get an example configuration file with all options via
+                    >. Вы можете получить пример конфигурационного файла со всеми опциями с помощью
                     <code class="docutils literal notranslate"
                       ><span class="pre">rnsd</span>
                       <span class="pre">--exampleconfig</span></code
                     >.
                   </p>
                   <p>
-                    When Reticulum is started for the first time, it will create a default
-                    configuration file, with one active interface. This default interface
-                    uses your existing Ethernet and WiFi networks (if any), and only
-                    allows you to communicate with other Reticulum peers within your local
-                    broadcast domains.
+                   При первом запуске Reticulum создает файл конфигурации по умолчанию с одним активным интерфейсом.
+                   Этот интерфейс по умолчанию использует существующие сети Ethernet и WiFi (если таковые имеются).
                   </p>
                   <p>
-                    To communicate further, you will have to add one or more interfaces.
-                    The default configuration includes a number of examples, ranging from
-                    using TCP over the internet, to LoRa and Packet Radio interfaces.
+                    Для дальнейшей связи вам необходимо будет добавить один или несколько интерфейсов.
+                    В стандартной конфигурации содержится ряд примеров,
+                    начиная от использования TCP через Интернет и заканчивая интерфейсами LoRa и Packet Radio.
                   </p>
                   <p>
-                    With Reticulum, you only need to configure what interfaces you want to
-                    communicate over. There is no need to configure address spaces,
-                    subnets, routing tables, or other things you might be used to from
-                    other network types.
+                    С Reticulum вам нужно только настроить интерфейсы, через которые вы хотите осуществлять связь.
+                    Нет необходимости настраивать адресные пространства, подсети, таблицы маршрутизации
+                    или другие вещи, привычные для традиционных сетей.
                   </p>
                   <p>
-                    Once Reticulum knows which interfaces it should use, it will
-                    automatically discover topography and configure transport of data to
-                    any destinations it knows about.
+                    Когда Reticulum определит, какие интерфейсы использовать, он автоматически определит
+                    топологию сети и настроит передачу данных ко всем известным ему пунктам назначения.
                   </p>
                   <p>
-                    In situations where you already have an established WiFi or Ethernet
-                    network, and many devices that want to utilise the same external
-                    Reticulum network paths (for example over LoRa), it will often be
-                    sufficient to let one system act as a Reticulum gateway, by adding any
-                    external interfaces to the configuration of this system, and then
-                    enabling transport on it. Any other device on your local WiFi will
-                    then be able to connect to this wider Reticulum network just using the
-                    default (<a
+                    В ситуациях, когда у вас уже есть настроенная сеть WiFi или Ethernet и множество устройств,
+                      которые хотят использовать одни и те же внешние
+                      <span title="network paths - подразумевает под собой маршруты или каналы связи [Радиосвязь в диапазонах VHF, UHF, SHF и т.д.]">
+                          сетевые пути</span>
+                      Reticulum (например, через <span title="Long Range - дальнобойная радиосвязь">LoRa</span>),
+                      часто достаточно позволить одной системе действовать в качестве шлюза Reticulum,
+                      добавив любые внешние интерфейсы в конфигурацию этой системы, а затем включив на ней транспорт.
+
+                    Любое другое устройство в вашей локальной сети WiFi сможет подключиться к этой более широкой
+                      сети Reticulum, используя только настройки по умолчанию (<a
                       class="reference internal"
                       href="interfaces.html#interfaces-auto"
-                      ><span class="std std-ref">AutoInterface</span></a
-                    >) configuration.
+                      ><span class="std std-ref">AutoInterface</span></a>).
                   </p>
                   <p>
-                    Possibly, the examples in the config file are enough to get you
-                    started. If you want more information, you can read the
+                    Возможно, примеров в конфигурационном файле будет достаточно для начала работы.
+                     Если вам нужна дополнительная информация, вы можете прочитать главы
                     <a class="reference internal" href="networks.html#networks-main"
-                      ><span class="std std-ref">Building Networks</span></a
+                      ><span class="std std-ref">Создание сетей</span></a
                     >
-                    and
+                    и
                     <a class="reference internal" href="interfaces.html#interfaces-main"
-                      ><span class="std std-ref">Interfaces</span></a
-                    >
-                    chapters of this manual, but most importantly, start with reading the
-                    next section,
+                      ><span class="std std-ref">Настройка интерфейсов</span></a>
+                    данного руководства, но самое главное — начать с чтения следующего раздела
                     <a class="reference internal" href="#bootstrapping-connectivity"
-                      ><span class="std std-ref">Запуск подключения</span></a
-                    >, as this provides the most essential understanding of how to ensure
-                    reliable connectivity with a minimum of maintenance.
+                      ><span class="std std-ref">Запуск подключения</span></a>,
+                      поскольку он дает наиболее важное понимание того,
+                      как обеспечить надежную связь с минимальными затратами на обслуживание.
                   </p>
                 </section>
                 <section id="bootstrapping-connectivity">
