@@ -728,7 +728,7 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                   </p>
                   <section id="finding-your-way">
                     <h3>
-                      Ориентирование в сети<a
+                      Ориентирование<a
                         class="headerlink"
                         href="#finding-your-way"
                         title="Link to this heading"
@@ -736,75 +736,73 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                       >
                     </h3>
                     <p>
-                      When you first start using Reticulum, you need a way to obtain
-                      connectivity with the peers you want to communicate with - the
-                      process of <em>bootstrapping connectivity</em>.
+                      Когда вы впервые начинаете использовать Reticulum, вам необходимо найти способ
+                        установить связь с одноранговыми узлами, с которыми вы хотите обмениваться данными
+                        — это процесс <em title="bootstrapping connectivity">инициализации связи</em>.
                     </p>
                     <div class="admonition important">
-                      <p class="admonition-title">Important</p>
+                      <p class="admonition-title">Важно</p>
                       <p>
-                        A common mistake in modern networking is the reliance on a few
-                        centralized, hard-coded entrypoints. If every user simply connects
-                        to the same list of public IP addresses found on a website, the
-                        network becomes brittle, centralized, and ultimately fails to
-                        deliver on the promise of decentralization and resilience. You
-                        have a responsibility here.
+                        Распространенной ошибкой в современных сетях является зависимость от нескольких
+                          централизованных, жестко запрограммированных точек входа.
+                          Если каждый пользователь просто подключается к одному и тому же списку публичных IP-адресов,
+                          указанных на веб-сайте, сеть становится уязвимой, централизованной и, в конечном итоге,
+                          не способной обеспечить децентрализацию и отказоустойчивость. Здесь вы несете ответственность.
                       </p>
                     </div>
                     <p>
-                      Reticulum encourages the approach of <em>organic growth</em>.
-                      Instead of relying on permanent static connections to distant
-                      servers, you can use temporary bootstrap connections to continously
-                      <em>discover</em> more relevant or local infrastructure. Once
-                      discovered, your system can automatically form stronger, more direct
-                      links to these peers, and discard the temporary bootstrap links.
-                      This results in a web of connections that are geographically
-                      relevant, resilient and efficient.
+                      Reticulum поощряет подход
+                      <em title="organic growth — в контексте сетей это означает, что сеть расширяется естественным, постепенным способом — узлы присоединяются друг к другу без централизованного планирования или фиксированных точек входа">органического роста</em>.
+                      Вместо того чтобы полагаться на постоянные статические соединения с удаленными серверами,
+                      вы можете использовать
+                      <span title="временные bootstrap‑соединения — это короткоживущие каналы, создаваемые лишь для того, чтобы «запустить» процесс поиска других узлов сети">
+                      временные bootstrap соединения</span> для
+                      непрерывного <em>обнаружения</em> более релевантной или локальной инфраструктуры.
+                      После обнаружения ваша система может автоматически формировать более прочные и прямые связи
+                      с этими одноранговыми узлами и отбрасывать временные bootstrap соединения.
+                      В результате получается сеть, географически релевантная, устойчивая и эффективная.
                     </p>
                     <p>
-                      It <em>is</em> possible to simply add a few public entrypoints to
-                      the
+                      Можно просто добавить несколько общих точек входа в раздел
                       <code class="docutils literal notranslate"
-                        ><span class="pre">[interfaces]</span></code
-                      >
-                      section of your Reticulum configuration and be connected, but a
-                      better option is to enable
-                      <a
-                        class="reference internal"
-                        href="using.html#using-interface-discovery"
-                        ><span class="std std-ref">interface discovery</span></a
-                      >
-                      and either manually select relevant, local interfaces, or enable
-                      discovered interface auto-connection.
+                        ><span class="pre">[interfaces]</span></code>
+                      конфигурации Reticulum и подключиться,
+                      но лучшим вариантом будет включить
+                      <a class="reference internal"
+                        href="using.html#using-interface-discovery">
+                          <span class="std std-ref" title="interface discovery">обнаружение интерфейсов</span></a>
+                      и либо вручную выбрать соответствующие
+                      локальные интерфейсы, либо включить автоматическое подключение к обнаруженным интерфейсам.
                     </p>
                     <p>
-                      A relevant option in this context is the
-                      <a
-                        class="reference internal"
+                      В данном контексте важна
+                      <a class="reference internal"
                         href="interfaces.html#interfaces-options"
-                        ><span class="std std-ref">bootstrap only</span></a
-                      >
-                      interface option. This is an automated tool for better distributing
-                      connectivity. By enabling interface discovery and auto-connection,
-                      and marking an interface as
+                        ><span class="std std-ref">bootstrap only</span></a>
+                      опция для интерфейса. Это автоматический инструмент, для более эффективного распределения подключений.
+                      Включив обнаружение интерфейса и автоматическое подключение, пометив интерфейс как
                       <code class="docutils literal notranslate"
-                        ><span class="pre">bootstrap_only</span></code
-                      >, you tell Reticulum to use that interface primarliy to find
-                      connectivity options, and then disconnect it once sufficient
-                      entrypoints have been discovered. This helps create a network
-                      topology that favors locality and resilience over the simple
-                      centralization caused by using only a few static entrypoints.
+                        ><span class="pre" title="интерфейс используется только для начального подключения: он служит точкой входа">
+                          bootstrap_only</span></code>,
+                        вы указываете Reticulum использовать этот интерфейс в первую очередь для поиска вариантов подключения,
+                        а затем отключать его, как только будет найдено достаточное количество точек входа.
+                        Это способствует формированию топологии сети, где приоритет отдаётся локальности и устойчивости,
+                        а не простой централизации через несколько статических точек входа.
                     </p>
                     <p>
-                      Good places to find interface definitions for bootstrapping
-                      connectivity are websites like
-                      <a class="reference external" href="https://directory.rns.recipes/"
-                        >directory.rns.recipes</a
-                      >
-                      and
-                      <a class="reference external" href="https://rmap.world/"
-                        >rmap.world</a
-                      >.
+                      Хорошие места для поиска
+                        <span title="Пример:
+[[Beleth RNS Hub]]
+  type = TCPClientInterface
+  enabled = yes
+  target_host = rns.beleth.net
+  target_port = 4242">определений интерфейсов</span>, которые можно использовать для начального
+                        подключения, — это такие
+                        веб-сайты, как
+                      <a class="reference external" href="https://directory.rns.recipes/" target="_blank" rel="noopener">directory.rns.recipes</a>
+                      и
+                      <a class="reference external" href="https://rmap.world/" target="_blank" rel="noopener"
+                        >rmap.world</a>.
                     </p>
                   </section>
                   <section id="build-personal-infrastructure">
@@ -2214,7 +2212,7 @@ break-system-packages = true
                         <ul>
                           <li>
                             <a class="reference internal" href="#finding-your-way"
-                              >Ориентирование в сети</a
+                              >Ориентирование</a
                             >
                           </li>
                           <li>
