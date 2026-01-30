@@ -1015,67 +1015,60 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                         по мере развития сети.
                         Ознакомьтесь с разделом
                       <a class="reference internal" href="#bootstrapping-connectivity"
-                        ><span title="Bootstrapping Connectivity" class="std std-ref">Запуск подключения</span></a>
-                        , чтобы понять эти параметры.
+                        ><span title="Bootstrapping Connectivity" class="std std-ref">Запуск подключения</span></a>,
+                        чтобы понять эти параметры.
                     </p>
                   </div>
                 </section>
                 <section id="hosting-public-entrypoints">
                   <span id="hosting-entrypoints"></span>
                   <h2>
-                    Hosting Public Entrypoints<a
+                    Размещение публичных точек входа<a
                       class="headerlink"
                       href="#hosting-public-entrypoints"
                       title="Link to this heading"
-                      >¶</a
-                    >
+                      >¶</a>
                   </h2>
                   <p>
-                    If you want to help build a strong global interconnection backbone,
-                    you can host a public (or private) entry-point to a Reticulum network
-                    over the Internet. This section offers some helpful pointers. Once you
-                    have set up your public entrypoint, it is a great idea to
-                    <a
-                      class="reference internal"
+                    Если вы хотите помочь в создании мощной глобальной магистральной сети,
+                      вы можете разместить публичную (или частную) точку входа в сеть Reticulum через Интернет.
+                      В этом разделе приведены некоторые полезные рекомендации.
+                      После настройки публичной точки входа рекомендуется
+                    <a class="reference internal"
                       href="interfaces.html#interfaces-discoverable"
                       ><span class="std std-ref"
-                        >make it discoverable over Reticulum</span
-                      ></a
-                    >.
+                        >сделать ее доступной для поиска через Reticulum</span
+                      ></a>.
                   </p>
                   <p>
-                    You will need a machine, physical or virtual with a public IP address,
-                    that can be reached by other devices on the Internet.
+                    Вам понадобится физический или виртуальный компьютер с публичным IP-адресом,
+                      к которому могут подключаться другие устройства в Интернете.
                   </p>
                   <p>
-                    The most efficient and performant way to host a connectable
-                    entry-point supporting many users is to use the
+                    Наиболее эффективным и производительным способом хостинга подключаемой точки входа,
+                      поддерживающей множество пользователей, является использование
                     <code class="docutils literal notranslate"
-                      ><span class="pre">BackboneInterface</span></code
-                    >. This interface type is fully compatible with the
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">TCPClientInterface</span></code
-                    >
-                    and
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">TCPServerInterface</span></code
-                    >
-                    types, but much faster and uses less system resources, allowing your
-                    device to handle thousands of connections even on small systems.
+                      ><span title="BackboneInterface – интерфейс, через который узел подключается к основной (магистральной) сети Reticulum."
+                             class="pre">BackboneInterface</span></code>.
+                      Этот тип интерфейса полностью совместим с типами
+                    <code class="docutils literal notranslate"><span class="pre">TCPClientInterface</span></code>
+                    и
+                    <code class="docutils literal notranslate"><span class="pre">TCPServerInterface</span></code>
+                   но работает гораздо быстрее и использует меньше системных ресурсов,
+                      что позволяет вашему устройству обрабатывать тысячи подключений даже на небольших системах.
                   </p>
                   <p>
-                    It is also important to set your connectable interface to
+                   Также важно настроить подключаемый интерфейс в режиме
                     <code class="docutils literal notranslate"
-                      ><span class="pre">gateway</span></code
-                    >
-                    mode, since this will greatly improve network convergence time and
-                    path resolution for anyone connecting to your entry-point.
+                      ><span title="gateway" class="pre">шлюза</span></code>,
+                      так как это значительно улучшит время сходимости сетей и
+                      разрешение маршрута для всех, кто подключается к вашей точке входа.
                   </p>
                   <div class="highlight-ini notranslate">
                     <div class="highlight">
-                      <pre><span></span><span class="c1"># This example demonstrates a backbone interface</span>
-<span class="c1"># configured for acting as a gateway for users to</span>
-<span class="c1"># connect to either a public or private network</span>
+                      <pre><span></span><span class="c1"># В этом примере показан интерфейс магистральной сети,</span>
+<span class="c1"># настроенный для работы в качестве шлюза, через который пользователи</span>
+<span class="c1"># подключаются к публичной или частной сети.</span>
 
 <span class="k">[[Public Gateway]]</span>
 <span class="w">  </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">BackboneInterface</span>
@@ -1087,21 +1080,20 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                     </div>
                   </div>
                   <p>
-                    If instead you want to make a private entry-point from the Internet,
-                    you can use the
+                    Если же вы хотите создать частную точку входа (entry‑point) из Интернета,
+                      вы можете использовать опции
                     <a
                       class="reference internal"
                       href="interfaces.html#interfaces-options"
                       ><span class="std std-ref"
-                        >IFAC name and passphrase options</span
-                      ></a
-                    >
-                    to secure your interface with a network name and passphrase.
+                        >ifac_name и passphrase</span
+                      ></a>
+                    для защиты вашего интерфейса с помощью сетевого имени и пароля.
                   </p>
                   <div class="highlight-ini notranslate">
                     <div class="highlight">
-                      <pre><span></span><span class="c1"># A private entry-point requiring a pre-shared</span>
-<span class="c1"># network name and passphrase to connect to.</span>
+                      <pre><span></span><span class="c1"># Частная точка входа, требующая предварительно согласованного</span>
+<span class="c1"># имени сети и пароля для подключения.</span>
 
 <span class="k">[[Private Gateway]]</span>
 <span class="w">  </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">BackboneInterface</span>
@@ -1115,15 +1107,13 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                     </div>
                   </div>
                   <p>
-                    If you are hosting an entry-point on an operating system that does not
-                    support
+                    Если вы размещаете точку входа в операционной системе, которая не поддерживает
                     <code class="docutils literal notranslate"
                       ><span class="pre">BackboneInterface</span></code
-                    >, you can use
+                    >, вы можете использовать
                     <code class="docutils literal notranslate"
                       ><span class="pre">TCPServerInterface</span></code
-                    >
-                    instead, although it will not be as performant.
+                    >, хотя она будет менее производительной.
                   </p>
                 </section>
                 <section id="connecting-reticulum-instances-over-the-internet">
