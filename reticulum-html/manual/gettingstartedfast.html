@@ -978,7 +978,7 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                 </section>
                 <section id="connect-to-the-distributed-backbone">
                   <h2>
-                    Connect to the Distributed Backbone<a
+                    Подключение к распределенной магистрали<a
                       class="headerlink"
                       href="#connect-to-the-distributed-backbone"
                       title="Link to this heading"
@@ -986,35 +986,37 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                     >
                   </h2>
                   <p>
-                    A global, distributed backbone of Reticulum Transport Nodes is being
-                    run by volunteers from around the world. This network constitutes a
-                    heterogenous collection of both public and private nodes that form an
-                    uncoordinated, voluntary inter-networking backbone that currently
-                    provides global transport and internetworking capabilities for
-                    Reticulum.
+                    Глобальная распределенная магистральная сеть транспортных узлов Reticulum управляется
+                      добровольцами со всего мира. Эта сеть представляет собой гетерогенное собрание как публичных,
+                      так и частных узлов, которые образуют некоординированную добровольную межсетевую
+                      магистральную сеть, которая в настоящее время обеспечивает глобальные транспортные и
+                      межсетевые возможности для Reticulum.
                   </p>
                   <p>
-                    As a good starting point, you can find interface definitions for
-                    connecting your own networks to this backbone on websites such as
-                    <a class="reference external" href="https://directory.rns.recipes/"
-                      >directory.rns.recipes</a
-                    >
-                    and
-                    <a class="reference external" href="https://rmap.world/">rmap.world</a
-                    >.
+                    В качестве хорошей отправной точки вы можете найти
+                      <span title="[[MichMesh]]
+  type = BackboneInterface
+  enabled = yes
+  remote = rns.michmesh.net
+  target_port = 7822">определения интерфейсов</span> для подключения ваших
+                      собственных сетей к этой магистрали на таких веб-сайтах, как
+                    <a class="reference external" href="https://directory.rns.recipes/" target="_blank" rel="noopener"
+                      >directory.rns.recipes</a>
+                    и
+                    <a class="reference external" href="https://rmap.world/"  target="_blank" rel="noopener">rmap.world</a>.
                   </p>
                   <div class="admonition tip">
-                    <p class="admonition-title">Tip</p>
+                    <p class="admonition-title">Совет</p>
                     <p>
-                      Don’t rely on just a single connection to the distributed backbone
-                      for everyday use. It is much better to have several redundant
-                      connections configured, and enable the interface discovery options,
-                      so your nodes can continously discover peering opportunities as the
-                      network evolves. Refer to the
+                      Не полагайтесь только на одно подключение к распределенной магистрали для
+                        повседневного использования.
+                        Гораздо лучше настроить несколько резервных подключений и включить параметры обнаружения
+                        интерфейсов, чтобы ваши узлы могли постоянно обнаруживать возможности пиринга
+                        по мере развития сети.
+                        Ознакомьтесь с разделом
                       <a class="reference internal" href="#bootstrapping-connectivity"
-                        ><span class="std std-ref">Bootstrapping Connectivity</span></a
-                      >
-                      section to understand the options.
+                        ><span title="Bootstrapping Connectivity" class="std std-ref">Запуск подключения</span></a>
+                        , чтобы понять эти параметры.
                     </p>
                   </div>
                 </section>
@@ -2235,7 +2237,7 @@ break-system-packages = true
                         <a
                           class="reference internal"
                           href="#connect-to-the-distributed-backbone"
-                          >Подключение к распределённому ядру сети</a
+                          >Подключение к распределенной магистрали</a
                         >
                       </li>
                       <li>
