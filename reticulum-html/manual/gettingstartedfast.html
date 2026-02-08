@@ -1332,114 +1332,101 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"
                         class="headerlink"
                         href="#android"
                         title="Link to this heading"
-                        >¶</a
-                      >
+                        >¶</a>
                     </h3>
                     <p>
-                      Reticulum can be used on Android in different ways. The easiest way
-                      to get started is using an app like
-                      <a class="reference external" href="https://unsigned.io/sideband"
-                        >Sideband</a
-                      >.
+                       Reticulum можно использовать на Android по-разному.
+                        Самый простой способ начать &mdash; использовать приложение типа
+                      <a class="reference external" href="https://unsigned.io/sideband" target="_blank" rel="noopener"
+                      title="Sideband &mdash; это расширяемый клиент для обмена сообщениями LXMF и телефонии LXST, система отслеживания обстановки и удаленного управления и мониторинга для Android, Linux">Sideband</a>.
                     </p>
                     <p>
-                      For more control and features, you can use Reticulum and related
-                      programs via the
-                      <a class="reference external" href="https://termux.com/"
-                        >Termux app</a
-                      >, at the time of writing available on
-                      <a class="reference external" href="https://f-droid.org">F-droid</a
-                      >.
+                      Если нужен больший контроль и дополнительные функции,
+                        Reticulum и сопутствующие программы можно запускать
+                        в
+                      <a class="reference external" href="https://termux.com/" target="_blank" rel="noopener" title="Termux &mdash; эмулятор терминала с обширной коллекцией пакетов Linux">приложении Termux</a>,
+                        на момент написания доступно в
+                      <a class="reference external" href="https://f-droid.org" target="_blank" rel="noopener" title="F-Droid &mdash; это экосистема распространения приложений FOSS для Android, в которой на первом месте стоит свобода пользователей">F-droid</a>.
                     </p>
                     <p>
-                      Termux is a terminal emulator and Linux environment for Android
-                      based devices, which includes the ability to use many different
-                      programs and libraries, including Reticulum.
+                      Termux &mdash; это эмулятор терминала и среда Linux для устройств на базе Android,
+                        которая включает в себя возможность использования множества различных программ и
+                        библиотек, в том числе Reticulum.
                     </p>
                     <p>
-                      To use Reticulum within the Termux environment, you will need to
-                      install
+                      Чтобы использовать Reticulum в среде Termux, необходимо установить
                       <code class="docutils literal notranslate"
-                        ><span class="pre">python</span></code
-                      >
-                      and the
+                        ><span class="pre">python</span></code>
+                      и библиотеку
                       <code class="docutils literal notranslate"
-                        ><span class="pre">python-cryptography</span></code
-                      >
-                      library using
+                        ><span class="pre">python-cryptography</span></code>
+                      с помощью
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pkg</span></code
-                      >, the package-manager build into Termux. After that, you can use
+                        ><span class="pre">pkg</span></code>, диспетчера пакетов, встроенного в Termux.<br>
+                        После этого Reticulum ставится через
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      to install Reticulum.
+                        ><span class="pre">pip</span></code>.
                     </p>
-                    <p>From within Termux, execute the following:</p>
+                    <p>Выполните в Termux следующие команды:</p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># First, make sure indexes and packages are up to date.</span>
+                        <pre><span></span><span class="c1"># Сначала убедитесь, что индексы и пакеты обновлены.</span>
 pkg<span class="w"> </span>update
 pkg<span class="w"> </span>upgrade
 
-<span class="c1"># Then install python and the cryptography library.</span>
+<span class="c1"># Затем установите Python и библиотеку python cryptography.</span>
 pkg<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span>python-cryptography
 
-<span class="c1"># Make sure pip is up to date, and install the wheel module.</span>
+<span class="c1"># Убедитесь, что pip обновлен, и установите модуль wheel.</span>
 pip<span class="w"> </span>install<span class="w"> </span>wheel<span class="w"> </span>pip<span class="w"> </span>--upgrade
 
-<span class="c1"># Install Reticulum</span>
+<span class="c1"># Установите Reticulum.</span>
 pip<span class="w"> </span>install<span class="w"> </span>rns
 </pre>
                       </div>
                     </div>
                     <p>
-                      If for some reason the
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">python-cryptography</span></code
-                      >
-                      package is not available for your platform via the Termux package
-                      manager, you can attempt to build it locally on your device using
-                      the following command:
+                      Если по какой-то причине пакет
+                      <code class="docutils literal notranslate"><span class="pre">python-cryptography</span></code>
+                        недоступен для вашей платформы через диспетчер пакетов Termux, вы можете попробовать
+                        скомпилировать его локально на своем устройстве с помощью следующей команды:
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># First, make sure indexes and packages are up to date.</span>
+                        <pre><span></span><span class="c1"># Сначала убедитесь, что индексы и пакеты обновлены.</span>
 pkg<span class="w"> </span>update
 pkg<span class="w"> </span>upgrade
 
-<span class="c1"># Then install dependencies for the cryptography library.</span>
+<span class="c1"># Затем установите зависимости для библиотеки криптографии.</span>
 pkg<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span>build-essential<span class="w"> </span>openssl<span class="w"> </span>libffi<span class="w"> </span>rust
 
-<span class="c1"># Make sure pip is up to date, and install the wheel module.</span>
+<span class="c1"># Убедитесь, что pip обновлен, и установите модуль wheel.</span>
 pip<span class="w"> </span>install<span class="w"> </span>wheel<span class="w"> </span>pip<span class="w"> </span>--upgrade
 
-<span class="c1"># To allow the installer to build the cryptography module,</span>
-<span class="c1"># we need to let it know what platform we are compiling for:</span>
+<span class="c1"># Чтобы установщик мог скомпилировать модуль криптографии,</span>
+<span class="c1"># нам нужно сообщить ему, для какой платформы мы компилируем:</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CARGO_BUILD_TARGET</span><span class="o">=</span><span class="s2">&quot;aarch64-linux-android&quot;</span>
 
-<span class="c1"># Start the install process for the cryptography module.</span>
-<span class="c1"># Depending on your device, this can take several minutes,</span>
-<span class="c1"># since the module must be compiled locally on your device.</span>
+<span class="c1"># Запустите процесс установки модуля cryptography.</span>
+<span class="c1"># В зависимости от вашего устройства это может занять несколько минут,</span>
+<span class="c1"># поскольку модуль должен быть скомпилирован локально на вашем устройстве.</span>
 pip<span class="w"> </span>install<span class="w"> </span>cryptography
 
-<span class="c1"># If the above installation succeeds, you can now install</span>
-<span class="c1"># Reticulum and any related software</span>
+<span class="c1"># Если вышеуказанная установка прошла успешно, теперь вы можете установить</span>
+<span class="c1"># Reticulum и любое связанное с ним программное обеспечение.</span>
 pip<span class="w"> </span>install<span class="w"> </span>rns
 </pre>
                       </div>
                     </div>
                     <p>
-                      It is also possible to include Reticulum in apps compiled and
-                      distributed as Android APKs. A detailed tutorial and example source
-                      code will be included here at a later point. Until then you can use
-                      the
+                      Также можно включить Reticulum в приложения, скомпилированные и распространяемые
+                        в виде APK-файлов для Android.
+                        Подробное руководство и пример исходного кода будут добавлены сюда позднее.
+                        До тех пор вы можете использовать
                       <a
                         class="reference external"
-                        href="https://github.com/markqvist/sideband"
-                        >Sideband source code</a
-                      >
-                      as an example and starting point.
+                        href="https://github.com/markqvist/sideband" title="Sideband source code"
+                         target="_blank" rel="noopener">исходный код Sideband</a> в качестве примера и отправной точки.
                     </p>
                   </section>
                   <section id="arm64">
