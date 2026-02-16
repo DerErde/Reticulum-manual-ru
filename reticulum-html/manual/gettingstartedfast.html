@@ -1475,43 +1475,37 @@ python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </s
                       >
                     </h3>
                     <p>
-                      On versions of Debian released after April 2023, it is no longer
-                      possible by default to use
+                      В версиях Debian, выпущенных после апреля 2023 года, по умолчанию больше нельзя использовать
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      to install packages onto your system. Unfortunately, you will need
-                      to use the replacement
+                        ><span class="pre">pip</span></code>
+                      для установки пакетов в систему.
+                        К сожалению, вам нужно будет использовать вместо этого замену
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pipx</span></code
-                      >
-                      command instead, which places installed packages in an isolated
-                      environment. This should not negatively affect Reticulum, but will
-                      not work for including and using Reticulum in your own scripts and
-                      programs.
+                        ><span class="pre">pipx</span></code>
+                      которая помещает установленные пакеты в изолированную среду.
+                        Это не должно негативно повлиять на Reticulum, но не будет работать для включения и
+                        использования Reticulum в ваших собственных скриптах и программах.
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># Install pipx</span>
+                        <pre><span></span><span class="c1"># Установите pipx</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pipx
 
-<span class="c1"># Make installed programs available on the command line</span>
+<span class="c1"># Сделайте установленные программы доступными в командной строке</span>
 pipx<span class="w"> </span>ensurepath
 
-<span class="c1"># Install Reticulum</span>
+<span class="c1"># Установите Reticulum</span>
 pipx<span class="w"> </span>install<span class="w"> </span>rns
 </pre>
                       </div>
                     </div>
                     <p>
-                      Alternatively, you can restore normal behaviour to
+                      В качестве альтернативы вы можете восстановить нормальное поведение
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      by creating or editing the configuration file located at
+                        ><span class="pre">pip</span></code>,
+                      создав или отредактировав файл конфигурации, расположенный в
                       <code class="docutils literal notranslate"
-                        ><span class="pre">~/.config/pip/pip.conf</span></code
-                      >, and adding the following section:
+                        ><span class="pre">~/.config/pip/pip.conf</span></code>, и добавив следующий раздел:
                     </p>
                     <div class="highlight-ini notranslate">
                       <div class="highlight">
@@ -1521,35 +1515,33 @@ pipx<span class="w"> </span>install<span class="w"> </span>rns
                       </div>
                     </div>
                     <p>
-                      For a one-shot installation of Reticulum, without globally enabling
-                      the
+                      Для однократной установки Reticulum без глобальной активации опции
                       <code class="docutils literal notranslate"
-                        ><span class="pre">break-system-packages</span></code
-                      >
-                      option, you can use the following command:
+                        ><span class="pre">break-system-packages</span></code>
+                       можно использовать следующую команду:
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> </span>--break-system-packages
+                        <pre><span></span>pip<span class="w"> </span>install<span class="w">
+</span>rns<span class="w"> </span>--break-system-packages
 </pre>
                       </div>
                     </div>
                     <div class="admonition note">
-                      <p class="admonition-title">Note</p>
+                      <p class="admonition-title">Примечание</p>
                       <p>
-                        The
+                        Директива
+                        <code class="docutils literal notranslate">
+                        <span class="pre" title="С английского break system packages можно перевести как: нарушить системные пакеты">
+                            --break-system-packages</span></code>
+                        является несколько вводящей в заблуждение формулировкой.
+                          Ее установка, конечно, не повредит никакие системные пакеты, а просто позволит устанавливать
+                          пакеты
                         <code class="docutils literal notranslate"
-                          ><span class="pre">--break-system-packages</span></code
-                        >
-                        directive is a somewhat misleading choice of words. Setting it
-                        will of course not break any system packages, but will simply
-                        allow installing
-                        <code class="docutils literal notranslate"
-                          ><span class="pre">pip</span></code
-                        >
-                        packages user- and system-wide. While this <em>could</em> in rare
-                        cases lead to version conflicts, it does not generally pose any
-                        problems, especially not in the case of installing Reticulum.
+                          ><span class="pre">pip</span></code>
+                            в пользовательском и системном масштабах.
+                          Хотя в <em>редких</em> случаях это может привести к конфликтам версий,
+                          в целом это не создает никаких проблем, особенно в случае установки Reticulum.
                       </p>
                     </div>
                   </section>
