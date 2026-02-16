@@ -1443,8 +1443,7 @@ pip<span class="w"> </span>install<span class="w"> </span>rns
                         <span title="ARM64 &mdash; это 64‑разрядная архитектура процессоров семейства ARM (Advanced RISC Machines)">ARM64</span>,
                         не все зависимости имеют предварительно скомпилированные
                         бинарные файлы. В таких системах может потребоваться установка
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">python3-dev</span></code
+                      <code class="docutils literal notranslate"><span class="pre">python3-dev</span></code
                       >(или аналогичного пакета) перед установкой Reticulum или программ, зависящих от Reticulum.
                     </p>
                     <div class="highlight-shell notranslate">
@@ -1539,7 +1538,7 @@ pipx<span class="w"> </span>install<span class="w"> </span>rns
                           пакеты
                         <code class="docutils literal notranslate"
                           ><span class="pre">pip</span></code>
-                            в пользовательском и системном масштабах.
+                            для текущего пользователя и глобально для всей системы.
                           Хотя в <em>редких</em> случаях это может привести к конфликтам версий,
                           в целом это не создает никаких проблем, особенно в случае установки Reticulum.
                       </p>
@@ -1555,76 +1554,63 @@ pipx<span class="w"> </span>install<span class="w"> </span>rns
                       >
                     </h3>
                     <p>
-                      To install Reticulum on macOS, you will need to have Python and the
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      package manager installed.
+                      Для установки Reticulum на macOS необходимо иметь установленные Python и менеджер пакетов
+                      <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
                     </p>
                     <p>
-                      Systems running macOS can vary quite widely in whether or not Python
-                      is pre-installed, and if it is, which version is installed, and
-                      whether the
+                      Системы под управлением macOS могут значительно различаться по наличию предустановленного Python,
+                        а если он предустановлен, то по версии, а также по наличию и настройке пакетного менеджера
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      package manager is also installed and set up. If in doubt, you can
+                        ><span class="pre">pip</span></code>.
+                      Если у вас есть сомнения, вы можете
                       <a
                         class="reference external"
-                        href="https://www.python.org/downloads/"
-                        >download and install</a
-                      >
-                      Python manually.
+                        href="https://www.python.org/downloads/" target="_blank" rel="noopener"
+                        >загрузить и установить</a
+                      > Python вручную.
                     </p>
                     <p>
-                      When Python and
+                      Если Python и
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      is available on your system, simply open a terminal window and use
-                      one of the following commands:
+                        ><span class="pre">pip</span></code>
+                      доступны в вашей системе, просто откройте окно терминала и используйте одну из следующих команд:
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># Install Reticulum and utilities with pip:</span>
+                        <pre><span></span><span class="c1"># Установите Reticulum и утилиты с помощью pip:</span>
 pip3<span class="w"> </span>install<span class="w"> </span>rns
 
-<span class="c1"># On some versions, you may need to use the</span>
-<span class="c1"># flag --break-system-packages to install:</span>
+<span class="c1"># В некоторых версиях может потребоваться использовать</span>
+<span class="c1"># параметр --break-system-packages для установки:</span>
 pip3<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> </span>--break-system-packages
 </pre>
                       </div>
                     </div>
                     <div class="admonition note">
-                      <p class="admonition-title">Note</p>
+                      <p class="admonition-title">Примечание</p>
                       <p>
-                        The
+                        Директива
+                        <code class="docutils literal notranslate">
+                        <span class="pre" title="С английского break system packages можно перевести как: нарушить системные пакеты">
+                            --break-system-packages</span></code>
+                        является несколько вводящей в заблуждение формулировкой.
+                          Ее установка, конечно, не повредит никакие системные пакеты, а просто позволит устанавливать
+                          пакеты
                         <code class="docutils literal notranslate"
-                          ><span class="pre">--break-system-packages</span></code
-                        >
-                        directive is a somewhat misleading choice of words. Setting it
-                        will of course not break any system packages, but will simply
-                        allow installing
-                        <code class="docutils literal notranslate"
-                          ><span class="pre">pip</span></code
-                        >
-                        packages user- and system-wide. While this <em>could</em> in rare
-                        cases lead to version conflicts, it does not generally pose any
-                        problems, especially not in the case of installing Reticulum.
+                          ><span class="pre">pip</span></code>
+                            для текущего пользователя и глобально для всей системы.
+                          Хотя в <em>редких</em> случаях это может привести к конфликтам версий,
+                          в целом это не создает никаких проблем, особенно в случае установки Reticulum.
                       </p>
                     </div>
                     <p>
-                      Additionally, some version combinations of macOS and Python require
-                      you to manually add your installed
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      packages directory to your <cite>PATH</cite> environment variable,
-                      before you can use installed commands in your terminal. Usually,
-                      adding the following line to your shell init script (for example
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">~/.zshrc</span></code
-                      >) will be enough:
+                      Кроме того, некоторые комбинации версий macOS и Python требуют, чтобы вы вручную добавили каталог
+                        установленных пакетов
+                      <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+                        в переменную среды <cite>PATH</cite> прежде чем вы сможете использовать
+                        установленные команды в терминале.
+                        Обычно достаточно добавить следующую строку в скрипт инициализации оболочки
+                      <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>):
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
@@ -1633,8 +1619,7 @@ pip3<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> <
                       </div>
                     </div>
                     <p>
-                      Adjust Python version and shell init script location according to
-                      your system.
+                      Настройте версию Python и расположение скрипта инициализации оболочки в соответствии с вашей системой.
                     </p>
                   </section>
                   <section id="openwrt">
