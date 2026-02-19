@@ -1632,84 +1632,77 @@ pip3<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> <
                       >
                     </h3>
                     <p>
-                      On OpenWRT systems with sufficient storage and memory, you can
-                      install Reticulum and related utilities using the
-                      <cite>opkg</cite> package manager and <cite>pip</cite>.
+                      На системах
+                        <span title="OpenWrt — это открытая операционная система на базе Linux, предназначенная для встраиваемых устройств, в первую очередь маршрутизаторов.">
+                            OpenWRT</span> с достаточным объемом памяти и хранилища можно установить Reticulum и
+                        связанные утилиты с помощью диспетчера пакетов
+                      <cite>opkg</cite> и <cite>pip</cite>.
                     </p>
                     <div class="admonition note">
-                      <p class="admonition-title">Note</p>
+                      <p class="admonition-title">Примечание</p>
                       <p>
-                        At the time of releasing this manual, work is underway to create
-                        pre-built Reticulum packages for OpenWRT, with full configuration,
-                        service and
-                        <code class="docutils literal notranslate"
-                          ><span class="pre">uci</span></code
-                        >
-                        integration. Please see the
-                        <a
-                          class="reference external"
-                          href="https://github.com/gretel/feed-reticulum"
-                          >feed-reticulum</a
-                        >
-                        and
-                        <a
-                          class="reference external"
-                          href="https://github.com/gretel/reticulum-openwrt"
-                          >reticulum-openwrt</a
-                        >
-                        repositories for more information.
+                          На момент выпуска данного руководства ведется работа над созданием готовых
+                          пакетов Reticulum для OpenWRT с полной
+                          конфигурацией, интеграцией сервисов и
+                        <code class="docutils literal notranslate"><span class="pre">uci</span></code>.
+                        Для получения дополнительной информации см. репозитории
+                        <a class="reference external"
+                          href="https://github.com/gretel/feed-reticulum" target="_blank" rel="noopener"
+                          >feed-reticulum</a>
+                        и
+                        <a class="reference external"
+                          href="https://github.com/gretel/reticulum-openwrt" target="_blank" rel="noopener"
+                          >reticulum-openwrt</a>.
                       </p>
                     </div>
                     <p>
-                      To install Reticulum on OpenWRT, first log into a command line
-                      session, and then use the following instructions:
+                      Чтобы установить Reticulum на OpenWRT, сначала войдите в сеанс командной строки,
+                        а затем выполните следующие инструкции:
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># Install dependencies</span>
+                        <pre><span></span><span class="c1"># Установить зависимости</span>
 opkg<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-pip<span class="w"> </span>python3-cryptography<span class="w"> </span>python3-pyserial
 
-<span class="c1"># Install Reticulum</span>
+<span class="c1"># Установить Reticulum</span>
 pip<span class="w"> </span>install<span class="w"> </span>rns
 
-<span class="c1"># Start rnsd with debug logging enabled</span>
+<span class="c1"># Запустить rnsd с включенной отладкой</span>
 rnsd<span class="w"> </span>-vvv
 </pre>
                       </div>
                     </div>
                     <div class="admonition note">
-                      <p class="admonition-title">Note</p>
+                      <p class="admonition-title">Примечание</p>
                       <p>
-                        The above instructions have been verified and tested on OpenWRT
-                        21.02 only. It is likely that other versions may require slightly
-                        altered installation commands or package names. You will also need
-                        enough free space in your overlay FS, and enough free RAM to
-                        actually run Reticulum and any related programs and utilities.
+                        Вышеуказанные инструкции были проверены и протестированы только на OpenWRT 21.02.
+                        Вероятно, что для других версий могут потребоваться слегка измененные команды установки
+                        или названия пакетов.
+                        Также необходимо иметь достаточно свободного места в overlay‑файловой системе и достаточно
+                        свободной оперативной памяти для запуска Reticulum и связанных программ и утилит.
                       </p>
                     </div>
                     <p>
-                      Depending on your device configuration, you may need to adjust
-                      firewall rules for Reticulum connectivity to and from your device to
-                      work. Until proper packaging is ready, you will also need to
-                      manually create a service or startup script to automatically laucnh
-                      Reticulum at boot time.
+                      В зависимости от конфигурации вашего устройства, вам может потребоваться настроить правила
+                        брандмауэра для подключения Reticulum к вашему устройству и от него, чтобы оно работало.
+                         Пока не будет готова
+                        <span title="В данном контексте под «полноценной упаковкой» подразумевается готовый и опубликованный пакет программного обеспечения Reticulum для OpenWRT">
+                        полноценная упаковка</span>, вам также придётся вручную создать службу или
+                        скрипт автозапуска, чтобы Reticulum автоматически запускался при загрузке системы.
                     </p>
                     <p>
-                      Please also note that the <cite>AutoInterface</cite> requires
-                      link-local IPv6 addresses to be enabled for any Ethernet and WiFi
-                      devices you intend to use. If
+                      Также обратите внимание, что для <cite>AutoInterface</cite> необходимо включить локальные
+                        IPv6-адреса для всех Ethernet и WiFi-устройств, которые вы собираетесь использовать.
+                        Если команда
+                        <code class="docutils literal notranslate"
+                        ><span class="pre">ip</span> <span class="pre">a</span></code>
+                      показывает адрес, начинающийся с
                       <code class="docutils literal notranslate"
-                        ><span class="pre">ip</span> <span class="pre">a</span></code
-                      >
-                      shows an address starting with
+                        ><span class="pre">fe80::</span></code>
+                      для данного устройства,
                       <code class="docutils literal notranslate"
-                        ><span class="pre">fe80::</span></code
-                      >
-                      for the device in question,
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">AutoInterface</span></code
-                      >
-                      should work for that device.
+                        ><span class="pre">AutoInterface</span></code>
+                      должен работать для этого устройства.
                     </p>
                   </section>
                   <section id="raspberry-pi">
