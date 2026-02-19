@@ -1715,45 +1715,43 @@ rnsd<span class="w"> </span>-vvv
                       >
                     </h3>
                     <p>
-                      It is currently recommended to use a 64-bit version of the Raspberry
-                      Pi OS if you want to run Reticulum on Raspberry Pi computers, since
-                      32-bit versions don’t always have packages available for some
-                      dependencies. If Python and the <cite>pip</cite> package manager is
-                      not already installed, do that first, and then install Reticulum
-                      using <cite>pip</cite>.
+                      В настоящее время рекомендуется использовать 64-разрядную версию ОС Raspberry Pi,
+                        если вы хотите запустить Reticulum на компьютерах Raspberry Pi,
+                        поскольку в 32-разрядных версиях не всегда доступны пакеты для некоторых зависимостей.
+                        Если Python и менеджер пакетов <cite>pip</cite> еще не установлены, сначала установите их,
+                        а затем установите Reticulum с помощью <cite>pip</cite>.
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># Install dependencies</span>
+                        <pre><span></span><span class="c1"># Установка зависимостей</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-pip<span class="w"> </span>python3-cryptography<span class="w"> </span>python3-pyserial
 
-<span class="c1"># Install Reticulum</span>
+<span class="c1"># Установка Reticulum</span>
 pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> </span>--break-system-packages
 </pre>
                       </div>
                     </div>
                     <div class="admonition note">
-                      <p class="admonition-title">Note</p>
+                      <p class="admonition-title">Примечание</p>
                       <p>
-                        The
+                        Директива
+                        <code class="docutils literal notranslate">
+                        <span class="pre" title="С английского break system packages можно перевести как: нарушить системные пакеты">
+                            --break-system-packages</span></code>
+                        является несколько вводящей в заблуждение формулировкой.
+                          Ее установка, конечно, не повредит никакие системные пакеты, а просто позволит устанавливать
+                          пакеты
                         <code class="docutils literal notranslate"
-                          ><span class="pre">--break-system-packages</span></code
-                        >
-                        directive is a somewhat misleading choice of words. Setting it
-                        will of course not break any system packages, but will simply
-                        allow installing
-                        <code class="docutils literal notranslate"
-                          ><span class="pre">pip</span></code
-                        >
-                        packages user- and system-wide. While this <em>could</em> in rare
-                        cases lead to version conflicts, it does not generally pose any
-                        problems, especially not in the case of installing Reticulum.
+                          ><span class="pre">pip</span></code>
+                            для текущего пользователя и глобально для всей системы.
+                          Хотя в <em>редких</em> случаях это может привести к конфликтам версий,
+                          в целом это не создает никаких проблем, особенно в случае установки Reticulum.
                       </p>
                     </div>
                     <p>
-                      While it is possible to install and run Reticulum on 32-bit Rasperry
-                      Pi OSes, it will require manually configuring and installing
-                      required build dependencies, and is not detailed in this manual.
+                      Хотя Reticulum можно установить и запустить на 32-разрядных ОС Raspberry Pi,
+                        для этого потребуется вручную настроить и установить
+                        необходимые зависимости для сборки, что не описано в данном руководстве.
                     </p>
                   </section>
                   <section id="risc-v">
