@@ -1764,32 +1764,32 @@ pip<span class="w"> </span>install<span class="w"> </span>rns<span class="w"> </
                       >
                     </h3>
                     <p>
-                      On some architectures, including RISC-V, not all dependencies have
-                      precompiled binaries. On such systems, you may need to install
+                      В некоторых архитектурах, включая
+                        <a href="https://ru.wikipedia.org/wiki/RISC-V" target="_blank" rel="noopener"
+                        title="RISC-V (риск-пять) — система команд с открытым стандартом на правила двоичного кодирования инструкций для управления вычислительными машинами">
+                        RISC-V</a>,
+                        не все зависимости имеют предварительно скомпилированные бинарные файлы.
+                        В таких системах может потребоваться установка
                       <code class="docutils literal notranslate"
-                        ><span class="pre">python3-dev</span></code
-                      >
-                      (or similar) before installing Reticulum or programs that depend on
-                      Reticulum.
+                        ><span class="pre">python3-dev</span></code>
+                       (или аналогичного пакета)
+                        перед установкой Reticulum или программ, зависящих от Reticulum.
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
-                        <pre><span></span><span class="c1"># Install Python and development packages</span>
+                        <pre><span></span><span class="c1"># Установите Python и пакеты для разработки</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-pip<span class="w"> </span>python3-dev
 
-<span class="c1"># Install Reticulum</span>
+<span class="c1"># Установите Reticulum</span>
 python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>rns
 </pre>
                       </div>
                     </div>
                     <p>
-                      With these packages installed,
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      will be able to build any missing dependencies on your system
-                      locally.
+                      После установки этих пакетов
+                      <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+                    сможет локально скомпилировать любые отсутствующие зависимости в вашей системе.
                     </p>
                   </section>
                   <section id="ubuntu-lunar">
