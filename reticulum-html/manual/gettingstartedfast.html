@@ -1881,51 +1881,41 @@ break-system-packages = true
                         class="headerlink"
                         href="#windows"
                         title="Link to this heading"
-                        >¶</a
-                      >
+                        >¶</a>
                     </h3>
                     <p>
-                      On Windows operating systems, the easiest way to install Reticulum
-                      is by using the
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      package manager from the command line (either the command prompt or
-                      Windows Powershell).
+                      В операционных системах Windows самый простой способ установить Reticulum &#8212; использовать менеджер
+                        пакетов
+                      <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+                      из командной строки (командная строка или Windows Powershell).
                     </p>
                     <p>
-                      If you don’t already have Python installed,
+                    Если у вас ещё не установлен Python,
                       <a
                         class="reference external"
-                        href="https://www.python.org/downloads/"
-                        >download and install Python</a
-                      >. At the time of publication of this manual, the recommended
-                      version is
+                        href="https://www.python.org/downloads/" target="_blank" rel="noopener"
+                        >скачайте и установите его</a>.
+                      На момент публикации данного руководства рекомендуется версия
                       <a
                         class="reference external"
-                        href="https://www.python.org/downloads/release/python-3127"
-                        >Python 3.12.7</a
-                      >.
+                        href="https://www.python.org/downloads/release/python-3127" target="_blank" rel="noopener"
+                        >Python 3.12.7</a>.
                     </p>
                     <p>
-                      <strong>Important!</strong> When asked by the installer, make sure
-                      to add the Python program to your PATH environment variables. If you
-                      don’t do this, you will not be able to use the
+                      <strong>Важно!</strong> Когда установщик спросит, обязательно добавьте программу Python в переменные среды PATH.
+                        Если вы этого не сделаете, вы не сможете использовать установщик
+                      <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+                      или запускать включённые утилиты Reticulum (такие как
                       <code class="docutils literal notranslate"
-                        ><span class="pre">pip</span></code
-                      >
-                      installer, or run the included Reticulum utility programs (such as
+                      title="rnsd – демон‑служба Reticulum. После запуска он открывает сетевой интерфейс, управляет маршрутизацией"
+                        ><span class="pre">rnsd</span></code>
+                      и
                       <code class="docutils literal notranslate"
-                        ><span class="pre">rnsd</span></code
-                      >
-                      and
-                      <code class="docutils literal notranslate"
-                        ><span class="pre">rnstatus</span></code
-                      >) from the command line.
+                      title="rnstatus – утилита для получения текущего состояния узла Reticulum"
+                        ><span class="pre">rnstatus</span></code>) из командной строки.
                     </p>
                     <p>
-                      After installing Python, open the command prompt or Windows
-                      Powershell, and type:
+                      После установки Python откройте командную строку или Windows Powershell и введите:
                     </p>
                     <div class="highlight-shell notranslate">
                       <div class="highlight">
@@ -1934,8 +1924,8 @@ break-system-packages = true
                       </div>
                     </div>
                     <p>
-                      You can now use Reticulum and all included utility programs directly
-                      from your preferred command line interface.
+                      Теперь вы можете использовать Reticulum и все входящие в него утилиты
+                        непосредственно из вашего любимого интерфейса командной строки.
                     </p>
                   </section>
                 </section>
@@ -1958,7 +1948,7 @@ break-system-packages = true
                       package to run Reticulum on systems that do not support
                       <a
                         class="reference external"
-                        href="https://github.com/pyca/cryptography"
+                        href="https://github.com/pyca/cryptography" target="_blank" rel="noopener"
                         >PyCA/cryptography</a
                       >, it is important that you read and understand the
                       <a
