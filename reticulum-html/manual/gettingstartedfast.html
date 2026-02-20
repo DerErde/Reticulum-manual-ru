@@ -1935,80 +1935,69 @@ break-system-packages = true
                       class="headerlink"
                       href="#pure-python-reticulum"
                       title="Link to this heading"
-                      >¶</a
-                    >
+                      >¶</a>
                   </h2>
                   <div class="admonition warning">
-                    <p class="admonition-title">Warning</p>
+                    <p class="admonition-title">Предупреждение</p>
                     <p>
-                      If you use the
+                      Если вы используете пакет
                       <code class="docutils literal notranslate"
-                        ><span class="pre">rnspure</span></code
-                      >
-                      package to run Reticulum on systems that do not support
+                        ><span class="pre">rnspure</span></code>
+                      для запуска Reticulum в системах, которые не поддерживают
+
                       <a
                         class="reference external"
                         href="https://github.com/pyca/cryptography" target="_blank" rel="noopener"
-                        >PyCA/cryptography</a
-                      >, it is important that you read and understand the
+                        title="PyCA/cryptography — это открытая библиотека Python, предоставляющая современные криптографические примитивы и протоколы."
+                        >PyCA/криптографию</a>, важно прочитать и понять раздел
                       <a
                         class="reference internal"
-                        href="understanding.html#understanding-primitives"
-                        ><span class="std std-ref">Cryptographic Primitives</span></a
-                      >
-                      section of this manual.
+                        href="understanding.html#understanding-primitives" title="Cryptographic Primitives"
+                        ><span class="std std-ref">Криптографические примитивы</span></a>
+                      данного руководства.
                     </p>
                   </div>
                   <p>
-                    In some rare cases, and on more obscure system types, it is not
-                    possible to install one or more dependencies. In such situations, you
-                    can use the
+                    В некоторых редких случаях и на более редких типах систем установка одной или нескольких
+                      зависимостей может быть невозможна.
+                      В таких ситуациях можно использовать пакет
                     <code class="docutils literal notranslate"
-                      ><span class="pre">rnspure</span></code
-                    >
-                    package instead of the
+                      ><span class="pre">rnspure</span></code>
+                    вместо пакета
                     <code class="docutils literal notranslate"
-                      ><span class="pre">rns</span></code
-                    >
-                    package, or use
+                      ><span class="pre">rns</span></code>
+                    или использовать
                     <code class="docutils literal notranslate"
-                      ><span class="pre">pip</span></code
-                    >
-                    with the
+                      ><span class="pre">pip</span></code>
+                    с опцией командной строки
                     <code class="docutils literal notranslate"
-                      ><span class="pre">--no-dependencies</span></code
-                    >
-                    command-line option. The
+                      ><span class="pre">--no-dependencies</span></code>. <br>
+                    Пакет
                     <code class="docutils literal notranslate"
-                      ><span class="pre">rnspure</span></code
-                    >
-                    package requires no external dependencies for installation. Please
-                    note that the actual contents of the
+                      ><span class="pre">rnspure</span></code>
+                    не требует внешних зависимостей для установки.
+                    Обратите внимание, что фактическое содержимое пакетов
                     <code class="docutils literal notranslate"
-                      ><span class="pre">rns</span></code
-                    >
-                    and
+                      ><span class="pre">rns</span></code>
+                    и
                     <code class="docutils literal notranslate"
-                      ><span class="pre">rnspure</span></code
-                    >
-                    packages are <em>completely identical</em>. The only difference is
-                    that the
+                      ><span class="pre">rnspure</span></code>
+                    <em>полностью идентично</em>.
+
+                    Единственное различие заключается в том, что пакет
                     <code class="docutils literal notranslate"
-                      ><span class="pre">rnspure</span></code
-                    >
-                    package lists no dependencies required for installation.
+                      ><span class="pre">rnspure</span></code>
+                    не содержит списка зависимостей, необходимых для установки.
                   </p>
                   <p>
-                    No matter how Reticulum is installed and started, it will load
-                    external dependencies only if they are <em>needed</em> and
-                    <em>available</em>. If for example you want to use Reticulum on a
-                    system that cannot support
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">pyserial</span></code
-                    >, it is perfectly possible to do so using the
-                    <cite>rnspure</cite> package, but Reticulum will not be able to use
-                    serial-based interfaces. All other available modules will still be
-                    loaded when needed.
+
+                    Независимо от того, как Reticulum установлен и запущен, он будет загружать внешние зависимости
+                      только в том случае, если они <em>необходимы</em> и <em>доступны</em>.
+                    Если, например, вы хотите использовать Reticulum в системе, которая не поддерживает
+                    <code class="docutils literal notranslate"><span class="pre">pyserial</span></code>,
+                      это вполне возможно с помощью пакета <cite>rnspure</cite>, но Reticulum не сможет использовать
+                      интерфейсы на основе последовательного соединения.
+                      Все остальные доступные модули по-прежнему будут загружаться при необходимости.
                   </p>
                 </section>
               </section>
