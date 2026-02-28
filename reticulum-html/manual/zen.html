@@ -636,7 +636,7 @@
                   </section>
                   <section id="encryption-is-not-a-feature">
                     <h3>
-                      Encryption Is Not A Feature<a
+                      Шифрование — это не функция<a
                         class="headerlink"
                         href="#encryption-is-not-a-feature"
                         title="Link to this heading"
@@ -644,32 +644,31 @@
                       >
                     </h3>
                     <p>
-                      In the world of TCP/IP, encryption is an afterthought. It is a layer
-                      we slap on top of the protocol (HTTPS, TLS) to patch the security
-                      holes of the original design. It is a “feature” you sometimes
-                      <em>enable</em> for “sensitive data”. This is fundamentally flawed,
-                      since all data is sensitive.
+                      В мире
+                      <a href="https://ru.wikipedia.org/wiki/TCP/IP" target="_blank" rel="noopener"
+                         title="Стек протоколов TCP/IP — это набор протоколов, используемых для передачи данных в компьютерных сетях">
+                          TCP/IP</a> шифрование — это второстепенная функция.
+                      Это слой, который мы накладываем поверх протокола (HTTPS, TLS),
+                        чтобы залатать дыры в безопасности исходной конструкции.
+                      Это “функция”, которую иногда <em>включают</em> для “чувствительные данных“.
+                      Это в корне неверно, поскольку все данные являются конфиденциальными.
                     </p>
-                    <p>In Reticulum, encryption is <strong>gravity</strong>.</p>
+                    <p>В Reticulum шифрование — это <strong>гравитация</strong>.</p>
                     <p>
-                      It is not optional. It is not a plugin. It is the
-                      <em>fundamental force that allows the network to exist</em>. If you
-                      were to strip the encryption from Reticulum, the routing would
-                      break. The Transport system uses cryptographic signatures and
-                      entropy to verify paths and pass information. If packets were
-                      plaintext, intermediate nodes could not prove that a route was
-                      valid, nor could endpoints prevent spoofing or tampering.
-                    </p>
-                    <p>
-                      In Reticulum, the entropy of the encrypted packet <em>is</em> the
-                      routing logic.
+                      Оно не является опцией. Это не плагин.
+                      Это <em>фундаментальная сила, которая позволяет сети существовать</em>.
+                      Если удалить шифрование из Reticulum, маршрутизация перестанет работать.<br>
+                      Транспортная система использует криптографические подписи и энтропию для проверки путей и передачи информации.
+                      Если бы пакеты были в виде открытого текста, промежуточные узлы не могли бы подтвердить
+                      действительность маршрута, а конечные точки не могли бы предотвратить подделку или фальсификацию.
                     </p>
                     <p>
-                      To ask for a version of Reticulum without encryption is like asking
-                      for a version of the ocean without liquid. You are not asking for a
-                      feature change; you’re asking for a different physical universe. We
-                      design for a universe where information has mass, structure, and
-                      integrity.
+                      В Reticulum энтропия зашифрованного пакета <em>является</em> логикой маршрутизации.
+                    </p>
+                    <p>
+                      Просить версию Reticulum без шифрования — все равно что просить версию океана без жидкости.
+                      Вы не просите изменить функционал, вы просите создать другую физическую вселенную.
+                      Мы разрабатываем продукты для вселенной, в которой информация имеет массу, структуру и целостность.
                     </p>
                   </section>
                   <section id="zero-trust-architectures">
@@ -1873,7 +1872,7 @@
                             <a
                               class="reference internal"
                               href="#encryption-is-not-a-feature"
-                              >Encryption Is Not A Feature</a
+                              >Шифрование — это не функция</a
                             >
                           </li>
                           <li>
