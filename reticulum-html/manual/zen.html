@@ -798,7 +798,7 @@
                   </section>
                   <section id="cost-of-a-byte">
                     <h3>
-                      Cost Of A Byte<a
+                      Стоимость байта<a
                         class="headerlink"
                         href="#cost-of-a-byte"
                         title="Link to this heading"
@@ -806,56 +806,53 @@
                       >
                     </h3>
                     <p>
-                      In a scarce economy, a byte is not just data, but energy, time, and
-                      space.
+                      В условиях ограниченной экономики байт — это не просто данные, а энергия, время и пространство.
                     </p>
                     <p>
-                      Every byte you transmit consumes battery life on a solar-powered
-                      node. It occupies valuable airtime that could have been used by
-                      another peer. It represents a measurable slice of the
-                      electromagnetic spectrum.
+                      Каждый передаваемый байт расходует заряд батареи на узле, питающемся от солнечной энергии.
+                      Он занимает ценное эфирное время, которое могло бы быть использовано другим узлом.
+                      Он представляет собой измеримую часть электромагнитного спектра.
                     </p>
                     <p>
-                      When you internalize this, you begin to write code differently. You
-                      stop asking, “How much data can I send?” and start asking, “What is
-                      the <em>minimum</em> amount of information required to convey this
-                      intent? How can I best utilize my informational entropy?”
+                      Когда вы осознаёте это, вы начнете писать код по-другому.
+                        Вы перестанете спрашивать: “Сколько данных я могу отправить?”,
+                        а начнете спрашивать: “Какой <em>минимальный</em> объем информации необходим для передачи этого намерения?
+                        Как я могу наилучшим образом использовать свою информационную энтропию?”.
                     </p>
                     <p>
-                      This is where the elegance of Reticulum shines. The protocol is
-                      designed to strip away the non-essential. A link establishment takes
-                      three very small packets. A destination hash fits in 16 bytes. The
-                      overhead is vanishingly small, leaving almost the entire channel for
-                      the message itself.
+                      Именно здесь проявляется элегантность Reticulum.
+                        Протокол разработан таким образом, чтобы устранить все несущественное.
+                        Для установления соединения требуется всего три очень маленьких пакета.
+                        Хеш назначения помещается в 16 байтах.
+                        Накладные расходы ничтожно малы, оставляя почти весь канал для самого сообщения.
                     </p>
-                    <p><strong>Consider:</strong></p>
+                    <p><strong>Рассмотрим:</strong></p>
                     <ul class="simple">
                       <li>
                         <p>
-                          <strong>The Old Way:</strong>
-                          <em
-                            >“I need to send a status update. I’ll send a JSON object with
-                            metadata, timestamps, and user profile info (15KB).”</em
-                          >
+                          <strong>Старый подход:</strong>
+                          <em>
+                              “Мне нужно отправить обновление статуса.
+                              Я отправлю JSON-объект с метаданными,
+                              временными метками и информацией о профиле пользователя (15 КБ)”.
+                          </em>
                         </p>
                       </li>
                       <li>
                         <p>
-                          <strong>The Zen Way:</strong>
-                          <em
-                            >“I need to send a status update. I’ll send a single byte
-                            representing the state code. The context is already
-                            known.”</em
-                          >
+                          <strong>Подход Дзен:</strong>
+                          <em>
+                              “Мне нужно отправить обновление статуса.
+                              Я отправлю один байт, представляющий код состояния. Контекст уже известен”.
+                          </em>
                         </p>
                       </li>
                     </ul>
                     <p>
-                      This is of course optimization, but more importantly,
-                      <em>it is a form of respect</em>. Efficiency in a shared medium is
-                      an act of stewardship. By taking only what you need from the
-                      network, you leave room for others. The network listens to those who
-                      speak with purpose.
+                      Конечно, это оптимизация, но, что более важно, это <em>форма уважения</em>.
+                        Эффективность в общей среде — это акт ответственного управления.
+                        Беря из сети только то, что вам нужно, вы оставляете место для других.
+                        Сеть прислушивается к тем, кто говорит с целью.
                     </p>
                   </section>
                   <section id="flow-time">
@@ -1891,7 +1888,7 @@
                           </li>
                           <li>
                             <a class="reference internal" href="#cost-of-a-byte"
-                              >Cost Of A Byte</a
+                              >Стоимость байта</a
                             >
                           </li>
                           <li>
