@@ -1480,8 +1480,8 @@ Reticulum в реальном коде: Кочевничество, Дефици
                           глубину узоров</span>, которые мы плели.
                   </p>
                   <section id="store-forward">
-                    <h3>
-                      Store &amp; Forward<a
+                    <h3 title="Store & Forward">
+                      Хранение &amp; Пересылка<a
                         class="headerlink"
                         href="#store-forward"
                         title="Link to this heading"
@@ -1489,36 +1489,36 @@ Reticulum в реальном коде: Кочевничество, Дефици
                       >
                     </h3>
                     <p>
-                      The web has trained us to be impatient. We write synchronous code.
-                      We fire a request and we wait, blocking the UI, holding our breath.
-                      If the response doesn’t come in 250 milliseconds, we show a spinner.
-                      If it doesn’t come in five seconds, we show an error. We treat
-                      network connectivity as a binary state: either we are “online” or we
-                      are “broken”.
+                      Интернет приучил нас к нетерпеливости.<br>
+                        Мы пишем синхронный код.<br>
+                        Мы отправляем запрос и ждем, блокируя пользовательский интерфейс и затаив дыхание.<br>
+                      Если ответ не приходит в течение 250 миллисекунд, мы показываем индикатор загрузки.<br>
+                        Если он не приходит в течение пяти секунд, мы показываем ошибку.<br>
+                        Мы рассматриваем сетевое соединение как двоичное состояние: либо мы “онлайн”, либо мы “сломаны”.
                     </p>
-                    <p>This is brittle. It is a rejection of reality.</p>
+                    <p>Это хрупко. Это отказ от реальности.</p>
                     <p>
-                      In Reticulum, connectivity is a spectrum, and presence is
-                      asynchronous. If at all applicable to your intent, you must design
-                      your applications to embrace <strong>Store &amp; Forward</strong>.
+                      В Reticulum <span title="Это идея, что соединение может быть частичным/переменным/длительным">
+                        связность представляет собой спектр</span>, а присутствие является асинхронным.
+                        Если это применимо к вашим целям,
+                        вы должны разрабатывать свои приложения с учетом <strong title="Хранение &amp; Пересылка">Store & Forward</strong>.
                     </p>
                     <p>
-                      Instead of demanding an immediate answer, your application should
-                      act as a patient participant. You create a message for someone or
-                      something in the mesh. The network holds it. It carries it from node
-                      to node, perhaps over hours or days, waiting for the recipient to
-                      appear. When they finally surface, the message is delivered. This
-                      requires a shift from “request/response” to “event/handler”. How
-                      exactly you do this is a challenge for you to solve intelligently
-                      within your problem domain, but Reticulum-based systems already
-                      exist that does this extremely well, and you can use them for
-                      inspiration.
+                      Вместо того чтобы требовать мгновенного ответа, приложение должно выступать в роли терпеливого участника.
+                        Вы создаете сообщение для кого-то или чего-то в сети. Сеть хранит его.
+                        Она передает его от узла к узлу, возможно, в течение нескольких часов или дней,
+                        ожидая появления получателя.
+                        Когда он наконец появляется, сообщение доставляется.<br>
+                        Это требует перехода от модели “запрос/ответ” к модели “событие/обработчик”.
+                        Как именно это сделать — задача, которую вам предстоит решить интеллектуально в рамках вашей
+                        проблемной области, но уже существуют системы на основе Reticulum,
+                        которые делают это чрезвычайно хорошо, и вы можете использовать их в качестве вдохновения.
                     </p>
-                    <p><strong>Consider:</strong></p>
+                    <p><strong>Рассмотрим:</strong></p>
                     <ul class="simple">
                       <li>
                         <p>
-                          <strong>The Old Way:</strong>
+                          <strong>Старый подход:</strong>
                           <code class="docutils literal notranslate"
                             ><span class="pre">Connect()</span>
                             <span class="pre">-&gt;</span> <span class="pre">Send()</span>
@@ -1531,7 +1531,7 @@ Reticulum в реальном коде: Кочевничество, Дефици
                       </li>
                       <li>
                         <p>
-                          <strong>The Zen Way:</strong>
+                          <strong>Подход Дзен:</strong>
                           <code class="docutils literal notranslate"
                             ><span class="pre">Send()</span>
                             <span class="pre">-&gt;</span>
@@ -1546,10 +1546,10 @@ Reticulum в реальном коде: Кочевничество, Дефици
                       </li>
                     </ul>
                     <p>
-                      This changes the user experience profoundly. It removes the anxiety
-                      of the loading bar. It creates a sense of continuity. The user is
-                      not “waiting for the network”; they are interacting with a
-                      persistent log of communication that lives in the network itself.
+                     Это кардинально меняет пользовательский опыт.
+                        Исчезает беспокойство, связанное с индикатором загрузки. Создается ощущение непрерывности.
+                        Пользователь не “ждет сеть”, он взаимодействует с постоянным журналом коммуникаций,
+                        который существует непосредственно в самой сети.
                     </p>
                   </section>
                   <section id="naming-is-power">
@@ -1996,7 +1996,7 @@ Reticulum в реальном коде: Кочевничество, Дефици
                         <ul>
                           <li>
                             <a class="reference internal" href="#store-forward"
-                              >Store &amp; Forward</a
+                              >Хранение &amp; Пересылка</a
                             >
                           </li>
                           <li>
