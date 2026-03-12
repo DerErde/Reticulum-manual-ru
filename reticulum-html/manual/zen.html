@@ -1554,7 +1554,7 @@ Reticulum в реальном коде: Кочевничество, Дефици
                   </section>
                   <section id="naming-is-power">
                     <h3>
-                      Naming Is Power<a
+                      Имя — это сила<a
                         class="headerlink"
                         href="#naming-is-power"
                         title="Link to this heading"
@@ -1562,45 +1562,42 @@ Reticulum в реальном коде: Кочевничество, Дефици
                       >
                     </h3>
                     <p>
-                      In the IP world, we are slaves to the Domain Name System. We rely on
-                      a hierarchy of registrars to map human-readable names to
-                      machine-readable addresses. This hierarchy is a choke point. If the
-                      registrar revokes your domain, or if the DNS server goes down, you
-                      vanish.
+                      В мире IP мы являемся рабами системы доменных имен (DNS).
+                        Мы полагаемся на иерархию регистраторов, которые сопоставляют понятные для человека имена
+                        с понятными для машин адресами.
+                        Эта иерархия является узким местом.
+                        Если регистратор аннулирует ваш домен или DNS сервер выйдет из строя, вы исчезнете.
                     </p>
                     <p>
-                      Reticulum dissolves this hierarchy with
-                      <strong>Hash-based Identity</strong>.
+                      Reticulum устраняет эту иерархию с помощью
+                      <strong title="Hash-based Identity">идентификации на основе хешей</strong>.
                     </p>
                     <p>
-                      In this design pattern, a name is not a string you look up; it is a
-                      cryptographic destination you verify. When you design for Reticulum,
-                      you stop asking the user for a URL and start asking for a
-                      Destination or Identity Hash.
+                     В этом шаблоне проектирования имя — не строка, которую нужно искать;
+                        это криптографический адрес назначения, который проверяется.
+                     При проектировании для Reticulum вы перестаете запрашивать у пользователя URL-адрес и
+                        начинаете запрашивать
+                        <span title="Destination or Identity Hash">Хеш назначения или Хеш идентификатора</span>.
                     </p>
                     <p>
-                      This feels strange at first. A hash like
+                      Сначала это кажется странным. Хеш типа
                       <code class="docutils literal notranslate"
-                        ><span class="pre"
-                          >&lt;83b7328926fed0d2e6a10a7671f9e237&gt;</span
-                        ></code
-                      >
-                      looks alien compared to
+                        ><span class="pre">&lt;83b7328926fed0d2e6a10a7671f9e237&gt;</span></code>
+                      выглядит чужеродным по сравнению с
                       <code class="docutils literal notranslate"
-                        ><span class="pre">myfriend.com</span></code
-                      >. But that alienness is the armor. It <strong>cannot</strong> be
-                      spoofed. It <strong>cannot</strong> be censored by a registrar. It
-                      is <strong>absolute</strong>.
+                        ><span class="pre">myfriend.com</span></code>.
+                        Но эта чужеродность и есть защита. Ее <strong>нельзя</strong> подделать.
+                        Ее <strong>нельзя</strong> подвергнуть цензуре со стороны регистратора. Она <strong>абсолютна</strong>.
                     </p>
                     <p>
-                      Designing for this means shifting your UI metaphors. You are no
-                      longer browsing a web of pages; you are managing a ledger of keys.
-                      You are building an “Address Book” that is actually a keyring. The
-                      names are given by the user, and the power stays with them. That
-                      hashes look complex is directly analogous to the strengths of the
-                      bonds formed by their use. It forces the user to engage in a moment
-                      of verification, an out-of-band handshake, which restores the human
-                      element of trust that SSL certificates stripped away.
+                        <span title="Речь идет об изменении подхода к проектированию пользовательского интерфейса">
+                        Проектирование этого подразумевает изменение концепций вашего пользовательского интерфейса.</span>
+                      Вы больше не просматриваете веб-страницы — вы управляете реестром ключей.<br>
+                        Вы создаете “адресную книгу”, которая на самом деле является связкой ключей.<br>
+                        Имена присваиваются пользователем, и власть остается за ним.
+                        Сложный вид хэшей напрямую отражает надёжность связей, образованных при их использовании.<br>
+                        Это заставляет пользователя участвовать в процессе проверки, обмен рукопожатием (out-of-band handshake),
+                        которое восстанавливает человеческий элемент доверия, стертый SSL-сертификатами.
                     </p>
                   </section>
                   <section id="the-interface-is-the-medium">
@@ -2001,7 +1998,7 @@ Reticulum в реальном коде: Кочевничество, Дефици
                           </li>
                           <li>
                             <a class="reference internal" href="#naming-is-power"
-                              >Naming Is Power</a
+                              >Имя — это сила</a
                             >
                           </li>
                           <li>
