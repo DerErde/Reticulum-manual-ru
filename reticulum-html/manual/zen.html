@@ -1602,54 +1602,55 @@ Reticulum в реальном коде: Кочевничество, Дефици
                   </section>
                   <section id="the-interface-is-the-medium">
                     <h3>
-                      The Interface Is The Medium<a
+                      Интерфейс — это среда<a
                         class="headerlink"
                         href="#the-interface-is-the-medium"
                         title="Link to this heading"
-                        >¶</a
-                      >
+                        >¶</a>
                     </h3>
                     <p>
-                      One of the most liberating patterns in Reticulum is
-                      <strong>Transport Agnosticism</strong>.
+                      Один из самых освобождающих паттернов в Reticulum — это
+                      <strong title="Transport Agnosticism - независимость от типа транспорта">транспортный агностицизм</strong>.
                     </p>
                     <p>
-                      In traditional networking, your code is often littered with
-                      transport logic. “Am I on WiFi? Check bandwidth. Am I on Cellular?
-                      Check data plan. Am I on Ethernet?”. You are constantly
-                      micromanaging the pipe.
+                        В традиционных сетях код часто перегружен транспортной логикой.<br>
+                        “Я подключен к Wi-Fi?
+                        Проверить пропускную способность.
+                        Я подключен к сотовой сети? Проверить тарифный план. Я подключен к Ethernet?”.
+                        Вы постоянно занимаетесь микроуправлением каналов.
                     </p>
                     <p>
-                      In Reticulum, you write to the API, and the API writes to the
-                      medium. You send a packet to a Destination. You do not care if that
-                      packet travels over a TCP tunnel, a LoRa radio wave, or a serial
-                      wire interface. That is the stack’s concern.
+                       В Reticulum вы обращаетесь к API, а API записывает данные в среду передачи.
+                        Вы отправляете пакет в пункт назначения.
+                        Вам не важно, проходит ли этот пакет через TCP-туннель, радиоволну LoRa или
+                        последовательный интерфейс. Об этом заботится стек.
                     </p>
                     <p>
-                      This allows you to write <strong>Universal Applications</strong>.
-                      Imagine a messaging app. You write it once. It works on a laptop
-                      connected to fiber. It works on a phone in the city using WiFi. And,
-                      without a single line of code changed, it works on a device in the
-                      wilderness, talking only to other devices via radio.
+                      Это позволяет создавать <strong title="Universal Applications">универсальные приложения</strong>.
+                      Представьте себе мессенджер. Вы пишете его один раз.
+                        Он работает на ноутбуке, подключенном к оптоволоконной сети.
+                        Он работает на телефоне в городе через Wi-Fi.
+                      И, без изменения ни одной строчки кода, он работает на устройстве в глуши,
+                        обмениваясь данными с другими устройствами только по радио.
                     </p>
                     <p>
-                      The pattern is simple:
-                      <strong>Never code to the hardware. Code to the intent.</strong>
+                      Принцип прост:
+                      <strong>никогда не программируйте под конкретное оборудование. Программируйте под задачу.</strong>
                     </p>
-                    <p><strong>Consider:</strong></p>
+                    <p><strong>Рассмотрим:</strong></p>
                     <ul class="simple">
                       <li>
                         <p>
-                          <strong>The Old Way:</strong>
+                          <strong>Старый подход:</strong>
                           <code class="docutils literal notranslate"
                             ><span class="pre">socket.connect(ip,</span>
                             <span class="pre">port)</span></code
-                          >, and then a whole lot more
+                          >, а затем еще много всего
                         </p>
                       </li>
                       <li>
                         <p>
-                          <strong>The Zen Way:</strong>
+                          <strong>Подход Дзен:</strong>
                           <code class="docutils literal notranslate"
                             ><span class="pre">RNS.Packet(destination,</span>
                             <span class="pre">data).send()</span></code
@@ -1658,15 +1659,16 @@ Reticulum в реальном коде: Кочевничество, Дефици
                       </li>
                     </ul>
                     <p>
-                      By abstracting the medium, you make your software immortal to
-                      changes in infrastructure. The user might switch from a 4G hotspot
-                      to a HF modem tomorrow. Your software doesn’t need to know. It
-                      simply continues the conversation.
+                      Абстрагируя среду передачи данных, вы делаете свое программное обеспечение невосприимчивым к
+                        изменениям в инфраструктуре. Завтра пользователь может переключиться с
+                        точки доступа 4G на высокочастотный модем (HF).
+                        Вашему программному обеспечению не нужно об этом знать.
+                        Оно просто продолжает разговор.
                     </p>
                   </section>
                   <section id="emergent-patterns">
                     <h3>
-                      Emergent Patterns<a
+                      Возникающие паттерны<a
                         class="headerlink"
                         href="#emergent-patterns"
                         title="Link to this heading"
@@ -1674,25 +1676,29 @@ Reticulum в реальном коде: Кочевничество, Дефици
                       >
                     </h3>
                     <p>
-                      When you combine these patterns - <em>Store &amp; Forward</em>,
-                      <em>Hash-based Identity</em>, and <em>Transport Agnosticism</em> -
-                      you create software that feels fundamentally different.
+                        Сочетая эти паттерны — <em title="Store &amp; Forward">хранение и пересылка</em>,
+                        <em title="Hash-based Identity">идентификация на основе хешей</em> и
+                        <em title="Transport Agnosticism">транспортная независимость</em> — вы создаете программное обеспечение,
+                        которое воспринимается совершенно иначе.
                     </p>
                     <p>
-                      It feels <em>grounded</em>. It doesn’t flicker when the signal
-                      drops. It doesn’t panic when the server is down. It has weight. It
-                      has persistence. It has <em>relevance</em>.
+                      В нём чувствуется <em>стабильность</em>.
+                        Оно не сбоит при потере сигнала.
+                        Оно не паникует, когда сервер не работает.
+                        Оно обладает весом.
+                        Оно обладает устойчивостью.
+                        Оно обладает <em>значимостью</em>.
                     </p>
                     <p>
-                      You are no longer building a “client” that begs a “server” for
-                      attention. You are building an autonomous agent that exists within
-                      the mesh. It speaks when it needs to, listens when it can, and
-                      carries its identity with it wherever it goes.
+                        Вы больше не создаете “клиент”, который выпрашивает внимания у “сервера”.
+                        Вы создаете автономного агента, существующего внутри сети.
+                        Он говорит, когда это необходимо, слушает, когда может,
+                        и несет свою идентичность с собой, куда бы ни пошел.
                     </p>
                     <p>
-                      This is the culmination of the Zen. The code is not just a set of
-                      instructions: It is a behavioral envelope. It is a way of
-                      <em>being</em> in the network.
+                      Это кульминация Дзен.<br>
+                        Код — это не просто набор инструкций: это оболочка поведения.<br>
+                        Это способ <em>существования</em> в сети.
                     </p>
                   </section>
                 </section>
@@ -2005,12 +2011,12 @@ Reticulum в реальном коде: Кочевничество, Дефици
                             <a
                               class="reference internal"
                               href="#the-interface-is-the-medium"
-                              >The Interface Is The Medium</a
+                              >Интерфейс — это среда</a
                             >
                           </li>
                           <li>
                             <a class="reference internal" href="#emergent-patterns"
-                              >Emergent Patterns</a
+                              >Возникающие паттерны</a
                             >
                           </li>
                         </ul>
