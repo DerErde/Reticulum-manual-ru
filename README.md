@@ -10,8 +10,10 @@
 В коде присутствуют прямые ссылки на документацию проекта. 
 Они будут заменены по мере перевода всех глав проекта.
 
-Исправлены ошибки.
-Изменена структура папок по сравнению с оригинальным сайтом.
+<p>
+    Добавлен машинный перевод в формате pdf:
+    <a href="https://github.com/DerErde/Reticulum-manual-ru/tree/master/reticulum-html/manual" target="_blank" rel="noopener">/manual/</a>
+</p>
 
 Это именно перевод официальной документации.
 
@@ -24,7 +26,5 @@
 </div>
 
 <div align="center">
-    <div class="copyright">Copyright &#169; 2025, Mark Qvist</div>
-    Generated with <a href="https://www.sphinx-doc.org/">Sphinx</a> and
-    <a href="https://github.com/pradyunsg/furo">Furo</a>
+    <div class="copyright">Copyright &#169; 2026, Mark Qvist</div>
 </div>
