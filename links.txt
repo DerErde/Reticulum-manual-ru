@@ -19,6 +19,7 @@
 - https://kirillz.github.io/reticulum-docs/ (код) [WIP]
 - https://github.com/DerErde/Reticulum-manual-ru/
 - https://markqvist.github.io/Reticulum/manual/
+- копия: https://rns.meshtula.ru/manual/
 
 Сам стек:
 
