@@ -5,10 +5,12 @@
 Перевод официальной документации проекта <a href="https://reticulum.network">Reticulum</a> на русский язык.
 </h3>
 
+<p>
 Сайт оформлен в виде HTML страниц с относительными ссылками, чтобы любой мог открыть его локально на своем компьютере.
 
 В коде присутствуют прямые ссылки на документацию проекта. 
 Они будут заменены по мере перевода всех глав проекта.
+</p>
 
 <p>
     Добавлен машинный перевод в формате pdf:
@@ -20,9 +22,14 @@
 Подробная инструкция по выбору оборудования, установке приложения, настройке и т.д. будет сделана в отдельном проекте.
 
 <p>
+    Альтернативная документация Reticulum:
+    <a href="https://kirillz.github.io/reticulum-docs/" target="_blank" rel="noopener">kirillz.github.io/reticulum-docs</a>
+</p>
+<p>
     Эта документация:
     <a href="https://github.com/DerErde/Reticulum-manual-ru" target="_blank" rel="noopener">Reticulum-manual-ru</a>
 </p>
+
 </div>
 
 <div align="center">
