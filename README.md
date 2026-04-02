@@ -5,6 +5,11 @@
 Перевод официальной документации проекта <a href="https://reticulum.network">Reticulum</a> на русский язык.
 </h3>
 
+<h4>
+<q>Проект Reticulum — создает новый интернет, отдавая контроль над коммуникациями людям, а не корпорациям или власти.
+Присоединяйтесь к великому событию. Создавайте открытый мир с нами.</q>
+</h4>
+
 <p>
 Сайт оформлен в виде HTML страниц с относительными ссылками, чтобы любой мог открыть его локально на своем компьютере.
 
@@ -16,11 +21,11 @@
     Добавлен машинный перевод в формате pdf:
     <a href="https://github.com/DerErde/Reticulum-manual-ru/tree/master/reticulum-html/manual" target="_blank" rel="noopener">/manual/</a>
 </p>
-
+<p>
 Это именно перевод официальной документации.
 
 Подробная инструкция по выбору оборудования, установке приложения, настройке и т.д. будет сделана в отдельном проекте.
-
+</p>
 <p>
     Альтернативная документация Reticulum:
     <a href="https://kirillz.github.io/reticulum-docs/" target="_blank" rel="noopener">kirillz.github.io/reticulum-docs</a>
@@ -33,5 +38,5 @@
 </div>
 
 <div align="center">
-    <div class="copyright">Copyright &#169; 2026, Mark Qvist</div>
+    <div class="copyright">Copyright &#169; 2025 — 2026, Mark Qvist</div>
 </div>
