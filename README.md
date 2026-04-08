@@ -32,7 +32,11 @@
 </p>
 <p>
     Эта документация:
-    <a href="https://github.com/DerErde/Reticulum-manual-ru" target="_blank" rel="noopener">Reticulum-manual-ru</a>
+    <a href="https://dererde.github.io/Reticulum-manual-ru/" target="_blank" rel="noopener">DerErde.github.io/Reticulum-manual-ru</a>
+</p>
+<p>
+    Этот проект:
+    <a href="https://github.com/DerErde/Reticulum-manual-ru" target="_blank" rel="noopener">GitHub/Reticulum-manual-ru</a>
 </p>
 
 </div>
