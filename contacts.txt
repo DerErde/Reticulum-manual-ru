@@ -34,16 +34,10 @@
 
 ##########################################
 
-# Мои контакты:
 
-- Jami
-name: reticulum
-id: 45d6a4bc9594fbca8f04bd41ad4a44e7d386255e
+# О результатах перевода отписываюсь в общей группе Telegram [https://t.me/reticulum_network_rus] и в Jami [https://jami.net].
 
-- yggdrasil
-
-- i2p
-
-- yggdrasil
+Группу в jami можно найти по адресу:
+swarm 508f76160045cc8ba3e969b826b2165e9aabb21e
 
 ##########################################
