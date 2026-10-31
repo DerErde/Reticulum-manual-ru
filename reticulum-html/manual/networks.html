@@ -1,780 +1,816 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ru" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Support Reticulum" href="support.html" />
-    <link rel="prev" title="Configuring Interfaces" href="interfaces.html" />
-    <link rel="prefetch" href="_static/rns_logo_512.png" as="image" />
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="index" title="Указатель" href="genindex.html">
+    <link rel="search" title="Поиск" href="search.html">
+    <link rel="next" title="Поддержать Reticulum" href="support.html">
+    <link rel="prev" title="Настройка интерфейсов" href="interfaces.html">
+    <link rel="prefetch" href="_static/rns_logo_512.png" as="image">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25.dev1 -->
-    <title>Building Networks - Reticulum Network Stack 1.0.5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="icon" href="../favicon-512x512.svg" type="image/x-icon">
+    <title>Построение сетей - Reticulum Network Stack 1.1.9 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655"/>
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf"/>
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b"/>
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b"/>
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bb3cebc5"/>
+
+
     <style>
-      body {
-        --color-code-background: #f2f2f2;
+        body {
+          --color-code-background: #f2f2f2;
         --color-code-foreground: #1e1e1e;
-      }
-      @media not print {
-        body[data-theme="dark"] {
-          --color-code-background: #202020;
-          --color-code-foreground: #d0d0d0;
-          --color-background-primary: #202b38;
-          --color-background-secondary: #161f27;
-          --color-foreground-primary: #dbdbdb;
-          --color-foreground-secondary: #a9b1ba;
-          --color-brand-primary: #41adff;
-          --color-background-hover: #161f27;
-          --color-api-name: #ffbe85;
-          --color-api-pre-name: #efae75;
+
         }
-        @media (prefers-color-scheme: dark) {
-          body:not([data-theme="light"]) {
+        @media not print {
+          body[data-theme="dark"] {
             --color-code-background: #202020;
-            --color-code-foreground: #d0d0d0;
-            --color-background-primary: #202b38;
-            --color-background-secondary: #161f27;
-            --color-foreground-primary: #dbdbdb;
-            --color-foreground-secondary: #a9b1ba;
-            --color-brand-primary: #41adff;
-            --color-background-hover: #161f27;
-            --color-api-name: #ffbe85;
-            --color-api-pre-name: #efae75;
+        --color-code-foreground: #d0d0d0;
+        --color-background-primary: #202b38;
+        --color-background-secondary: #161f27;
+        --color-foreground-primary: #dbdbdb;
+        --color-foreground-secondary: #a9b1ba;
+        --color-brand-primary: #41adff;
+        --color-background-hover: #161f27;
+        --color-api-name: #ffbe85;
+        --color-api-pre-name: #efae75;
+
+          }
+          @media (prefers-color-scheme: dark) {
+            body:not([data-theme="light"]) {
+              --color-code-background: #202020;
+        --color-code-foreground: #d0d0d0;
+        --color-background-primary: #202b38;
+        --color-background-secondary: #161f27;
+        --color-foreground-primary: #dbdbdb;
+        --color-foreground-secondary: #a9b1ba;
+        --color-brand-primary: #41adff;
+        --color-background-hover: #161f27;
+        --color-api-name: #ffbe85;
+        --color-api-pre-name: #efae75;
+
+            }
           }
         }
-      }
     </style>
-  </head>
-  <body>
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
+</head>
+<body>
 
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-      <symbol id="svg-toc" viewBox="0 0 24 24">
-        <title>Contents</title>
+<script>
+    document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+</script>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-toc" viewBox="0 0 24 24">
+        <title>Содержание</title>
         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-          <path
-            d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"
-          ></path>
+            <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
         </svg>
-      </symbol>
-      <symbol id="svg-menu" viewBox="0 0 24 24">
-        <title>Menu</title>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather-menu"
-        >
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Меню</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
-      </symbol>
-      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-        <title>Expand</title>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather-chevron-right"
-        >
-          <polyline points="9 18 15 12 9 6"></polyline>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Развернуть</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+            <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
-      </symbol>
-      <symbol id="svg-sun" viewBox="0 0 24 24">
-        <title>Light mode</title>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather-sun"
-        >
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </symbol>
+    <symbol id="svg-sun" viewBox="0 0 24 24">
+        <title>Светлая тема</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-      </symbol>
-      <symbol id="svg-moon" viewBox="0 0 24 24">
-        <title>Dark mode</title>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-tabler-moon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path
-            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
-          ></path>
+    </symbol>
+    <symbol id="svg-moon" viewBox="0 0 24 24">
+        <title>Тёмная тема</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/>
         </svg>
-      </symbol>
-      <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
-        <title>Auto light/dark, in light mode</title>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-custom-derived-from-feather-sun-and-tabler-moon"
-        >
-          <path
-            style="opacity: 50%"
-            d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"
-          ></path>
-          <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"></line>
-          <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"></line>
-          <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"></line>
-          <line x1="19" y1="14.05" x2="20.414" y2="15.464"></line>
-          <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"></line>
-          <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"></line>
-          <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"></line>
-          <line x1="19" y1="5.05" x2="20.414" y2="3.636"></line>
-          <circle cx="14.5" cy="9.55" r="3.6"></circle>
+    </symbol>
+    <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+        <title>Авто светлая/тёмная, в светлой теме</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+             class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+            <path style="opacity: 50%"
+                  d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+            <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+            <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+            <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+            <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+            <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+            <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+            <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+            <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+            <circle cx="14.5" cy="9.55" r="3.6"/>
         </svg>
-      </symbol>
-      <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
-        <title>Auto light/dark, in dark mode</title>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-custom-derived-from-feather-sun-and-tabler-moon"
-        >
-          <path
-            d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"
-          ></path>
-          <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"></line>
-          <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"></line>
-          <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"></line>
-          <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"></line>
-          <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"></line>
-          <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"></line>
-          <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"></line>
-          <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"></line>
-          <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"></circle>
+    </symbol>
+    <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+        <title>Авто светлая/тёмная, в тёмной теме</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+             class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+            <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+            <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+            <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+            <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+            <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+            <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+            <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+            <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+            <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+            <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
         </svg>
-      </symbol>
-      <symbol id="svg-pencil" viewBox="0 0 24 24">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-tabler-pencil-code"
-        >
-          <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
-          <path d="M13.5 6.5l4 4"></path>
-          <path d="M20 21l2 -2l-2 -2"></path>
-          <path d="M17 17l-2 2l2 2"></path>
+    </symbol>
+    <symbol id="svg-pencil" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+            <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"/>
+            <path d="M13.5 6.5l4 4"/>
+            <path d="M20 21l2 -2l-2 -2"/>
+            <path d="M17 17l-2 2l2 2"/>
         </svg>
-      </symbol>
-      <symbol id="svg-eye" viewBox="0 0 24 24">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-tabler-eye-code"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-          <path
-            d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008"
-          ></path>
-          <path d="M20 21l2 -2l-2 -2"></path>
-          <path d="M17 17l-2 2l2 2"></path>
+    </symbol>
+    <symbol id="svg-eye" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>
+            <path
+                    d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008"/>
+            <path d="M20 21l2 -2l-2 -2"/>
+            <path d="M17 17l-2 2l2 2"/>
         </svg>
-      </symbol>
-    </svg>
+    </symbol>
+</svg>
 
-    <input
-      type="checkbox"
-      class="sidebar-toggle"
-      name="__navigation"
-      id="__navigation"
-      aria-label="Toggle site navigation sidebar"
-    />
-    <input
-      type="checkbox"
-      class="sidebar-toggle"
-      name="__toc"
-      id="__toc"
-      aria-label="Toggle table of contents sidebar"
-    />
-    <label class="overlay sidebar-overlay" for="__navigation"></label>
-    <label class="overlay toc-overlay" for="__toc"></label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation"
+       aria-label="Переключить боковую панель навигации">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc"
+       aria-label="Переключить боковую панель содержания">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
-    <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+<a class="skip-to-content muted-link" href="#furo-main-content">Перейти к содержанию</a>
 
-    <div class="page">
-      <header class="mobile-header">
+
+<div class="page">
+    <header class="mobile-header">
         <div class="header-left">
-          <label class="nav-overlay-icon" for="__navigation">
-            <span class="icon"
-              ><svg><use href="#svg-menu"></use></svg
-            ></span>
-          </label>
+            <label class="nav-overlay-icon" for="__navigation">
+                <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+            </label>
         </div>
         <div class="header-center">
-          <a href="index.html"
-            ><div class="brand">Reticulum Network Stack 1.0.5 documentation</div></a
-          >
+            <a href="index.html">
+                <div class="brand">Reticulum Network Stack 1.1.9 documentation</div>
+            </a>
         </div>
         <div class="header-right">
-          <div class="theme-toggle-container theme-toggle-header">
-            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-header-icon" for="__toc">
-            <span class="icon"
-              ><svg><use href="#svg-toc"></use></svg
-            ></span>
-          </label>
-        </div>
-      </header>
-      <aside class="sidebar-drawer">
-        <div class="sidebar-container">
-          <div class="sidebar-sticky">
-            <a class="sidebar-brand" href="index.html">
-              <div class="sidebar-logo-container">
-                <img class="sidebar-logo" src="_static/rns_logo_512.png" alt="Logo" />
-              </div>
-
-              <span class="sidebar-brand-text">Reticulum Network Stack 1.0.5 documentation</span>
-            </a>
-            <form class="sidebar-search-container" method="get" action="search.html" role="search">
-              <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
-            <div id="searchbox"></div>
-            <div class="sidebar-scroll">
-              <div class="sidebar-tree">
-                <ul class="current">
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="whatis.html">Что такое Reticulum?</a>
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="gettingstartedfast.html"
-                      >Быстрый старт</a
-                    >
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="using.html"
-                      >Использование Reticulum на вашей системе</a
-                    >
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="understanding.html"
-                      >Понимание Reticulum</a
-                    >
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="hardware.html">Коммуникационное оборудование</a>
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="interfaces.html">Настройка интерфейсов</a>
-                  </li>
-                  <li class="toctree-l1 current current-page">
-                    <a class="current reference internal" href="#">Создание сетей</a>
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="support.html">Поддержка Reticulum</a>
-                  </li>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="examples.html">Примеры кода</a>
-                  </li>
-                </ul>
-                <ul>
-                  <li class="toctree-l1">
-                    <a class="reference internal" href="reference.html">Справочник API</a>
-                  </li>
-                </ul><br>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <div class="main">
-        <div class="content">
-          <div class="article-container">
-            <a href="#" class="back-to-top muted-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"
-                ></path>
-              </svg>
-              <span>Back to top</span>
-            </a>
-            <div class="content-icon-container">
-              <div class="theme-toggle-container theme-toggle-content">
-                <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-                  <svg class="theme-icon-when-auto-light">
-                    <use href="#svg-sun-with-moon"></use>
-                  </svg>
-                  <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-                  <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-                  <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            <div class="theme-toggle-container theme-toggle-header">
+                <button class="theme-toggle" aria-label="Переключить светлую / тёмную / авто тему">
+                    <svg class="theme-icon-when-auto-light">
+                        <use href="#svg-sun-with-moon"></use>
+                    </svg>
+                    <svg class="theme-icon-when-auto-dark">
+                        <use href="#svg-moon-with-sun"></use>
+                    </svg>
+                    <svg class="theme-icon-when-dark">
+                        <use href="#svg-moon"></use>
+                    </svg>
+                    <svg class="theme-icon-when-light">
+                        <use href="#svg-sun"></use>
+                    </svg>
                 </button>
-              </div>
-              <label class="toc-overlay-icon toc-content-icon" for="__toc">
-                <span class="icon"
-                  ><svg><use href="#svg-toc"></use></svg
-                ></span>
-              </label>
             </div>
-            <article role="main" id="furo-main-content">
-              <section id="building-networks">
-                <span id="networks-main"></span>
-                <h1>
-                  Building Networks<a
-                    class="headerlink"
-                    href="#building-networks"
-                    title="Link to this heading"
-                    >¶</a
-                  >
-                </h1>
-                <p>
-                  This chapter will provide you with the knowledge needed to build networks with
-                  Reticulum, which can often be easier than using traditional stacks, since you
-                  don’t have to worry about coordinating addresses, subnets and routing for an
-                  entire network that you might not know how will evolve in the future. With
-                  Reticulum, you can simply add more segments to your network when it becomes
-                  necessary, and Reticulum will handle the convergence of the entire network
-                  automatically.
-                </p>
-                <section id="concepts-overview">
-                  <h2>
-                    Concepts & Overview<a
-                      class="headerlink"
-                      href="#concepts-overview"
-                      title="Link to this heading"
-                      >¶</a
-                    >
-                  </h2>
-                  <p>
-                    There are important points that need to be kept in mind when building networks
-                    with Reticulum:
-                  </p>
-                  <blockquote>
-                    <div>
-                      <ul>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              In a Reticulum network, any node can autonomously generate as many
-                              addresses (called <em>destinations</em> in Reticulum terminology) as
-                              it needs, which become globally reachable to the rest of the network.
-                              There is no central point of control over the address space.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              Reticulum was designed to handle both very small, and very large
-                              networks. While the address space can support billions of endpoints,
-                              Reticulum is also very useful when just a few devices needs to
-                              communicate.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              Low-bandwidth networks, like LoRa and packet radio, can interoperate
-                              and interconnect with much larger and higher bandwidth networks
-                              without issue. Reticulum automatically manages the flow of information
-                              to and from various network segments, and when bandwidth is limited,
-                              local traffic is prioritised.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              Reticulum provides sender/initiator anonymity by default. There is no
-                              way to filter traffic or discriminate it based on the source of the
-                              traffic.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              All traffic is encrypted using ephemeral keys generated by an Elliptic
-                              Curve Diffie-Hellman key exchange on Curve25519. There is no way to
-                              inspect traffic contents, and no way to prioritise or throttle certain
-                              kinds of traffic. All transport and routing layers are thus completely
-                              agnostic to traffic type, and will pass all traffic equally.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              Reticulum can function both with and without infrastructure. When
-                              <em>transport nodes</em> are available, they can route traffic over
-                              multiple hops for other nodes, and will function as a distributed
-                              cryptographic keystore. When there is no transport nodes available,
-                              all nodes that are within communication range can still communicate.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              Every node can become a transport node, simply by enabling it in it’s
-                              configuration, but there is no need for every node on the network to
-                              be a transport node. Letting every node be a transport node will in
-                              most cases degrade the performance and reliability of the network.
-                            </div>
-                          </div>
-                          <blockquote>
-                            <div>
-                              <p>
-                                <em
-                                  >In general terms, if a node is stationary, well-connected and
-                                  kept running most of the time, it is a good candidate to be a
-                                  transport node. For optimal performance, a network should contain
-                                  the amount of transport nodes that provides connectivity to the
-                                  intended area / topography, and not many more than that.</em
-                                >
-                              </p>
-                            </div>
-                          </blockquote>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              Reticulum is designed to work reliably in open, trustless
-                              environments. This means you can use it to create open-access
-                              networks, where participants can join and leave in a free and
-                              unorganised manner. This property allows an entirely new, and so far,
-                              mostly unexplored class of networked applications, where networks, and
-                              the information flow within them can form and dissolve organically.
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="line-block">
-                            <div class="line">
-                              You can just as easily create closed networks, since Reticulum allows
-                              you to add authentication to any interface. This means you can
-                              restrict access on any interface type, even when using legacy devices,
-                              such as modems. You can also mix authenticated and open interfaces on
-                              the same system. See the
-                              <a
-                                class="reference internal"
-                                href="interfaces.html#interfaces-options"
-                                ><span class="std std-ref">Common Interface Options</span></a
-                              >
-                              section of the
-                              <a class="reference internal" href="interfaces.html#interfaces-main"
-                                ><span class="std std-ref">Interfaces</span></a
-                              >
-                              chapter of this manual for information on how to set up interface
-                              authentication.
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </blockquote>
-                  <p>
-                    Reticulum allows you to mix very different kinds of networking mediums into a
-                    unified mesh, or to keep everything within one medium. You could build a
-                    “virtual network” running entirely over the Internet, where all nodes
-                    communicate over TCP and UDP “channels”. You could also build such a network
-                    using other already-established communications channels as the underlying
-                    carrier for Reticulum.
-                  </p>
-                  <p>
-                    However, most real-world networks will probably involve either some form of
-                    wireless or direct hardline communications. To allow Reticulum to communicate
-                    over any type of medium, you must specify it in the configuration file, by
-                    default located at
-                    <code class="docutils literal notranslate"
-                      ><span class="pre">~/.reticulum/config</span></code
-                    >. See the
-                    <a class="reference internal" href="interfaces.html#interfaces-main"
-                      ><span class="std std-ref">Supported Interfaces</span></a
-                    >
-                    chapter of this manual for interface configuration examples.
-                  </p>
-                  <p>
-                    Any number of interfaces can be configured, and Reticulum will automatically
-                    decide which are suitable to use in any given situation, depending on where
-                    traffic needs to flow.
-                  </p>
-                </section>
-                <section id="example-scenarios">
-                  <h2>
-                    Example Scenarios<a
-                      class="headerlink"
-                      href="#example-scenarios"
-                      title="Link to this heading"
-                      >¶</a
-                    >
-                  </h2>
-                  <p>
-                    This section illustrates a few example scenarios, and how they would, in general
-                    terms, be planned, implemented and configured.
-                  </p>
-                  <section id="interconnected-lora-sites">
-                    <h3>
-                      Interconnected LoRa Sites<a
-                        class="headerlink"
-                        href="#interconnected-lora-sites"
-                        title="Link to this heading"
-                        >¶</a
-                      >
-                    </h3>
-                    <p>
-                      An organisation wants to provide communication and information services to
-                      it’s members, which are located mainly in three separate areas. Three suitable
-                      hill-top locations are found, where the organisation can install equipment:
-                      Site A, B and C.
-                    </p>
-                    <p>
-                      Since the amount of data that needs to be exchanged between users is mainly
-                      text- based, the bandwidth requirements are low, and LoRa radios are chosen to
-                      connect users to the network.
-                    </p>
-                    <p>
-                      Due to the hill-top locations found, there is radio line-of-sight between site
-                      A and B, and also between site B and C. Because of this, the organisation does
-                      not need to use the Internet to interconnect the sites, but purchases four
-                      Point-to-Point WiFi based radios for interconnecting the sites.
-                    </p>
-                    <p>
-                      At each site, a Raspberry Pi is installed to function as a gateway. A LoRa
-                      radio is connected to the Pi with a USB cable, and the WiFi radio is connected
-                      to the Ethernet port of the Pi. At site B, two WiFi radios are needed to be
-                      able to reach both site A and site C, so an extra Ethernet adapter is
-                      connected to the Pi in this location.
-                    </p>
-                    <p>
-                      Once the hardware has been installed, Reticulum is installed on all the Pis,
-                      and at site A and C, one interface is added for the LoRa radio, as well as one
-                      for the WiFi radio. At site B, an interface for the LoRa radio, and one
-                      interface for each WiFi radio is added to the Reticulum configuration file.
-                      The transport node option is enabled in the configuration of all three
-                      gateways.
-                    </p>
-                    <p>
-                      The network is now operational, and ready to serve users across all three
-                      areas. The organisation prepares a LoRa radio that is supplied to the end
-                      users, along with a Reticulum configuration file, that contains the right
-                      parameters for communicating with the LoRa radios installed at the gateway
-                      sites.
-                    </p>
-                    <p>
-                      Once users connect to the network, anyone will be able to communicate with
-                      anyone else across all three sites.
-                    </p>
-                  </section>
-                  <section id="bridging-over-the-internet">
-                    <h3>
-                      Bridging Over the Internet<a
-                        class="headerlink"
-                        href="#bridging-over-the-internet"
-                        title="Link to this heading"
-                        >¶</a
-                      >
-                    </h3>
-                    <p>
-                      As the organisation grows, several new communities form in places too far away
-                      from the core network to be reachable over WiFi links. New gateways similar to
-                      those previously installed are set up for the new communities at the new sites
-                      D and E, but they are islanded from the core network, and only serve the local
-                      users.
-                    </p>
-                    <p>
-                      After investigating the options, it is found that it is possible to install an
-                      Internet connection at site A, and an interface on the Internet connection is
-                      configured for Reticulum on the Raspberry Pi at site A.
-                    </p>
-                    <p>
-                      A member of the organisation at site D, named Dori, is willing to help by
-                      sharing the Internet connection she already has in her home, and is able to
-                      leave a Raspberry Pi running. A new Reticulum interface is configured on her
-                      Pi, connecting to the newly enabled Internet interface on the gateway at site
-                      A. Dori is now connected to both the nodes at her own local site (through the
-                      hill-top LoRa gateway), and all the combined users of sites A, B and C. She
-                      then enables transport on her node, and traffic from site D can now reach
-                      everyone at site A, B and C, and vice versa.
-                    </p>
-                  </section>
-                  <section id="growth-and-convergence">
-                    <h3>
-                      Growth and Convergence<a
-                        class="headerlink"
-                        href="#growth-and-convergence"
-                        title="Link to this heading"
-                        >¶</a
-                      >
-                    </h3>
-                    <p>
-                      As the organisation grows, more gateways are added to keep up with the growing
-                      user base. Some local gateways even add VHF radios and packet modems to reach
-                      outlying users and communities that are out of reach for the LoRa radios and
-                      WiFi backhauls.
-                    </p>
-                    <p>
-                      As more sites, gateways and users are connected, the amount of coordination
-                      required is kept to a minimum. If one community wants to add connectivity to
-                      the next one over, it can simply be done without having to involve everyone or
-                      coordinate address space or routing tables.
-                    </p>
-                    <p>
-                      With the added geographical coverage, the operators at site A one day find
-                      that the original internet bridged interfaces are no longer utilised. The
-                      network has converged to be completely self-connected, and the sites that were
-                      once poorly connected outliers are now an integral part of the network.
-                    </p>
-                  </section>
-                </section>
-              </section>
-            </article>
-          </div>
-          <footer>
-            <div class="related-pages">
-              <a class="next-page" href="support.html">
-                <div class="page-info">
-                  <div class="context">
-                    <span>Next</span>
-                  </div>
-                  <div class="title">Support Reticulum</div>
-                </div>
-                <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              </a>
-              <a class="prev-page" href="interfaces.html">
-                <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-                <div class="page-info">
-                  <div class="context">
-                    <span>Previous</span>
-                  </div>
+            <label class="toc-overlay-icon toc-header-icon" for="__toc">
+                <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            </label>
+        </div>
+    </header>
+    <aside class="sidebar-drawer">
+        <div class="sidebar-container">
 
-                  <div class="title">Configuring Interfaces</div>
+            <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+                <div class="sidebar-logo-container">
+                    <img class="sidebar-logo" src="_static/rns_logo_512.png" alt="Logo"/>
                 </div>
-              </a>
+
+                <span class="sidebar-brand-text">Reticulum Network Stack 1.1.9 documentation</span>
+
+            </a>
+                <form class="sidebar-search-container" method="get" action="search.html" role="search">
+                    <input class="sidebar-search" placeholder="Поиск" name="q" aria-label="Поиск">
+                    <input type="hidden" name="check_keywords" value="yes">
+                    <input type="hidden" name="area" value="default">
+                </form>
+                <div id="searchbox"></div>
+                <div class="sidebar-scroll">
+                    <div class="sidebar-tree">
+                        <ul class="current">
+                            <li class="toctree-l1"><a class="reference internal" href="whatis.html">Что такое
+                                Reticulum?</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="gettingstartedfast.html">Быстрый
+                                старт</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="zen.html">Дзен Reticulum</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="software.html">Программы,
+                                использующие Reticulum</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="using.html">Использование
+                                Reticulum в вашей системе</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="understanding.html">Понимание
+                                Reticulum</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="hardware.html">Коммуникационное
+                                оборудование</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="interfaces.html">Настройка
+                                интерфейсов</a></li>
+                            <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Построение
+                                сетей</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="support.html">Поддержать
+                                Reticulum</a></li>
+                            <li class="toctree-l1"><a class="reference internal" href="examples.html">Примеры кода</a>
+                            </li>
+                            <li class="toctree-l1"><a class="reference internal" href="license.html">Лицензия
+                                Reticulum</a></li>
+                        </ul>
+                        <ul>
+                            <li class="toctree-l1"><a class="reference internal" href="reference.html">Справочник
+                                API</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
             </div>
-            <div class="bottom-of-page">
-              <div class="left-details">
-                <div class="copyright">Copyright &#169; 2025, Mark Qvist</div>
-                  Официальный сайт проекта <a href="https://reticulum.network" target="_blank" rel="noopener">Reticulum.network</a><br>
-                  Официальный репозиторий на <a href="https://github.com/markqvist/reticulum" target="_blank" rel="noopener">GitHub</a>
-              </div>
-              <div class="right-details"></div>
+
+        </div>
+    </aside>
+    <div class="main">
+        <div class="content">
+            <div class="article-container">
+                <a href="#" class="back-to-top muted-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+                    </svg>
+                    <span>Наверх</span>
+                </a>
+                <div class="content-icon-container">
+                    <div class="theme-toggle-container theme-toggle-content">
+                        <button class="theme-toggle" aria-label="Переключить светлую / тёмную / авто тему">
+                            <svg class="theme-icon-when-auto-light">
+                                <use href="#svg-sun-with-moon"></use>
+                            </svg>
+                            <svg class="theme-icon-when-auto-dark">
+                                <use href="#svg-moon-with-sun"></use>
+                            </svg>
+                            <svg class="theme-icon-when-dark">
+                                <use href="#svg-moon"></use>
+                            </svg>
+                            <svg class="theme-icon-when-light">
+                                <use href="#svg-sun"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <label class="toc-overlay-icon toc-content-icon" for="__toc">
+                        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+                    </label>
+                </div>
+                <article role="main" id="furo-main-content">
+                    <section id="building-networks">
+                        <span id="networks-main"></span>
+                        <h1>Построение сетей<a class="headerlink" href="#building-networks"
+                                               title="Link to this heading">¶</a></h1>
+                        <p>Эта глава предоставит вам высокоуровневые знания, необходимые для построения сетей с помощью
+                            Reticulum. Однако она не расскажет вам всё, что нужно знать для успешного проектирования и
+                            настройки всех видов сетей, которые вы можете себе представить. Для этого вам, скорее всего,
+                            потребуется прочитать это руководство полностью, вложить значительное время в эксперименты
+                            со стеком и интуитивно изучить функциональность.</p>
+                        <p>Тем не менее, после прочтения этой главы вы должны быть хорошо подготовлены к тому, чтобы
+                            <em>начать</em> этот путь. Хотя Reticulum <strong>принципиально отличается</strong> от
+                            других сетевых технологий, он часто может быть проще в использовании, чем традиционные
+                            стеки. Если вы строили сети раньше, вам, вероятно, придётся забыть или хотя бы временно
+                            игнорировать многие вещи на этом этапе. В конце концов, всё встанет на свои места. Надеемся.
+                        </p>
+                        <p>Если вы привыкли к таким протоколам, как IP, давайте начнём хотя бы с некоторого облегчения:
+                            вам не нужно беспокоиться о координации адресов, подсетей и маршрутизации для всей сети, о
+                            которой вы можете не знать, как она будет развиваться в будущем. С Reticulum вы можете
+                            просто добавлять новые сегменты в вашу сеть, когда это становится необходимым, и Reticulum
+                            автоматически справится со схождением всей сети. В Reticulum есть ещё множество подобных
+                            изящных аспектов, но мы забегаем вперёд. Давайте сначала охватим основы.</p>
+                        <section id="concepts-overview">
+                            <h2>Концепции и обзор<a class="headerlink" href="#concepts-overview"
+                                                    title="Link to this heading">¶</a></h2>
+                            <p>Прежде чем вы начнёте строить свои собственные сети, важно понять фундаментальные
+                                принципы, которые отличают сети Reticulum от традиционных сетевых подходов. Эти принципы
+                                формируют то, как вы проектируете свою сеть, с какими компромиссами сталкиваетесь и на
+                                какие возможности можете положиться.</p>
+                            <p>Reticulum — это не единая сеть, к которой вы «присоединяетесь», это инструментарий для
+                                <em>создания</em> сетей. Вы решаете, какие среды использовать, как узлы подключаются,
+                                какие существуют границы доверия и какова цель сети. Reticulum предоставляет
+                                криптографическую основу, транспортные механизмы и алгоритмы схождения, которые делают
+                                ваш проект работоспособным. Вы предоставляете намерение и структуру.</p>
+                            <p>Такой подход предлагает огромную гибкость, но требует мышления в терминах иных
+                                абстракций, нежели те, что используются в обычных сетях.</p>
+                            <section id="introductory-considerations">
+                                <h3>Вводные соображения<a class="headerlink" href="#introductory-considerations"
+                                                          title="Link to this heading">¶</a></h3>
+                                <p>Существуют важные моменты, которые необходимо иметь в виду при построении сетей с
+                                    помощью Reticulum:</p>
+                                <blockquote>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">В сети Reticulum любой узел может автономно
+                                                        генерировать столько адресов (называемых <em>назначениями</em> в
+                                                        терминологии Reticulum), сколько ему нужно, которые становятся
+                                                        глобально достижимыми для остальной сети. Нет центральной точки
+                                                        контроля над адресным пространством.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Reticulum был разработан для работы как с очень
+                                                        маленькими, так и с очень большими сетями. Хотя адресное
+                                                        пространство может поддерживать миллиарды конечных точек,
+                                                        Reticulum также очень полезен, когда необходимо связать всего
+                                                        несколько устройств.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Сети с низкой пропускной способностью, такие как
+                                                        LoRa и пакетная радиосвязь, могут беспрепятственно
+                                                        взаимодействовать и соединяться с гораздо более крупными и
+                                                        высокоскоростными сетями. Reticulum автоматически управляет
+                                                        потоком информации в различные сегменты сети и из них, а когда
+                                                        пропускная способность ограничена, приоритет отдаётся локальному
+                                                        трафику. Однако вам нужно будет правильно настроить свои
+                                                        интерфейсы. Если вы скажете Reticulum пропускать весь трафик
+                                                        объявлений с гигабитного канала на интерфейсы LoRa, он будет
+                                                        стараться изо всех сил выполнить это, соблюдая при этом
+                                                        ограничения пропускной способности, но вы <em>потратите</em>
+                                                        много драгоценной полосы пропускания и эфирного времени, и ваша
+                                                        сеть LoRa не будет работать хорошо.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Reticulum обеспечивает анонимность
+                                                        отправителя/инициатора по умолчанию. Нет способа фильтровать
+                                                        трафик или дискриминировать его на основе источника трафика.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Весь трафик шифруется с использованием эфемерных
+                                                        ключей, генерируемых путём обмена ключами Диффи-Хеллмана на
+                                                        эллиптических кривых на Curve25519. Невозможно проверить
+                                                        содержимое трафика, и невозможно приоритизировать или
+                                                        ограничивать определённые виды трафика. Все транспортные и
+                                                        маршрутизирующие слои, таким образом, полностью агностичны к
+                                                        типу трафика и будут передавать весь трафик одинаково.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Reticulum может функционировать как с
+                                                        инфраструктурой, так и без неё. Когда доступны <em>транспортные
+                                                            узлы</em>, они могут маршрутизировать трафик через несколько
+                                                        прыжков для других узлов и функционировать как распределённое
+                                                        криптографическое хранилище ключей. Когда транспортные узлы
+                                                        недоступны, все узлы, находящиеся в пределах досягаемости связи,
+                                                        всё равно могут общаться.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Любой узел может стать транспортным узлом, просто
+                                                        включив это в своей конфигурации, но нет необходимости, чтобы
+                                                        каждый узел в сети был транспортным узлом. Если позволить
+                                                        каждому узлу быть транспортным, это в большинстве случаев
+                                                        ухудшит производительность и надёжность сети.
+                                                    </div>
+                                                </div>
+                                                <blockquote>
+                                                    <div><p><em>В общих чертах, если узел стационарен, хорошо подключён
+                                                        и работает большую часть времени, он является хорошим кандидатом
+                                                        на роль транспортного узла. Для оптимальной производительности
+                                                        сеть должна содержать такое количество транспортных узлов,
+                                                        которое обеспечивает связность в предполагаемой зоне /
+                                                        топографии, и не намного больше.</em></p>
+                                                    </div>
+                                                </blockquote>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Reticulum разработан для надёжной работы в
+                                                        открытых, не требующих доверия средах. Это означает, что вы
+                                                        можете использовать его для создания сетей с открытым доступом,
+                                                        где участники могут присоединяться и покидать сеть свободно и
+                                                        неорганизованно. Это свойство позволяет создать совершенно новый
+                                                        и до сих пор в значительной степени неисследованный класс
+                                                        сетевых приложений, где сети и информационные потоки внутри них
+                                                        могут формироваться и распадаться органически.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="line-block">
+                                                    <div class="line">Вы можете так же легко создавать закрытые сети,
+                                                        поскольку Reticulum позволяет добавлять аутентификацию на любой
+                                                        интерфейс. Это означает, что вы можете ограничить доступ на
+                                                        любом типе интерфейса, даже при использовании устаревших
+                                                        устройств, таких как модемы. Вы также можете смешивать
+                                                        аутентифицированные и открытые интерфейсы в одной системе.
+                                                        Смотрите раздел <a class="reference internal"
+                                                                           href="interfaces.html#interfaces-options"><span
+                                                                class="std std-ref">Общие параметры интерфейсов</span></a>
+                                                        главы <a class="reference internal"
+                                                                 href="interfaces.html#interfaces-main"><span
+                                                                class="std std-ref">Интерфейсы</span></a> этого
+                                                        руководства для получения информации о настройке аутентификации
+                                                        интерфейса.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </blockquote>
+                                <p>Reticulum позволяет смешивать очень разные типы сетевых сред в единую ячеистую сеть
+                                    или держать всё в рамках одной среды. Вы можете построить «виртуальную сеть»,
+                                    работающую полностью через Интернет, где все узлы общаются через TCP и UDP «каналы».
+                                    Вы также можете построить такую сеть, используя другие уже установленные каналы
+                                    связи в качестве базового носителя для Reticulum.</p>
+                                <p>Однако большинство реальных сетей, вероятно, будут включать в себя ту или иную форму
+                                    беспроводной или прямой проводной связи. Чтобы позволить Reticulum общаться через
+                                    любой тип среды, вы должны указать это в конфигурационном файле, по умолчанию
+                                    расположенном в <code class="docutils literal notranslate"><span class="pre">~/.reticulum/config</span></code>.
+                                    Смотрите главу <a class="reference internal" href="interfaces.html#interfaces-main"><span
+                                            class="std std-ref">Поддерживаемые интерфейсы</span></a> этого руководства
+                                    для примеров конфигурации интерфейсов.</p>
+                                <p>Можно настроить любое количество интерфейсов, и Reticulum автоматически решит, какие
+                                    из них подходят для использования в любой конкретной ситуации, в зависимости от
+                                    того, куда должен направляться трафик.</p>
+                            </section>
+                            <section id="destinations-not-addresses">
+                                <h3>Назначения, а не адреса<a class="headerlink" href="#destinations-not-addresses"
+                                                              title="Link to this heading">¶</a></h3>
+                                <p>В традиционных сетях адреса выделяются из управляемого пространства. Если вы хотите
+                                    связаться с другим узлом, вам нужно знать его адрес, и этот адрес должен быть
+                                    уникальным в пределах сегмента сети. Это требует координации, либо через ручное
+                                    назначение, DHCP-серверы, либо другие механизмы выделения.</p>
+                                <p>Reticulum заменяет адреса на <strong>назначения (destinations)</strong>. Назначение
+                                    идентифицируется 16-байтовым хешем (128 бит), полученным из хеша SHA-256 от
+                                    идентифицирующих характеристик назначения. Этот хеш служит адресом в сети. В сети он
+                                    представлен в двоичном виде, но при отображении для пользователей он обычно выглядит
+                                    примерно так: <code class="docutils literal notranslate"><span class="pre">&lt;13425ec15b621c1d928589718000d814&gt;</span></code>.
+                                </p>
+                                <p>Критическое отличие заключается в том, что <em>любой узел может генерировать столько
+                                    назначений, сколько ему нужно, без координации</em>. Уникальность назначения
+                                    гарантируется устойчивостью SHA-256 к коллизиям и включением открытого ключа узла в
+                                    расчёт хеша. Два узла могут использовать одно и то же имя назначения <code
+                                            class="docutils literal notranslate"><span
+                                            class="pre">messenger.user.inbox</span></code>, но у них будут разные хеши
+                                    назначений, потому что их открытые ключи различаются. Оба могут сосуществовать в
+                                    одной сети без конфликта.</p>
+                                <p>Это имеет глубокие последствия для проектирования сети:</p>
+                                <ul class="simple">
+                                    <li><p><strong>Нет планирования распределения адресов:</strong> вам никогда не нужно
+                                        резервировать диапазоны адресов, планировать подсети или координироваться с
+                                        другими сетевыми операторами. Узлы просто генерируют назначения и объявляют их.
+                                    </p></li>
+                                    <li><p><strong>Глобальная переносимость:</strong> назначение не привязано к
+                                        физическому местоположению или сегменту сети. Узел может перемещать свои
+                                        назначения между интерфейсами, средами или даже между полностью отдельными
+                                        сетями Reticulum, просто отправив объявление на новой среде.</p></li>
+                                    <li><p><strong>Неявная аутентификация:</strong> поскольку назначения привязаны к
+                                        открытым ключам, связь с назначением по своей сути криптографически
+                                        аутентифицирована. Только владелец соответствующего приватного ключа может
+                                        расшифровать и ответить на трафик, адресованный этому назначению. Это также
+                                        делает аутентификацию на уровне приложений <em>гораздо</em> проще, поскольку она
+                                        может напрямую использовать фундаментальную верификацию идентичности, встроенную
+                                        в основной сетевой уровень.</p></li>
+                                    <li><p><strong>Абстракция идентичности:</strong> одна идентичность Reticulum может
+                                        создавать несколько назначений. Это позволяет одной сущности (человеку,
+                                        устройству, службе) представлять несколько конечных точек без необходимости в
+                                        нескольких криптографических парах ключей.</p></li>
+                                </ul>
+                            </section>
+                            <section id="transport-nodes-and-instances">
+                                <h3>Транспортные узлы и экземпляры<a class="headerlink"
+                                                                     href="#transport-nodes-and-instances"
+                                                                     title="Link to this heading">¶</a></h3>
+                                <p>Reticulum различает два типа узлов: <strong>Экземпляры</strong> и <strong>Транспортные
+                                    Узлы</strong>. Каждый узел, работающий под управлением Reticulum, является
+                                    Экземпляром, но не каждый Экземпляр является Транспортным Узлом.</p>
+                                <p><strong>Экземпляр Reticulum</strong> — это любая система, запускающая стек Reticulum.
+                                    Он может создавать назначения, отправлять и получать пакеты, устанавливать связи и
+                                    общаться с другими узлами. Он также может размещать назначения, доступные для
+                                    подключения <em>любому</em> другому участнику сети. Это означает, что вы можете
+                                    легко размещать глобально доступные службы из любого места, включая ваш дом или
+                                    офис. Общесетевая, глобальная связность для всех назначений гарантирована, пока
+                                    существует <em>какой-то</em> физический способ фактически транспортировать пакеты.
+                                    Экземпляры — это состояние по умолчанию, и они подходят для большинства устройств
+                                    конечных пользователей, таких как телефоны, ноутбуки, датчики или любые устройства,
+                                    которые в основном потребляют сетевые услуги.</p>
+                                <p><strong>Транспортный Узел</strong> — это Экземпляр, который был явно настроен для
+                                    участия в общесетевом транспорте. Транспортные узлы пересылают пакеты через прыжки,
+                                    распространяют объявления, поддерживают таблицы путей и обслуживают запросы путей от
+                                    имени других узлов. Когда назначение отправляет объявление, Транспортные Узлы
+                                    получают его, запоминают путь и ретранслируют его на другие интерфейсы. Когда узлу
+                                    нужно достичь назначения, для которого у него нет пути, Транспортные Узлы помогают
+                                    разрешить путь через сеть.</p>
+                                <p>Даже устройства, размещающие службы или обслуживающие контент, вероятно, следует
+                                    настраивать просто как экземпляры и самим подключаться к более широким сетям через
+                                    Транспортный Узел. Однако в некоторых ситуациях это может быть непрактично, и в
+                                    качестве примера: вполне жизнеспособно разместить личный Транспортный Узел на
+                                    Raspberry Pi, который в то же время работает как узел распространения LXMF и
+                                    размещает ваш личный сайт или файлы через Reticulum.</p>
+                                <p>Это различие важно. <strong>Не</strong> каждый узел должен быть Транспортным Узлом:
+                                </p>
+                                <ul class="simple">
+                                    <li><p><strong>Потребление ресурсов:</strong> транспортные узлы поддерживают таблицы
+                                        путей, обрабатывают объявления и пересылают трафик. Это требует ресурсов памяти
+                                        и процессора, которые могут быть ограничены на маломощных устройствах.</p></li>
+                                    <li><p><strong>Требования к стабильности:</strong> транспортные узлы способствуют
+                                        схождению сети. Если Транспортные Узлы часто отключаются, таблицы путей
+                                        устаревают, и схождение страдает. Стабильные, постоянно включённые узлы лучше
+                                        подходят на роль Транспортных Узлов.</p></li>
+                                    <li><p><strong>Соображения пропускной способности:</strong> транспортные узлы
+                                        обрабатывают и ретранслируют служебный трафик сети. На средах с очень низкой
+                                        пропускной способностью слишком большое количество Транспортных Узлов будет
+                                        потреблять ёмкость, которую следовало бы использовать для фактических данных.
+                                    </p></li>
+                                </ul>
+                                <p>На практике сеть обычно имеет относительно небольшое количество Транспортных Узлов,
+                                    стратегически размещённых для обеспечения покрытия и связности. Устройства конечных
+                                    пользователей работают как Экземпляры, подключаясь через ближайшие Транспортные Узлы
+                                    для доступа к более широкой сети. Эта модель отражает традиционные сети, где
+                                    маршрутизаторы пересылают трафик, в то время как конечные хосты просто потребляют
+                                    связность, но с тем решающим отличием, что любой узел <em>может</em> стать
+                                    маршрутизатором при необходимости, и решение принимаете вы, исходя из требований
+                                    вашей сети.</p>
+                                <p>Транспортные узлы также функционируют как распределённые криптографические хранилища
+                                    ключей. Когда назначение объявляет о себе, Транспортные Узлы кешируют открытый ключ
+                                    и информацию о назначении. Другие узлы могут запрашивать неизвестные открытые ключи
+                                    из сети, и Транспортные Узлы отвечают кешированной информацией. Это устраняет
+                                    необходимость в центральной службе каталогов, обеспечивая при этом доступность
+                                    открытых ключей по всей сети.</p>
+                            </section>
+                            <section id="trustless-networking">
+                                <h3>Сетевое взаимодействие без доверия<a class="headerlink" href="#trustless-networking"
+                                                                         title="Link to this heading">¶</a></h3>
+                                <p>Традиционные модели сетевой безопасности предполагают высокий уровень доверия на
+                                    определённых уровнях. Вы можете доверять своему интернет-провайдеру в доставке
+                                    пакетов без проверки, или доверять своему VPN-провайдеру в обработке вашего трафика,
+                                    или доверять сетевому администратору в правильной настройке брандмауэров. Эти
+                                    доверительные отношения создают уязвимости и зависимости.</p>
+                                <p>Reticulum разработан для функционирования в <strong>открытых, не требующих доверия
+                                    средах</strong>. Это означает, что протокол не делает никаких предположений о
+                                    надёжности сетевой инфраструктуры, других участников или транспортных сред. Каждый
+                                    аспект связи защищён криптографически:</p>
+                                <ul class="simple">
+                                    <li><p><strong>Шифрование трафика:</strong> весь трафик к одиночным назначениям
+                                        шифруется с использованием эфемерных ключей.</p></li>
+                                    <li><p><strong>Анонимность источника:</strong> пакеты Reticulum не включают адреса
+                                        источников. Наблюдатель, перехватывающий пакет, не может определить, кто его
+                                        отправил, только кому он адресован (если не включён IFAC, в этом случае ничего
+                                        нельзя определить). Это обеспечивает анонимность инициатора по умолчанию.</p>
+                                    </li>
+                                    <li><p><strong>Верификация пути:</strong> механизм объявлений включает
+                                        криптографические подписи, которые доказывают подлинность объявлений назначений.
+                                    </p></li>
+                                    <li><p><strong>Неподделываемые подтверждения доставки:</strong> когда назначение
+                                        доказывает получение пакета, доказательство подписывается ключом идентичности
+                                        назначения. Это предотвращает ложные подтверждения и обеспечивает надёжную
+                                        верификацию доставки.</p></li>
+                                    <li><p><strong>Аутентификация интерфейса:</strong> при использовании Кодов Доступа к
+                                        Интерфейсу (IFAC) пакеты на аутентифицированных интерфейсах несут подписи,
+                                        полученные из общего секрета. Только узлы с правильным именем сети и парольной
+                                        фразой могут генерировать действительные пакеты, позволяя создавать виртуальные
+                                        частные сети на общих средах.</p></li>
+                                </ul>
+                                <p>Дизайн без доверия имеет важные последствия для проектирования сети:</p>
+                                <ul class="simple">
+                                    <li><p><strong>Сети с открытым доступом жизнеспособны:</strong> вы можете строить
+                                        сети, к которым любой может присоединиться без предварительного одобрения.
+                                        Поскольку трафик шифруется и аутентифицируется сквозным образом, участники не
+                                        могут вмешиваться в частную связь друг друга, даже если они используют одну и ту
+                                        же транспортную инфраструктуру.</p></li>
+                                    <li><p><strong>Никакой проверки или приоритизации трафика:</strong> поскольку
+                                        содержимое и источники трафика непрозрачны для промежуточных узлов, не
+                                        существует механизма для фильтрации, приоритизации или ограничения трафика на
+                                        основе его типа или происхождения. Весь трафик обрабатывается одинаково. С точки
+                                        зрения нейтральности, это особенность.</p></li>
+                                    <li><p><strong>Устойчивость к противникам:</strong> сеть может работать, даже если
+                                        некоторые узлы являются вредоносными или контролируются противниками. Хотя
+                                        вредоносный Транспортный Узел может отказаться пересылать определённый трафик
+                                        или отбрасывать пакеты, он не может расшифровать, изменить или выдать себя за
+                                        легитимный трафик. Избыточные пути и несколько Транспортных Узлов смягчают
+                                        воздействие вредоносных узлов.</p></li>
+                                </ul>
+                                <p>Конечно, вы также можете создавать закрытые сети. Коды Доступа к Интерфейсу позволяют
+                                    вам ограничивать участие на определённых интерфейсах. Сетевые Идентичности позволяют
+                                    вам проверять, что обнаруженные интерфейсы принадлежат доверенным операторам.
+                                    Управление чёрными дырами позволяет блокировать вредоносные идентичности. Reticulum
+                                    предоставляет как инструменты для открытых сетей, так и средства контроля для
+                                    закрытых. Выбор за вами, исходя из ваших требований.</p>
+                            </section>
+                            <section id="heterogeneous-connectivity">
+                                <h3>Гетерогенная связность<a class="headerlink" href="#heterogeneous-connectivity"
+                                                             title="Link to this heading">¶</a></h3>
+                                <p>В обычных сетях смешивание различных транспортных сред обычно требует шлюзов, уровней
+                                    трансляции и тщательной настройки. Сеть WiFi изначально не взаимодействует с сетью
+                                    пакетной радиосвязи без дополнительной инфраструктуры, и вы не можете просто
+                                    загрузить автомобиль через последовательный порт или отправить зашифрованное
+                                    сообщение в QR-коде.</p>
+                                <p>Reticulum рассматривает <strong>гетерогенность как основную предпосылку</strong>.
+                                    Протокол разработан для бесшовного смешивания сред с совершенно разными
+                                    характеристиками:</p>
+                                <ul class="simple">
+                                    <li><p><strong>Пропускная способность:</strong> линии LoRa, работающие на нескольких
+                                        сотнях бит в секунду, могут соединяться с гигабитными магистралями Ethernet.
+                                        Reticulum автоматически управляет потоком информации, отдавая приоритет
+                                        локальному трафику на медленных сегментах, одновременно позволяя глобальное
+                                        схождение.</p></li>
+                                    <li><p><strong>Задержка:</strong> спутниковые линии с многомиллисекундной задержкой
+                                        могут сосуществовать с локальными линиями, измеряемыми в миллисекундах.
+                                        Транспортная система прозрачно обрабатывает синхронизацию, асинхронную доставку
+                                        и повторные передачи.</p></li>
+                                    <li><p><strong>Топология:</strong> микроволновые линии точка-точка,
+                                        широковещательные радиосети, коммутируемые фабрики Ethernet и виртуальные
+                                        туннели через Интернет — всё это может быть частью одной сети Reticulum.</p>
+                                    </li>
+                                    <li><p><strong>Надёжность:</strong> прерывистые соединения, которые появляются и
+                                        исчезают (например, мобильные устройства или оппортунистические радиоконтакты),
+                                        могут участвовать наряду с постоянно включённой инфраструктурой. Reticulum
+                                        корректно обрабатывает потерю связи и переподключение.</p></li>
+                                </ul>
+                                <p>Эта гетерогенность достигается за счёт нескольких элементов дизайна:</p>
+                                <ul class="simple">
+                                    <li><p><strong>Расширяемая, средне-агностическая система интерфейсов:</strong>
+                                        Reticulum общается с физическим миром через модули интерфейсов. Добавление
+                                        поддержки новой среды — это вопрос реализации класса интерфейса. Сам протокол
+                                        остаётся неизменным.</p></li>
+                                    <li><p><strong>Режимы интерфейсов:</strong> различные режимы (<code
+                                            class="docutils literal notranslate"><span class="pre">full</span></code>,
+                                        <code class="docutils literal notranslate"><span
+                                                class="pre">gateway</span></code>, <code
+                                                class="docutils literal notranslate"><span
+                                                class="pre">access_point</span></code>, <code
+                                                class="docutils literal notranslate"><span
+                                                class="pre">roaming</span></code>, <code
+                                                class="docutils literal notranslate"><span
+                                                class="pre">boundary</span></code>) позволяют вам настраивать, как
+                                        интерфейсы взаимодействуют с более широкой сетью, исходя из их характеристик и
+                                        роли.</p></li>
+                                    <li><p><strong>Правила распространения объявлений:</strong> объявления пересылаются
+                                        между интерфейсами в соответствии с правилами, которые учитывают ограничения
+                                        пропускной способности и режимы интерфейсов. Медленные сегменты не перегружаются
+                                        трафиком от быстрых сегментов.</p></li>
+                                    <li><p><strong>Приоритизация локального трафика:</strong> когда пропускная
+                                        способность ограничена, Reticulum отдаёт приоритет объявлениям для близлежащих
+                                        назначений. Это гарантирует, что локальная связность остаётся функциональной,
+                                        даже когда глобальное схождение неполное.</p></li>
+                                </ul>
+                                <p>Для проектировщиков сетей это означает, что вы свободны использовать любые среды,
+                                    которые доступны, доступны по цене или подходят для вашей ситуации. Вы можете
+                                    использовать LoRa для широкозонного покрытия с низкой пропускной способностью, WiFi
+                                    для локальных высокопроизводительных линий, I2P для анонимного подключения к
+                                    Интернету и Ethernet для инфраструктурных магистралей — всё в рамках одной сети.
+                                    Reticulum автоматически обрабатывает трансляцию и координацию.</p>
+                                <p>Ключевое соображение при проектировании заключается не в том, могут ли различные
+                                    среды работать вместе (они могут), а в том, <strong>как</strong> они должны работать
+                                    вместе, исходя из ваших целей. Узел с несколькими интерфейсами, охватывающими
+                                    гетерогенные среды, должен быть настроен с соответствующими режимами интерфейсов,
+                                    чтобы трафик проходил эффективно. Шлюз, соединяющий медленный сегмент LoRa с быстрой
+                                    магистралью Интернета, должен быть настроен иначе, чем мобильное устройство,
+                                    перемещающееся между радиосотами.</p>
+                            </section>
+                        </section>
+                    </section>
+
+                </article>
             </div>
-          </footer>
+            <footer>
+
+                <div class="related-pages">
+                    <a class="next-page" href="support.html">
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Далее</span>
+                            </div>
+                            <div class="title">Поддержать Reticulum</div>
+                        </div>
+                        <svg class="furo-related-icon">
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                    </a>
+                    <a class="prev-page" href="interfaces.html">
+                        <svg class="furo-related-icon">
+                            <use href="#svg-arrow-right"></use>
+                        </svg>
+                        <div class="page-info">
+                            <div class="context">
+                                <span>Назад</span>
+                            </div>
+
+                            <div class="title">Настройка интерфейсов</div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="bottom-of-page">
+                    <div class="left-details">
+                        <div class="copyright">
+                            Copyright &#169; 2025, Mark Qvist
+                        </div>
+                        Generated with <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+                        <a href="https://github.com/pradyunsg/furo">Furo</a>
+
+                    </div>
+                    <div class="right-details">
+
+                    </div>
+                </div>
+
+            </footer>
         </div>
         <aside class="toc-drawer">
-          <div class="toc-sticky toc-scroll">
-            <div class="toc-title-container">
-              <a class="toc-title" href="../index.html"> &#127759; HOME </a>
-            </div>
-            <div class="toc-title-container">
-              <span class="toc-title"> On this page </span>
-            </div>
-            <div class="toc-tree-container">
-              <div class="toc-tree">
-                <ul>
-                  <li>
-                    <a class="reference internal" href="#">Building Networks</a>
-                    <ul>
-                      <li>
-                        <a class="reference internal" href="#concepts-overview"
-                          >Concepts & Overview</a
-                        >
-                      </li>
-                      <li>
-                        <a class="reference internal" href="#example-scenarios"
-                          >Example Scenarios</a
-                        >
+
+
+            <div class="toc-sticky toc-scroll">
+                <div class="toc-title-container">
+          <span class="toc-title">
+            На этой странице
+          </span>
+                </div>
+                <div class="toc-tree-container">
+                    <div class="toc-tree">
                         <ul>
-                          <li>
-                            <a class="reference internal" href="#interconnected-lora-sites"
-                              >Interconnected LoRa Sites</a
-                            >
-                          </li>
-                          <li>
-                            <a class="reference internal" href="#bridging-over-the-internet"
-                              >Bridging Over the Internet</a
-                            >
-                          </li>
-                          <li>
-                            <a class="reference internal" href="#growth-and-convergence"
-                              >Growth and Convergence</a
-                            >
-                          </li>
+                            <li><a class="reference internal" href="#">Построение сетей</a>
+                                <ul>
+                                    <li><a class="reference internal" href="#concepts-overview">Концепции и обзор</a>
+                                        <ul>
+                                            <li><a class="reference internal" href="#introductory-considerations">Вводные
+                                                соображения</a></li>
+                                            <li><a class="reference internal" href="#destinations-not-addresses">Назначения,
+                                                а не адреса</a></li>
+                                            <li><a class="reference internal" href="#transport-nodes-and-instances">Транспортные
+                                                узлы и экземпляры</a></li>
+                                            <li><a class="reference internal" href="#trustless-networking">Сетевое
+                                                взаимодействие без доверия</a></li>
+                                            <li><a class="reference internal" href="#heterogeneous-connectivity">Гетерогенная
+                                                связность</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+
+                    </div>
+                </div>
             </div>
-          </div>
+
+
         </aside>
-      </div>
     </div>
-    <script src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-  </body>
+</div>
+<script src="_static/documentation_options.js?v=7b68ca77"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/scripts/furo.js?v=46bd48cc"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=f281be69"></script>
+</body>
 </html>
